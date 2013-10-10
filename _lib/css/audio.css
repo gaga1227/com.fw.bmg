@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* ------------------------------------------------------------------------------ */
+/* common audio */
+/* ------------------------------------------------------------------------------ */
+
+/* audio container */
+.audioContainer { 
+	display:block; position:relative; width:100%; height:auto; margin:0 auto!important; padding:8px 0 16px 0; overflow:hidden; }		
+.audioContainer div:first-child { 
+	padding-top:0; }
+	
+	/* audioHeader */
+	.audioContainer .audioHeader { 
+		position:relative; width:auto; height:50px; margin:0; padding:0; overflow:hidden;
+		color:#fff; background-color:#16aeb9; /*default*/ }
+		
+		/* audioTitle */
+		.audioContainer .audioHeader .audioTitle { 
+			position:relative; width:auto; height:20px; margin:0; padding:15px; overflow:hidden;
+			color:#fff; background:none; white-space:nowrap; text-overflow:ellipsis;
+			font-family:'Montserrat',sans-serif; font-size:15px; font-weight:400; line-height:20px; }
+		 
+		 	/* audioTrackID */
+			.audioContainer .audioHeader .audioTrackID { 
+				display:inline-block; margin-right:10px; font-size:18px; font-weight:700; }
+	
+	/* audio */
+	.audioContainer audio.audioHTML5 { display:none; }
+	

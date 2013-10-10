@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+ *
+ * This is the sample templates definitions file from FCKeditor
+ *
+ * It's provided as a sample for the backwards compatible plugin xmltemplates
+-->
+<Templates imagesBasePath="templates/images/" templateName="default">
+		
+	<!-- DIVIDERS -->
+	<Template title="Stump divider" image="tmpl-divider-stump.gif">
+		<Description>Inserts a stump divider</Description>
+		<Html>
+			<![CDATA[
+			<div class="divider dividerStump">&nbsp;</div>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Solid divider" image="tmpl-divider-solid.gif">
+		<Description>Inserts a solid divider</Description>
+		<Html>
+			<![CDATA[
+			<div class="divider dividerSolid">&nbsp;</div>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Lite divider" image="tmpl-divider-lite.gif">
+		<Description>Inserts a lite divider</Description>
+		<Html>
+			<![CDATA[
+			<div class="divider dividerLite">&nbsp;</div>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>	
+	
+	<!-- IMAGE -->
+	<Template title="Left aligned image cog" image="tmpl-img-1up-med-lt.gif">
+		<Description>Inserts a left aligned image cog</Description>
+		<Html>
+			<![CDATA[
+				<div class="imgWrapper leftAligned"><img src="private/_lib/editor/editor/templates/images/img-ph-240x240.gif" width="240" height="240" alt="0" title=""/><div class="caption">Caption text...</div></div>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Right aligned image cog" image="tmpl-img-1up-med-rt.gif">
+		<Description>Inserts a right aligned image cog</Description>
+		<Html>
+			<![CDATA[
+				<div class="imgWrapper rightAligned"><img src="private/_lib/editor/editor/templates/images/img-ph-240x240.gif" width="240" height="240" alt="0" title=""/><div class="caption">Caption text...</div></div>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Full width image cog" image="tmpl-img-1up-full-sml.gif">
+		<Description>Inserts a full width image cog</Description>
+		<Html>
+			<![CDATA[
+				<div class="imgWrapper fullWidthImage"><img src="private/_lib/editor/editor/templates/images/img-ph-640x220.gif" width="640" height="220" alt="0" title=""/><div class="caption">Caption text...</div></div>
+				<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="2-up image tile" image="tmpl-img-2up-med.gif">
+		<Description>Inserts a 2-up image tile</Description>
+		<Html>
+			<![CDATA[
+				<div class="clearfix">
+					<div class="col2a"><img class="fullWidthImage" src="private/_lib/editor/editor/templates/images/img-ph-310x210.gif" width="310" height="210" alt="" /></div>
+					<div class="col2b"><img class="fullWidthImage" src="private/_lib/editor/editor/templates/images/img-ph-310x210.gif" width="310" height="210" alt="" /></div>
+				</div>
+				<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+
+	<!-- BLOCKQUOTE -->
+	<Template title="Highlight Quote Box" image="tmpl-box-quote.gif">
+		<Description>Inserts a highlighted quote box</Description>
+		<Html>
+			<![CDATA[			
+			<blockquote>
+				<p>[Insert your quote message]</p>
+			</blockquote>
+			<cite>[Insert citation]</cite>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>	
+
+	<!-- SPECIALBOX -->
+	<Template title="Special Box (Highlight)" image="tmpl-box-highlight.gif">
+		<Description>Inserts a highlighted box</Description>
+		<Html>
+			<![CDATA[			
+			<div class="specialBox">
+				<h4>[title]</h4>
+				<p>[detailed description]</p>
+				<ul>
+					<li><a href="">[item with link]</a></li>
+					<li>[item without link]</li>
+				</ul>
+			</div>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Special Box (Download)" image="tmpl-box-dl.gif">
+		<Description>Inserts a highlighted download box</Description>
+		<Html>
+			<![CDATA[
+			<div class="specialBox withHeader">
+				<div class="header">Download<i class="icon fwicon-download">&nbsp;</i></div>
+				<p>[Insert download item title here]</p>
+				<p><a href="#">[Insert download item link here]</a></p>
+			</div>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Special Box (Link)" image="tmpl-box-link.gif">
+		<Description>Inserts a highlighted link box</Description>
+		<Html>
+			<![CDATA[
+			<div class="specialBox withHeader">
+				<div class="header">Link<i class="icon icon-laptop">&nbsp;</i></div>
+				<p>[Insert link item title here]</p>
+				<p><a href="#">[Insert link item here]</a></p>
+			</div>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Special Box (Link)" image="tmpl-box-info.gif">
+		<Description>Inserts a highlighted link box</Description>
+		<Html>
+			<![CDATA[
+			<div class="specialBox withHeader">
+				<div class="header">Information<i class="icon fwicon-info">&nbsp;</i></div>
+				<p>[Insert info message here]</p>
+			</div>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Special Box (Download) Small" image="tmpl-box-dl.gif">
+		<Description>Inserts a small highlighted download box</Description>
+		<Html>
+			<![CDATA[
+			<div class="specialBox withIcon">
+				<i class="icon fwicon-download">&nbsp;</i>
+				<p><a href="#">[Insert download item here]</a></p>
+			</div>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Special Box (Link) Small" image="tmpl-box-link.gif">
+		<Description>Inserts a small highlighted link box</Description>
+		<Html>
+			<![CDATA[
+			<div class="specialBox withIcon">
+				<i class="icon icon-laptop">&nbsp;</i>
+				<p><a href="#">[Insert link item here]</a></p>
+			</div>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Special Box (Link) Small" image="tmpl-box-info.gif">
+		<Description>Inserts a small highlighted link box</Description>
+		<Html>
+			<![CDATA[
+			<div class="specialBox withIcon">
+				<i class="icon fwicon-info">&nbsp;</i>
+				<p>[Insert info message here]</p>
+			</div>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<!-- TABLE -->
+	<Template title="Table (two-column)" image="tmpl-table-styled.gif">
+		<Description>Inserts a two-column table with table headings in default styles.</Description>
+		<Html>
+			<![CDATA[
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="styledTable">
+				<tr class="noBorder">
+					<th>[column 1 heading]</th>
+					<th>[column 2 heading]</th>
+				</tr>
+				<tr>
+					<td>[cell content]</td>
+					<td>[cell content]</td>
+				</tr>
+				<tr>
+					<td>[cell content]</td>
+					<td>[cell content]</td>
+				</tr>
+				<tr>
+					<td>[cell content]</td>
+					<td>[cell content]</td>
+				</tr>
+			</table>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<Template title="Table (Layout Mode)" image="tmpl-table-layout.gif">
+		<Description>Inserts a table with no borders, margins, cell-padding, or cell-spacing. Ideal for laying-out content.</Description>
+		<Html>
+			<![CDATA[
+			<table class="layoutMode">
+				<tr>
+					<td>[cell]</td>
+					<td>[cell]</td>
+				</tr>
+				<tr>
+					<td>[cell]</td>
+					<td>[cell]</td>
+				</tr>
+				<tr>
+					<td>[cell]</td>
+					<td>[cell]</td>
+				</tr>
+			</table>
+			<p>&nbsp;</p>
+			]]>
+		</Html>
+	</Template>
+	
+	<!-- HELPER -->
+	<Template title="Clearer (for floats)" image="tmpl-helper-clearer.gif">
+		<Description>Inserts an clearer element clear float elements above</Description>
+		<Html>
+			<![CDATA[
+			<div class="clearer">&nbsp;</div>
+			]]>
+		</Html>
+	</Template>
+	
+</Templates>

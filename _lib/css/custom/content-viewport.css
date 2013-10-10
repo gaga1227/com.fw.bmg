@@ -1,0 +1,505 @@
+@charset "utf-8";
+
+/*	verticle-rhythm base value: 8px
+	-----------------------------------------------------------
+	apply to all content below leaderText
+	'line-height', 'height', 'outerHeight' should equal to 
+	an even multiply/division of the base value 
+	(e.g. 10px(0.5x), 20px(1x), 40px(2x), 60px(3x), so on... */
+
+
+/* ==========================================================================
+   IMPORTS
+   ========================================================================== */
+@import url("content-viewport-img-layout.css");
+
+
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+   
+/* first-child */
+.contentViewport h1:first-child,	.contentViewport h1.first-child,
+.contentViewport h2:first-child,	.contentViewport h2.first-child,
+.contentViewport h3:first-child,	.contentViewport h3.first-child,
+.contentViewport h4:first-child,	.contentViewport h4.first-child,
+.contentViewport h5:first-child,	.contentViewport h5.first-child,
+.contentViewport p:first-child,		.contentViewport p.first-child,
+.contentViewport div:first-child,	.contentViewport div.first-child,
+.contentViewport table:first-child, .contentViewport table.first-child { margin-top:0; }
+
+/* body */
+body.ps, .contentViewport { color:#333; font-family:'Montserrat',sans-serif; font-size:15px; font-weight:400; line-height:24px; }
+
+
+/* ==========================================================================
+   elem - HEADINGS and PARAGRAPH
+   ========================================================================== */
+
+/* styles */
+.contentViewport h1, .h1 { color:#333; font-size:42px; line-height:54px; font-weight:400; font-style:normal; margin:0!important; padding: 0px 0px 24px 0px; }
+.contentViewport h2, .h2 { color:#333; font-size:36px; line-height:45px; font-weight:400; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }
+.contentViewport h3, .h3 { color:#333; font-size:24px; line-height:32px; font-weight:400; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }  
+.contentViewport h4, .h4 { color:#333; font-size:16px; line-height:24px; font-weight:700; font-style:normal; margin:0!important; padding: 8px 0px  0px 0px; }  
+.contentViewport h5, .h5 { color:#333; font-size:15px; line-height:24px; font-weight:700; font-style:normal; margin:0!important; padding: 8px 0px  0px 0px; }  
+.contentViewport p,  .p  { color:#333; font-size:15px; line-height:24px; font-weight:400; font-style:normal; margin:0!important; padding: 0px 0px  8px 0px; }
+
+/* fonts */ 
+.contentViewport h1, .h1,
+.contentViewport h2, .h2,
+.contentViewport h2, .h3 { font-family:'Merriweather',serif; }
+
+
+/* ==========================================================================
+   elem - LINK
+   ========================================================================== */
+   
+/* default */
+.contentViewport a 			{ color:#00aab8; text-decoration:none; }
+.contentViewport a:hover,
+.contentViewport a:focus,
+.contentViewport a:active 	{ color:#00aab8; text-decoration:underline; }
+
+/* dark */
+.contentViewport a.dark 		{ color:#333; text-decoration:none; }
+.contentViewport a.dark:hover,
+.contentViewport a.dark:focus,
+.contentViewport a.dark:active 	{ color:#333; text-decoration:underline; }
+
+
+/* ==========================================================================
+   elem - LIST
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* lv1 */
+
+/* container */
+.contentViewport ul,
+.contentViewport ol { margin:0px; padding:0 0 8px 0; list-style:none; }
+.contentViewport ol { margin-left:18px; list-style-type:decimal; list-style-position:outside; }
+
+/* item */
+.contentViewport li 			{ color:#333; font-size:15px; line-height:24px; margin:0 0 0 0; }
+.contentViewport li.first-child { margin-top:0; }
+.contentViewport li:first-child { margin-top:0; }
+
+/* item bullet */
+.contentViewport li 	{ padding:0 0 0 18px; background:url(../../img/blt-list-lv1.png) 1px 10px no-repeat; }
+.contentViewport ol li 	{ padding:0 0 0 0; background:none; }
+
+/* -------------------------------------------------------------------------- */
+/* lv2 */
+
+/* container */
+.contentViewport ul ul,
+.contentViewport ul ol,
+.contentViewport ol ol,
+.contentViewport ol ul { padding:0 0 0 0; }
+.contentViewport ol ol { list-style:lower-alpha; }
+
+/* item */
+.contentViewport li li.first-child { margin-top:0px; }
+.contentViewport li li:first-child { margin-top:0px; }
+
+/* item bullet */
+.contentViewport li li 		{ padding:0 0 0 18px; background:url(../../img/blt-list-lv2.png) 1px 10px no-repeat; }
+.contentViewport li ol li 	{ padding:0 0 0 0; background:none; }
+
+/* -------------------------------------------------------------------------- */
+/* extensions */
+
+/* ol */
+.contentViewport ol.listAlpha   { list-style:lower-alpha; }
+.contentViewport ol.listRoman   { list-style:lower-roman; }
+.contentViewport ol.listDecimal { list-style:decimal; }
+
+/* -------------------------------------------------------------------------- */
+/* IE fix */
+.ie7 .contentViewport ul 		{ margin-left:16px; }
+.ie7 .contentViewport ol 		{ margin-left:22px; }
+.ie7 .contentViewport ul li 	{ list-style:disc; background:none; padding-left:6px; } 
+.ie7 .contentViewport ol li 	{ list-style:decimal; }
+.ie7 .contentViewport ol ul li 	{ list-style:disc; }
+.ie7 .contentViewport ol ol li 	{ list-style:lower-alpha; } 
+.ie7 .contentViewport li ul 	{ margin-left:16px; }
+.ie7 .contentViewport li ol 	{ margin-left:22px; }
+.ie7 .contentViewport li ul li 	{ padding-left:6px; }
+.ie7 .contentViewport li ol li 	{ padding-left:0; }
+
+.ie6 .contentViewport ul 		{ margin-left:16px; }
+.ie6 .contentViewport ol 		{ margin-left:22px; }
+.ie6 .contentViewport ul li 	{ list-style:disc; background:none; padding-left:6px; } 
+.ie6 .contentViewport ol li 	{ list-style:decimal; }
+.ie6 .contentViewport ol ul li 	{ list-style:disc; }
+.ie6 .contentViewport ol ol li 	{ list-style:lower-alpha; } 
+.ie6 .contentViewport li ul		{ margin-left:16px; }
+.ie6 .contentViewport li ol 	{ margin-left:22px; }
+.ie6 .contentViewport li ul li 	{ padding-left:6px; }
+.ie6 .contentViewport li ol li 	{ padding-left:0; }
+
+
+/* ==========================================================================
+   style - LEADERTEXT
+   ========================================================================== */
+.contentViewport .leaderText  { 
+	color:#333; font-size:18px; line-height:24px; font-weight:700; font-style:normal; margin:0!important; padding:0px 0px 8px 0px; }
+
+
+/* ==========================================================================
+   style - BLOCKQUOTE/CITE
+   ========================================================================== */
+
+/* blockquote */
+.contentViewport blockquote p:before,
+.contentViewport blockquote p:after { 
+	content:''; }
+	
+/* container */
+.contentViewport blockquote,
+.contentViewport .blockquote { 
+	display:block; position:relative; width:auto; max-width:460px; height:auto; margin:8px 0 8px -4px; padding:20px 35px 12px 55px;
+	color:#262626; background:#fff url(../../img/bg-quote.png) 16px 20px no-repeat; border-left:4px solid #00aab8; }
+	
+	/* common */
+	.contentViewport blockquote,
+	.contentViewport blockquote p,
+	.contentViewport blockquote li,
+	.contentViewport blockquote span,
+	.contentViewport .blockquote,
+	.contentViewport .blockquote p,
+	.contentViewport .blockquote li,
+	.contentViewport .blockquote span { 
+		color:#262626; font-family:'Merriweather',serif; font-size:20px; font-weight:400; line-height:38px; font-style:normal; }
+
+	/* cite */
+	.contentViewport blockquote + cite,
+	.contentViewport blockquote + .cite,
+	.contentViewport .blockquote + cite,
+	.contentViewport .blockquote + .cite {	
+		display:block; max-width:495px; padding:0 0 16px 55px;
+		background:#ebebeb; text-align:right; }
+		
+
+/* ==========================================================================
+   style - TEXT
+   ========================================================================== */
+
+/* acronym */
+.contentViewport acronym {
+	border-bottom:1px dotted #666; cursor:pointer; }
+
+/* caption */
+.contentViewport .caption {
+	color:#333; font-size:15px; font-weight:400; }
+
+/* cite */
+.contentViewport cite,
+.contentViewport .cite {
+	color:#888; font-size:13px; font-weight:400; font-style:normal; line-height:16px; }
+
+/* date */
+.contentViewport .date {
+	color:#4c4c4c; font-size:13px; font-weight:700; text-transform:uppercase; }
+
+/* note */
+.contentViewport .note {
+	color:#333; font-size:13px; font-weight:700; }
+
+/* quote */
+.contentViewport .quote	{ 
+	color:#222; font-family:'Merriweather',serif; font-size:18px; font-weight:400; font-style:normal; }
+.contentViewport p.quote { 
+	max-width:550px; padding:8px 0 16px 0; }
+
+/* reference */ 
+.contentViewport .reference { 
+	color:#333; font-family:'Merriweather',serif; font-size:16px; font-weight:400; font-style:normal; }
+
+/* tag */ 
+.contentViewport .tag { 
+	color:#28353e; font-size:11px; font-weight:700; text-transform:uppercase; }
+
+/* title */ 
+.contentViewport .title { 
+	color:#333; font-size:18px; font-weight:700; }
+
+/* -------------------------------------------------------------------------- */
+/* assistive */
+
+/* inlineTextHighlight */
+.contentViewport .inlineTextHighlight {
+	color:#fff; background:#ff0080; }
+
+/* discreetText */
+.contentViewport .discreetText {
+	color:#888; font-size:12px; font-weight:400; }
+	
+/* small */ 
+.contentViewport .small { 
+	font-size:11px; }
+
+
+/* ==========================================================================
+   cog - DIVIDER
+   ========================================================================== */
+
+/* common */
+.divider,
+.contentViewport .divider { 	
+	display:block; width:100%; margin:0; padding:0; float:none; clear:both; overflow:hidden;
+	font-size:0; line-height:0; text-indent:-9999em; text-align:center; }
+
+/* -------------------------------------------------------------------------- */
+/* extend */
+
+/* stump */
+.dividerStump, .contentViewport .dividerStump {
+	border-top:4px solid #99bc33; width:28%; height:12px; margin:8px 0 0 0; }
+
+/* solid */
+.dividerSolid, .contentViewport .dividerSolid {
+	border-top:4px solid #99bc33; height:12px; margin:8px 0 0 0; }
+
+/* lite */
+.dividerLite, .contentViewport .dividerLite {
+	border-top:1px solid #99bc33; height:15px; margin:8px 0 0 0; }
+
+
+/* ==========================================================================
+   cog - SPECIALBOX
+   ========================================================================== */
+   
+/* -------------------------------------------------------------------------- */
+/* specialBox */
+.contentViewport .specialBox {
+	display:block; position:relative; width:auto; max-width:500px; height:auto; margin:8px 0 16px 0; padding:20px 25px 12px 25px; overflow:hidden;
+	color:#333; background:#fff; }	
+	
+	/*title*/
+	.contentViewport .specialBox .title { color:#99bc33; }
+		
+	/* a */
+	.contentViewport .specialBox a { color:#99bc33!important; }
+	
+	/* header */
+	.contentViewport .specialBox > .header { display:none; }
+	
+/* -------------------------------------------------------------------------- */
+/* extend */	
+
+/* specialBox.withHeader */
+.contentViewport .specialBox.withHeader {  }
+	
+	/* header */
+	.contentViewport .specialBox.withHeader > .header { 
+		display:block; position:relative; width:auto; height:auto; margin:-20px -25px 20px -25px; padding:6px 25px; overflow:hidden;
+		color:#fff; background:#9bb731; border-top:1px solid #edf2d8; }
+	
+		/* icon */
+		.contentViewport .specialBox > .header > .icon {
+			position:absolute; top:6px; right:10px; width:24px; height:24px; margin:0; padding:0; overflow:hidden;
+			color:#fff; font-size:0; line-height:0; }
+		.ie7 .contentViewport .specialBox > .header > .icon,
+		.contentViewport .specialBox > .header > .icon:before { 
+			font-size:20px; line-height:24px; }
+			
+/* specialBox.withIcon */
+.contentViewport .specialBox.withIcon { 
+	max-width:450px; min-height:24px; padding:11px 40px 3px 60px; }
+	
+	/* icon */
+	.contentViewport .specialBox.withIcon > .icon { 
+		position:absolute; top:0; left:0; width:46px; height:46px; margin:0; padding:0; overflow:hidden;
+		color:#fff; background:#9bb731; font-size:0; line-height:0; }
+	.ie7 .contentViewport .specialBox.withIcon > .icon,
+	.contentViewport .specialBox.withIcon > .icon:before { 
+		font-size:21px; line-height:46px; }
+
+
+/* ==========================================================================
+   cog - TABLE
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* styledTable */
+.contentViewport .styledTable {
+	display:table; width:100%; margin:8px 0 16px/*24-0(border)*/ 0;
+	color:#333; background:#fff; border-bottom:none; 
+	font-size:15px; line-height:24px; }
+	
+	/* p */
+	.contentViewport .styledTable p { 
+		font-size:15px; line-height:24px; padding:0 0 8px 0; }
+	.contentViewport .styledTable p:last-child { 
+		padding-bottom:0; }
+		
+	/* th/td */
+	.contentViewport .styledTable th,
+	.contentViewport .styledTable td { 
+		text-align:left; border:0; padding:8px 12px 8px 12px; }
+	.contentViewport .styledTable td { 
+		border-bottom:1px solid #ebebeb; padding:8px 12px 7px/*8-1(border)*/ 12px; }
+	.contentViewport .styledTable tr.noBorder td { 
+		border:none; padding-bottom:8px; }
+		
+	/* th */
+	.contentViewport .styledTable th,
+	.contentViewport .styledTable th p { 
+		background:#00aab8; color:#fff; font-size:15px; font-weight:700; line-height:24px; }
+	.contentViewport .styledTable th p { 
+		padding-bottom:0; }
+	
+	/* a */
+	.contentViewport .styledTable a:hover { 
+		text-decoration:underline; cursor:pointer; }
+		
+	/* alt/highlight */
+	.contentViewport .styledTable td.highlight,
+	.contentViewport .styledTable td.alt { 
+		background:#f5f5f5; }
+
+/* -------------------------------------------------------------------------- */
+/* layoutMode */
+.contentViewport table.layoutMode 		{ width:auto; color:#333; border-collapse:collapse; }
+.contentViewport table.layoutMode,
+.contentViewport table.layoutMode th,
+.contentViewport table.layoutMode td 	{ margin:0; padding:0; }
+
+
+/* ==========================================================================
+   cog - BUTTON
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* common */
+.btnText.right,
+.btnBox.right { margin-right:0; margin-left:16px; }
+
+/* -------------------------------------------------------------------------- */
+/* btnText */
+.btnText { 
+	display:inline-block; position:relative; margin:0 16px 16px 0; padding:0; width:auto; height:24px; vertical-align:middle;
+	text-decoration:none!important; outline:0 none!important; cursor:pointer; }
+.btnText:hover,
+.btnText:focus,
+.btnText:active { 
+	text-decoration:none!important; }
+
+	/* label */
+	.btnText,
+	.btnText .label { 
+		overflow:hidden; white-space:nowrap; text-overflow:ellipsis; vertical-align:middle;
+		color:#06afbc; font-size:15px; font-weight:700; line-height:24px;
+		/*transition*/
+		/*-webkit-transform:translate3d(0,0,0);*/
+		-webkit-transition:color 0.3s ease-in-out;
+		-moz-transition:color 0.3s ease-in-out;
+		-o-transition:color 0.3s ease-in-out;
+		transition:color 0.3s ease-in-out; }	
+	.btnText:hover .label,
+	.btnText:focus .label,
+	.btnText:active .label { 
+		text-decoration:underline!important; }
+		
+	/* icon */
+	.btnText .icon,
+	.btnText .iconInline 		{ font-size:0; line-height:0; vertical-align:middle; }
+	
+	.ie7 .btnText .icon,
+	.ie7 .btnText .iconInline,
+	.btnText .icon:before,
+	.btnText .iconInline:before	{ font-size:14px; line-height:24px; }	
+
+/* -------------------------------------------------------------------------- */
+/* extend slim */
+.btnText.slim,
+.btnText.slim .label { font-weight:400; }
+
+/* -------------------------------------------------------------------------- */
+/* btnBox */
+.btnBox { 
+	display:inline-block; position:relative; width:auto; height:auto; margin:0 16px 16px 0; padding:0 40px; overflow:hidden;
+	background:#1f353f; white-space:nowrap; text-overflow:ellipsis;
+	text-decoration:none!important; outline:0 none!important; cursor:pointer;
+	/*box-shadow*/-webkit-box-shadow:1px 1px 1px 0px rgba(0,0,0,0.15); box-shadow:1px 1px 1px 0px rgba(0,0,0,0.15); }
+.btnBox:hover,
+.btnBox:focus,
+.btnBox:active { 
+	background:#06bbca; text-decoration:none!important; }
+
+	/* label */
+	.btnBox,
+	.btnBox .label { 
+		color:#fff!important; text-align:center; vertical-align:middle;
+		font-family:'Montserrat',sans-serif; font-weight:400; font-size:16px; line-height:50px; }	
+	.btnBox:hover .label,
+	.btnBox:focus .label,
+	.btnBox:active .label { 
+		text-decoration:none!important; }	
+		
+	/* icon */
+	.btnBox .icon,
+	.btnBox .iconInline 		{ font-size:0; line-height:0; vertical-align:middle; }
+	
+	.ie7 .btnBox .icon,
+	.ie7 .btnBox .iconInline,
+	.btnBox .icon:before,
+	.btnBox .iconInline:before 	{ font-size:16px; line-height:50px; }	
+
+/* -------------------------------------------------------------------------- */
+/* btnBox.compact */
+.btnBox.compact 		{ padding:0 20px; }
+.btnBox.compact,
+.btnBox.compact .label 	{ font-size:14px; line-height:35px; }
+
+/* -------------------------------------------------------------------------- */
+/* btnBox.highlight */
+.btnBox.highlight 		 { background:#06bbca; }
+.btnBox.highlight:hover,
+.btnBox.highlight:focus,
+.btnBox.highlight:active { background:#1f353f; }
+
+
+/* ==========================================================================
+   style - MISC
+   ========================================================================== */
+   
+/* -------------------------------------------------------------------------- */
+/* override */
+.contentViewport .iconInline.left { padding-right:5px }
+
+/* -------------------------------------------------------------------------- */
+/* helpers */
+.contentViewport .clearer {	float:none; clear:both; height:0; line-height:0; overflow:hidden; visibility:hidden; }
+
+/* -------------------------------------------------------------------------- */
+/* widgets */
+.contentViewport .interaction,
+.contentViewport .flashcontent { display:block; position:relative; margin:0 auto 16px auto; padding:0; overflow:hidden; }
+
+
+/* ==========================================================================
+   responsive - ALL
+   ========================================================================== */
+@media only screen and (max-width:500px) {
+
+	/* smaller headings */
+	.contentViewport h1, .h1 { font-size:32px; line-height:40px; padding:8px 0 16px 0; } 
+	.contentViewport h2, .h2 { font-size:24px; line-height:32px; } 
+	.contentViewport h3, .h3 { font-size:18px; line-height:24px; } 
+	
+	/* smaller blockquote */
+	.contentViewport blockquote,
+	.contentViewport .blockquote { padding:20px 25px 12px 25px; background-image:none; }
+	
+	.contentViewport blockquote,
+	.contentViewport blockquote p,
+	.contentViewport blockquote li,
+	.contentViewport blockquote span,
+	.contentViewport .blockquote,
+	.contentViewport .blockquote p,
+	.contentViewport .blockquote li,
+	.contentViewport .blockquote span { font-size:18px; line-height:32px; }
+
+}
