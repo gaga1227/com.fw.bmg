@@ -441,39 +441,15 @@
 /* ----------------------------------------------------------------------------------- 
    fwicon styles
    ----------------------------------------------------------------------------------- */
-.fwicon-view:before								{ content: "\e000"; }
-.fwicon-video:before							{ content: "\e001"; }
-.fwicon-scroll:before							{ content: "\e002"; }
-.fwicon-pdf:before								{ content: "\e003"; }
-.fwicon-music:before							{ content: "\e004"; }
-.fwicon-link:before								{ content: "\e005"; }
-.fwicon-info:before								{ content: "\e006"; }
-.fwicon-hat:before								{ content: "\e007"; }
-.fwicon-group:before							{ content: "\e008"; }
-.fwicon-globe:before							{ content: "\e009"; }
-.fwicon-download:before							{ content: "\e00a"; }
-.fwicon-books:before							{ content: "\e00b"; }
-.fwicon-book-open:before						{ content: "\e00c"; }
-.fwicon-arrow:before							{ content: "\e00d"; }
-
-.fwicon-tech:before								{ content: "\e00e"; }
-.fwicon-structure:before						{ content: "\e00f"; }
-.fwicon-star:before								{ content: "\e010"; }
-.fwicon-search:before							{ content: "\e011"; }
-.fwicon-pin:before								{ content: "\e012"; }
-.fwicon-numeracy:before							{ content: "\e013"; }
-.fwicon-menu-tiles:before						{ content: "\e014"; }
-.fwicon-literacy:before							{ content: "\e015"; }
-.fwicon-flag:before								{ content: "\e016"; }
-.fwicon-enrol:before							{ content: "\e017"; }
-.fwicon-door:before								{ content: "\e018"; }
-.fwicon-dates:before							{ content: "\e019"; }
-.fwicon-calendar:before							{ content: "\e01a"; }
-.fwicon-building:before							{ content: "\e01b"; }
-.fwicon-board:before							{ content: "\e01c"; }
-
-
-
+.fwicon-list:before								{ content: "\e000"; }
+.fwicon-grid:before								{ content: "\e001"; }
+.fwicon-arrow-right:before						{ content: "\e002"; }
+.fwicon-arrow-left:before						{ content: "\e003"; }
+.fwicon-plus:before								{ content: "\e004"; }
+.fwicon-minus:before							{ content: "\e005"; }
+.fwicon-gallery:before							{ content: "\e006"; }
+.fwicon-flag:before								{ content: "\e007"; }
+.fwicon-download:before							{ content: "\e008"; }
 
 /* -----------------------------------------------------------------------------------
    Extras
