@@ -86,7 +86,7 @@ function init(){
 	insertFirstLastChild('#navItems, #sideNav, #sideNav ul, .itemListing');
 	
 	//interactions	
-	//SelectNav = new initSelectNav();
+	ToggleNav = new initToggleNav();
 	
 	//template specific functions
 	if 		( $('body#home').length ) 			{ initHome(); }

@@ -114,6 +114,53 @@ function initSelectNav() {
 		
 }
 /* ------------------------------------------------------------------------------ */
+/* initToggleNav */
+/* ------------------------------------------------------------------------------ */
+function initToggleNav() {
+	
+	//check if DOM elem exists
+	if ( !$('#nav').length || !$('#navToggle').length ) return false;
+	
+	//create global obj
+	var toggleNav = {},
+		$nav = $('#nav'),
+		$btnToggle = $('#navToggle'),
+		thisObj = toggleNav;
+	
+	//function - toggle
+	toggleNav.toggle = function(e){
+		if (e) e.preventDefault();
+		console.log(thisObj.isActive);
+		
+		//update DOM
+		if ( thisObj.isActive ) {
+			$nav.removeClass(thisObj.activeCls);
+			$btnToggle.removeClass(thisObj.activeCls);
+		} else {
+			$nav.addClass(thisObj.activeCls);
+			$btnToggle.addClass(thisObj.activeCls);
+		}
+		thisObj.isActive = !thisObj.isActive;
+	}
+	
+	//function - init
+	toggleNav.init = function(){		
+		//properties
+		thisObj.activeCls = 'active';
+		thisObj.isActive = false;
+ 
+ 		//bind button
+		$btnToggle.on( 'click', thisObj.toggle);
+	};
+	
+	//init obj
+	toggleNav.init();
+	
+	//return global obj
+	return toggleNav;
+
+}
+/* ------------------------------------------------------------------------------ */
 /* initDatepicker */
 /* ------------------------------------------------------------------------------ */
 function initDatepicker(){
