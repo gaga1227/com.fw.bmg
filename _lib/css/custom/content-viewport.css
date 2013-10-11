@@ -55,16 +55,10 @@ body.ps, .contentViewport { color:#333; font-family:'Montserrat',sans-serif; fon
    ========================================================================== */
    
 /* default */
-.contentViewport a 			{ color:#00aab8; text-decoration:none; }
+.contentViewport a 			{ color:#1082e2; text-decoration:none; }
 .contentViewport a:hover,
 .contentViewport a:focus,
-.contentViewport a:active 	{ color:#00aab8; text-decoration:underline; }
-
-/* dark */
-.contentViewport a.dark 		{ color:#333; text-decoration:none; }
-.contentViewport a.dark:hover,
-.contentViewport a.dark:focus,
-.contentViewport a.dark:active 	{ color:#333; text-decoration:underline; }
+.contentViewport a:active 	{ color:#1082e2; text-decoration:underline; }
 
 
 /* ==========================================================================
@@ -409,12 +403,7 @@ body.ps, .contentViewport { color:#333; font-family:'Montserrat',sans-serif; fon
 	.ie7 .btnText .icon,
 	.ie7 .btnText .iconInline,
 	.btnText .icon:before,
-	.btnText .iconInline:before	{ font-size:14px; line-height:24px; }	
-
-/* -------------------------------------------------------------------------- */
-/* extend slim */
-.btnText.slim,
-.btnText.slim .label { font-weight:400; }
+	.btnText .iconInline:before	{ font-size:14px; line-height:24px; }
 
 /* -------------------------------------------------------------------------- */
 /* btnBox */
@@ -448,12 +437,6 @@ body.ps, .contentViewport { color:#333; font-family:'Montserrat',sans-serif; fon
 	.btnBox .iconInline:before 	{ font-size:16px; line-height:50px; }	
 
 /* -------------------------------------------------------------------------- */
-/* btnBox.compact */
-.btnBox.compact 		{ padding:0 20px; }
-.btnBox.compact,
-.btnBox.compact .label 	{ font-size:14px; line-height:35px; }
-
-/* -------------------------------------------------------------------------- */
 /* btnBox.highlight */
 .btnBox.highlight 		 { background:#06bbca; }
 .btnBox.highlight:hover,
@@ -467,7 +450,7 @@ body.ps, .contentViewport { color:#333; font-family:'Montserrat',sans-serif; fon
    
 /* -------------------------------------------------------------------------- */
 /* override */
-.contentViewport .iconInline.left { padding-right:5px }
+
 
 /* -------------------------------------------------------------------------- */
 /* helpers */
