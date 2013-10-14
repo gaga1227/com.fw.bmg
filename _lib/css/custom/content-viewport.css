@@ -37,17 +37,17 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
    ========================================================================== */
 
 /* styles */
-.contentViewport h1, .h1 { color:#252525; font-size:42px; line-height:54px; font-weight:400; font-style:normal; margin:0!important; padding: 0px 0px 24px 0px; }
-.contentViewport h2, .h2 { color:#252525; font-size:36px; line-height:45px; font-weight:400; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }
-.contentViewport h3, .h3 { color:#252525; font-size:24px; line-height:32px; font-weight:400; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }  
-.contentViewport h4, .h4 { color:#252525; font-size:16px; line-height:24px; font-weight:700; font-style:normal; margin:0!important; padding: 8px 0px  0px 0px; }  
-.contentViewport h5, .h5 { color:#252525; font-size:15px; line-height:24px; font-weight:700; font-style:normal; margin:0!important; padding: 8px 0px  0px 0px; }  
-.contentViewport p,  .p  { color:#252525; font-size:15px; line-height:24px; font-weight:400; font-style:normal; margin:0!important; padding: 0px 0px  8px 0px; }
+.contentViewport h1, .h1 { color:#252525; font-size:34px; line-height:40px; font-weight:300; font-style:normal; margin:0!important; padding: 0px 0px 24px 0px; }
+.contentViewport h2, .h2 { color:#252525; font-size:26px; line-height:32px; font-weight:300; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }
+.contentViewport h3, .h3 { color:#252525; font-size:20px; line-height:24px; font-weight:600; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }  
+.contentViewport h4, .h4 { color:#252525; font-size:18px; line-height:24px; font-weight:600; font-style:normal; margin:0!important; padding: 8px 0px  0px 0px; }  
+.contentViewport h5, .h5 { color:#252525; font-size:16px; line-height:24px; font-weight:600; font-style:normal; margin:0!important; padding: 8px 0px  0px 0px; }  
+.contentViewport p,  .p  { color:#252525; font-size:16px; line-height:24px; font-weight:400; font-style:normal; margin:0!important; padding: 0px 0px  8px 0px; }
 
 /* fonts */ 
 .contentViewport h1, .h1,
 .contentViewport h2, .h2,
-.contentViewport h2, .h3 { font-family:'Merriweather',serif; }
+.contentViewport h2, .h3 {  }
 
 
 /* ==========================================================================
@@ -74,7 +74,7 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
 .contentViewport ol { margin-left:18px; list-style-type:decimal; list-style-position:outside; }
 
 /* item */
-.contentViewport li 			{ color:252525; font-size:15px; line-height:24px; margin:0 0 0 0; }
+.contentViewport li 			{ color:252525; font-size:16px; line-height:24px; margin:0 0 0 0; }
 .contentViewport li.first-child { margin-top:0; }
 .contentViewport li:first-child { margin-top:0; }
 
@@ -137,7 +137,7 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
    style - LEADERTEXT
    ========================================================================== */
 .contentViewport .leaderText  { 
-	color:#252525; font-size:18px; line-height:24px; font-weight:700; font-style:normal; margin:0!important; padding:0px 0px 8px 0px; }
+	color:#252525; font-size:18px; line-height:24px; font-weight:600; font-style:normal; margin:0!important; padding:0px 0px 8px 0px; }
 
 
 /* ==========================================================================
@@ -178,6 +178,10 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
 /* ==========================================================================
    style - TEXT
    ========================================================================== */
+
+/* bold */
+.contentViewport b,
+.contentViewport strong { font-weight:600; }
 
 /* acronym */
 .contentViewport acronym {
@@ -406,23 +410,27 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
 /* -------------------------------------------------------------------------- */
 /* btnBox */
 .btnBox { 
-	display:inline-block; position:relative; width:auto; height:auto; margin:0 16px 16px 0; padding:0 40px; overflow:hidden;
-	background:#1f353f; white-space:nowrap; text-overflow:ellipsis;
-	text-decoration:none!important; outline:0 none!important; cursor:pointer;
-	/*box-shadow*/-webkit-box-shadow:1px 1px 1px 0px rgba(0,0,0,0.15); box-shadow:1px 1px 1px 0px rgba(0,0,0,0.15); }
-.no-touch .btnBox:hover,
-.touch .btnBox:active { 
-	background:#06bbca; text-decoration:none!important; }
+	display:inline-block; position:relative; width:auto; height:auto; margin:0 16px 16px 0; padding:14px 20px; overflow:hidden;
+	background:#373737; white-space:nowrap; text-overflow:ellipsis;
+	text-decoration:none!important; outline:0 none!important; }
 
+/* interaction */
+a.btnBox { cursor:pointer; }
+.no-touch a.btnBox:hover,
+.touch a.btnBox:active { 
+	color:#e7bb2b; background:#d9a600; text-decoration:none!important; }
+	
 	/* label */
 	.btnBox,
 	.btnBox .label { 
 		color:#fff!important; text-align:center; vertical-align:middle;
-		font-family:'Montserrat',sans-serif; font-weight:400; font-size:16px; line-height:50px; }	
-	.no-touch .btnBox:hover .label,
-	.touch .btnBox:active .label { 
+		font-weight:400; font-size:13px; line-height:16px; }	
+	
+	/* interaction */
+	.no-touch a.btnBox:hover .label,
+	.touch a.btnBox:active .label { 
 		text-decoration:none!important; }	
-		
+
 	/* icon */
 	.btnBox .icon,
 	.btnBox .iconInline 		{ font-size:0; line-height:0; vertical-align:middle; }
@@ -430,13 +438,13 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
 	.ie7 .btnBox .icon,
 	.ie7 .btnBox .iconInline,
 	.btnBox .icon:before,
-	.btnBox .iconInline:before 	{ font-size:16px; line-height:50px; }	
+	.btnBox .iconInline:before 	{ font-size:14px; line-height:16px; }	
 
 /* -------------------------------------------------------------------------- */
-/* btnBox.highlight */
-.btnBox.highlight 		 { background:#06bbca; }
-.no-touch .btnBox.highlight:hover,
-.touch .btnBox.highlight:active { background:#1f353f; }
+/* btnBoxTitle */
+.btnBox.btnBoxTitle { white-space:normal; margin:0 0 24px 0; }
+.btnBox.btnBoxTitle,
+.btnBox.btnBoxTitle .label { text-align:left; }
 
 
 /* ==========================================================================
@@ -463,21 +471,8 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
 @media only screen and (max-width:500px) {
 
 	/* smaller headings */
-	.contentViewport h1, .h1 { font-size:32px; line-height:40px; padding:8px 0 16px 0; } 
-	.contentViewport h2, .h2 { font-size:24px; line-height:32px; } 
-	.contentViewport h3, .h3 { font-size:18px; line-height:24px; } 
-	
-	/* smaller blockquote */
-	.contentViewport blockquote,
-	.contentViewport .blockquote { padding:20px 25px 12px 25px; background-image:none; }
-	
-	.contentViewport blockquote,
-	.contentViewport blockquote p,
-	.contentViewport blockquote li,
-	.contentViewport blockquote span,
-	.contentViewport .blockquote,
-	.contentViewport .blockquote p,
-	.contentViewport .blockquote li,
-	.contentViewport .blockquote span { font-size:18px; line-height:32px; }
+	.contentViewport h1, .h1 { font-size:28px; line-height:32px; padding:0 0 16px 0; } 
+	.contentViewport h2, .h2 { font-size:25px; line-height:32px; padding:8px 0; } 
+	.contentViewport h3, .h3 { font-size:18px; line-height:24px; padding:8px 0; } 
 
 }

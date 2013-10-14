@@ -83,7 +83,7 @@ function initIsotope(){
 var $isotope, SelectNav, Slideshows, StaticAudios, StaticVideos;
 function init(){
 	//layout assistance
-	insertFirstLastChild('#navItems, #sideNav, #sideNav ul, .itemListing');
+	insertFirstLastChild('#navItems, #sideNav, #sideNav ul, .itemListing, #main > .padder');
 	
 	//interactions	
 	ToggleNav = new initToggleNav();
