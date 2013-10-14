@@ -573,7 +573,8 @@ body.ps {
 	.mainBg { width:80.00%; left:0; }
 		
 		/* extra */
-		#extra { width:26.5%; float:left; clear:left; min-height:260px; background:silver; }
+		#extra 					{ display:none; width:26.5%; float:left; clear:left; min-height:260px; background:silver; }
+		#main.withExtra #extra 	{ display:block; }
 		
 		/* main padder */
 		#main > .padder 			{ padding:50px; }
@@ -635,7 +636,7 @@ body.ps {
 	
 	/* stack extra */
 	#main.withExtra > .padder 	{ margin-left:0; }
-	#extra 						{ width:auto; float:none; clear:both; background:silver; }
+	#extra 						{ width:auto; float:none; clear:both; }
 	
 	/* btnBoxTitle */
 	.btnBox.btnBoxTitle { 
@@ -647,7 +648,8 @@ body.ps {
 @media only screen and (min-width:1600px) {
 	
 	/* increase content right gap */
-	#main > .padder 	{ padding-left:70px; padding-right:15%; }
+	#main > .padder 			{ padding-left:70px; padding-right:20%; }
+	#main.withExtra > .padder 	{ padding-right:15%; }
 
 }
 
