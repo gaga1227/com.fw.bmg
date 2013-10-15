@@ -212,7 +212,7 @@ body.ps {
 	#header .brand .title 	{ width:149px; margin-right:20px; }
 
 }
-@media only screen and (max-width:750px) {
+@media only screen and (max-width:770px) {
 	
 	/* remove side gaps */
 	#header > .padder { border-width:0; }
@@ -288,7 +288,7 @@ body.ps {
 		.touch #nav .navItem.selected:active .label { 
 			color:#fff; border-bottom-color:#d9a600; 
 			pointer-events:none; cursor:default; }
-	
+
 /* ------------------------------------------------------------------------------ */
 /* nav responsive down */
 @media only screen and (max-width:980px) {
@@ -311,7 +311,7 @@ body.ps {
 	#nav .navItem .label 	{ margin:0 8px; font-size:15px; }
 
 }
-@media only screen and (max-width:750px) {
+@media only screen and (max-width:770px) {
 	
 	/* show navToggle */
 	#navToggle { 
@@ -365,7 +365,7 @@ body.ps {
 	/* smaller navToggle */
 	#navToggle 				{ width:38px; height:38px; top:18px; right:10px; line-height:38px; }
 	.ie7 #navToggle .icon,
-	#navToggle .icon:before 	{ font-size:21px; line-height:38px; }	
+	#navToggle .icon:before { font-size:21px; line-height:38px; }	
 	
 }
 
@@ -675,7 +675,7 @@ body.ps {
 		color:#666; font-size:14px; font-weight:400; line-height:1em; }
 	
 	/* container */
-	#footerLinks { margin-right:20%; padding:35px 4%; }
+	#footerLinks { height:14px; margin-right:20%; padding:35px 4%; }
 	
 		/* li */
 		#footerLinks li { 
@@ -705,7 +705,35 @@ body.ps {
 	#btnFW:hover,
 	#btnFW:focus { 
 		/*opacity*/opacity:0.75; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; filter:alpha(opacity=75); }
+
+/* -------------------------------------------------------------------------- */
+/* footer.invert */
+
+/* padder */
+#footer.invert > .padder { background:#fff; border:none; }
+
+	/* footerLinks */
+	#footer.invert #footerLinks { padding:20px 4%; }
 	
+		/* item */
+		#footer.invert #footerLinks,
+		#footer.invert #footerLinks li { color:#999; }
+		#footer.invert #footerLinks li { border-left-color:#ccc; }
+		
+			/* a */
+			#footer.invert #footerLinks a 		 { color:#999; }
+			#footer.invert #footerLinks a:hover,
+			#footer.invert #footerLinks a:focus,
+			#footer.invert #footerLinks a:active { color:#777; }
+		
+	/* btnFW */
+	#footer.invert #btnFW { 
+		background-image:url(../img/btn-fw-invert.png);
+		/*opacity*/opacity:0.3; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; filter:alpha(opacity=30); }
+	#footer.invert #btnFW:hover,
+	#footer.invert #btnFW:focus { 
+		/*opacity*/opacity:0.5; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter:alpha(opacity=50); }
+
 /* -------------------------------------------------------------------------- */
 /* responsive */
 @media only screen and (max-width:1000px) {
@@ -718,7 +746,8 @@ body.ps {
 @media only screen and (max-width:860px) {
 
 	/* adjust gaps */
-	#footerLinks { padding:30px 25px; }
+	#footerLinks 				{ height:12px; padding:30px 25px; }
+	#footer.invert #footerLinks { padding:20px 25px; }
 	
 	/* smaller item */
 	#footerLinks,
@@ -726,10 +755,10 @@ body.ps {
 	#footerLinks li { margin-left:7px; padding-left:7px; }
 	
 }
-@media only screen and (max-width:750px) {
+@media only screen and (max-width:770px) {
 	
 	/* switch from left to center align */
-	#footerLinks 			{ margin:0; text-align:center; }
+	#footerLinks 			{ height:36px; margin:0; text-align:center; }
 	#footerLinks li 		{ display:inline-block; float:none; clear:both; }
 	.ie7 #footerLinks li 	{ display:inline; }
 	
@@ -745,10 +774,12 @@ body.ps {
 
 	/* bigger text */
 	#footerLinks,
-	#footerLinks li { font-size:13px; }
+	#footerLinks li { font-size:14px; }
 	
 	/* stack items */
-	#footerLinks { padding:12px 20px; text-align:left; }
+	#footerLinks { height:auto; padding:12px 20px; text-align:left; }
+	#footer.invert #footerLinks { padding:12px 20px; }
+	
 	#footerLinks li,
 	#footerLinks li:first-child,
 	#footerLinks li:first-child + li { 
@@ -1610,8 +1641,14 @@ body.ps {
 
 
 /* ==========================================================================
-   common - FLASHCONTAINER
+   common - MISC
    ========================================================================== */
+   
+/* scroller */
+.scroller 		{ overflow:auto!important; }
+.iOS .scroller 	{ -webkit-overflow-scrolling:touch!important; }
+   
+/* flash */
 .flashContainer { 
 	position:relative; width:100%; height:auto; margin:0; padding:0; overflow:hidden;
 	background:#000; }
@@ -1621,15 +1658,205 @@ body.ps {
 	color:#fff;
 	font-size:18px; font-weight:700; line-height:24px; text-align:center; }
 	
-
+	
 /* ==========================================================================
    section - HOME
    ========================================================================== */
    
    
+   
+   
+   
+   
+   
+   
 /* ==========================================================================
    section - LANDING
    ========================================================================== */
+
+/* ------------------------------------------------------------------------------ 
+   Change layout to fullscreen with 3 independent columns 
+   ------------------------------------------------------------------------------ */
+
+/* -------------------------------------------------------------------------- */
+/* container */
+body.landing #container { height:100%; }
+
+	/* -------------------------------------------------------------------------- */
+	/* header */  
+	
+	/* container */
+	body.landing #header { 
+		position:absolute; left:0; top:0; bottom:55px; width:250px; min-width:0;
+		background:#0f69b1; border:20px solid #fff; border-right:none; border-bottom:none;
+		/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+		
+		/* padder */
+		body.landing #header > .padder { position:static; border:0; }
+		
+			/* brand */
+			body.landing #header .brand { width:auto; height:150px; padding:40px 0; float:none; clear:both; }
+				
+				/* common */
+				body.landing #header .brand img { display:block; }
+				
+				/* crest */
+				body.landing #header .brand .crest { width:160px; }
+				
+				/* title */
+				body.landing #header .brand .title { width:142px; margin:12px auto 0 auto; }
+			
+	/* -------------------------------------------------------------------------- */
+	/* nav */
+	
+	/* hide navToggle */
+	body.landing #navToggle { display:none; }
+	
+	/* switch to drop down */
+	body.landing #nav { 
+		position:absolute; left:0; top:231px; bottom:0; width:100%; max-height:auto; margin:0;
+		background:#0f69b1 url(../img/bg-crest-blu.png) right bottom no-repeat; background-size:237px 316px; }
+						
+		/* navItem */
+		body.landing #nav #navItems .navItem { 
+			display:block; width:auto; height:auto; margin:0; padding:0; overflow:hidden;
+			color:#fff; background:none;
+			font-size:16px; line-height:25px; text-align:left;
+			text-decoration:none!important; }
+			
+			/* label */
+			body.landing #nav .navItem .label { 
+				margin:0; padding:10px 25px; border-bottom:none!important;
+				font-size:16px; }
+		
+		/* interaction */	
+		.no-touch body.landing #nav #navItems .navItem:hover,
+		.no-touch body.landing #nav #navItems .navItem:focus,
+		.touch body.landing #nav #navItems .navItem:active { background:#0c548c; }
+		
+		/* selected */
+		body.landing #nav #navItems .navItem.selected,
+		body.landing #nav #navItems .navItem.selected .label,
+		.no-touch body.landing #nav #navItems .navItem.selected:hover,
+		.no-touch body.landing #nav #navItems .navItem.selected:focus,
+		.touch body.landing #nav #navItems .navItem.selected:active { background:#d6a400; }
+	
+	/* nav active */
+	body.landing #nav.active { max-height:auto; padding:0; }
+
+/* -------------------------------------------------------------------------- */
+/* landingContent */
+body.landing #landingContent { 
+	display:block; position:absolute; left:250px; top:0; bottom:55px; width:350px; height:auto; margin:0 auto; padding:0; overflow:hidden;
+	background:rgba(0,0,0,0.8); border-top:20px solid #fff;
+	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+.oldie body.landing #landingContent { 
+	background:#373737; }
+	
+	/* padder */
+	body.landing #landingContent > .padder { padding:30px; }	
+
+/* -------------------------------------------------------------------------- */
+/* footer */
+body.landing #footer { 
+	position:absolute; bottom:0; left:0; width:100%; float:none; clear:both; }
+
+/* -------------------------------------------------------------------------- */
+/* responsive */
+@media only screen and (max-width:770px) {
+	
+	/* -------------------------------------------------------------------------- */
+	/* backto normal flow */
+	body.landing #container { height:auto; }
+	
+	/* -------------------------------------------------------------------------- */
+	/* header */
+	body.landing #header { 
+		position:relative; left:auto; top:auto; bottom:auto; width:auto; min-width:300px;
+		background:#05519a; border:none; 
+		/*box-sizing*/-webkit-box-sizing:content-box; -moz-box-sizing:content-box; box-sizing:content-box; }
+		
+		/* padder */
+		body.landing #header > .padder { 
+			position:relative; border-width:0; }
+		
+			/* brand */
+			body.landing #header .brand { 
+				width:300px; height:auto; margin:0 auto; padding:10px; float:none; clear:both;
+				text-align:center; }
+				
+				/* common */
+				body.landing #header .brand img { display:inline-block!important; }
+				
+				/* crest */
+				body.landing #header .brand .crest { width:100px; }
+				
+				/* title */
+				body.landing #header .brand .title { width:149px; margin-top:0; margin-right:20px; }
+	
+	/* -------------------------------------------------------------------------- */
+	/* nav */
+	
+	/* show navToggle */
+	body.landing #navToggle { display:block; }
+	
+	/* switch to drop down */
+	body.landing #nav { 
+		position:relative; left:auto; top:auto; bottom:auto; width:auto; max-height:0; margin:0; overflow:hidden!important;
+		background:#0f69b1 url('../img/bg-crest-blu.png') right bottom no-repeat; background-size:180px 240px; }
+						
+		/* navItem */
+		body.landing #nav #navItems .navItem { font-size:18px; }
+			
+			/* label */
+			body.landing #nav .navItem .label { font-size:18px; }
+		
+	/* nav active */
+	body.landing #nav.active { max-height:500px; padding:10px 0; }
+	
+	/* -------------------------------------------------------------------------- */
+	/* landingContent */
+	body.landing #landingContent { 
+		position:relative; left:auto; top:auto; bottom:auto; width:45%; float:left; clear:left; overflow:hidden;
+		border:none; }
+		
+		/* padder */
+		body.landing #landingContent > .padder { 
+			padding:30px; 
+			border:15px solid #fff; border-right:none; border-bottom:none; }	
+	
+	/* -------------------------------------------------------------------------- */
+	/* footer */
+	body.landing #footer { position:relative; bottom:auto; left:auto; width:auto; }
+	
+}
+@media only screen and (max-width:600px) {
+
+	/* -------------------------------------------------------------------------- */
+	/* landingContent */
+	
+	/* stretch full */
+	body.landing #landingContent { width:auto; float:none; clear:both; }
+	body.landing #landingContent > .padder { padding:30px; border:none; }
+
+}
+@media only screen and (max-width:500px) {
+	
+	/* -------------------------------------------------------------------------- */
+	/* header */
+	
+	/* shorter brand */
+	body.landing #header .brand 		{ width:200px; margin:0; text-align:left; }
+	body.landing #header .brand .crest 	{ width:75px; }
+	body.landing #header .brand .title 	{ width:108px; margin-right:0; }
+	
+	/* -------------------------------------------------------------------------- */
+	/* landingContent */
+	
+	/* reduce padder border */
+	body.landing #landingContent > .padder { padding:20px; }
+	
+}
 
 
 /* ==========================================================================

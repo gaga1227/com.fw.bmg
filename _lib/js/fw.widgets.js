@@ -130,7 +130,7 @@ function initToggleNav() {
 	//function - toggle
 	toggleNav.toggle = function(e){
 		if (e) e.preventDefault();
-		console.log(thisObj.isActive);
+		//console.log(thisObj.isActive);
 		
 		//update DOM
 		if ( thisObj.isActive ) {

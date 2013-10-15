@@ -4,14 +4,16 @@
    ========================================================================== */
 @media print {
     /* hidden elements */
-    #header, #nav, #sidenav, #banner, #megafooter, #footer,
+    #debugInfo, #loader, #pageBg,
+	#nav, #sideNav, #banner, #aside, #megafooter, #footer,
     .pagination, .slideshow, .interaction, .audioContainer, .videoContainer, /*.video,*/
-    .btnBox, .btnBg, .btnText, .btnGraphic, 
-    .icon, .shadow, .shade, .gradient,
+    .btnBox, .btnBg, .btnText, .btnGraphic, btnIcon, .btnOutline,
+    .icon, .iconInline, .shadow, .shade, .gradient,
     .nfp { display:none!important; }
-
+	
     /* simplify printing styles */
-    * { color:#000!important; background:transparent!important; box-shadow:none!important; text-shadow:none!important; }
+    * { color:#000!important; background:transparent!important; box-shadow:none!important; text-shadow:none!important;
+		font-family:Arial, Helvetica, sans-serif; }
 
     /* show link urls */
     a, a:visited { text-decoration:underline; }
@@ -33,4 +35,11 @@
     @page { margin: 0.5cm; }
     p, h2, h3 { orphans:3; widows:3; }
     h2, h3 { page-break-after:avoid; }
+	
+	/* -------------------------------------------------------------------------- */
+	/* custom */
+	
+	/* branding */
+	.brand img 			{ display:inline-block; width:3cm!important; height:auto!important; border:none; vertical-align:middle; }
+	a.brand[href]:after { content:""; }
 }
