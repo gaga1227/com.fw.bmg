@@ -1690,6 +1690,7 @@ body.landing #container { height:100%; }
 		position:absolute; left:0; top:0; bottom:55px; width:250px; min-width:0;
 		background:#0f69b1; border:20px solid #fff; border-right:none; border-bottom:none;
 		/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+	.ie7 body.landing #header { width:230px; }
 		
 		/* padder */
 		body.landing #header > .padder { position:static; border:0; }
@@ -1716,7 +1717,7 @@ body.landing #container { height:100%; }
 	body.landing #nav { 
 		position:absolute; left:0; top:231px; bottom:0; width:100%; max-height:auto; margin:0;
 		background:#0f69b1 url(../img/bg-crest-blu.png) right bottom no-repeat; background-size:237px 316px; }
-						
+			
 		/* navItem */
 		body.landing #nav #navItems .navItem { 
 			display:block; width:auto; height:auto; margin:0; padding:0; overflow:hidden;
@@ -1745,16 +1746,28 @@ body.landing #container { height:100%; }
 	body.landing #nav.active { max-height:auto; padding:0; }
 
 /* -------------------------------------------------------------------------- */
-/* landingContent */
-body.landing #landingContent { 
+/* contentLanding */
+body.landing #contentLanding { 
 	display:block; position:absolute; left:250px; top:0; bottom:55px; width:350px; height:auto; margin:0 auto; padding:0; overflow:hidden;
-	background:rgba(0,0,0,0.8); border-top:20px solid #fff;
+	background-position:center center; background-size:cover; 
+	border-top:20px solid #fff;
 	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
-.oldie body.landing #landingContent { 
-	background:#373737; }
-	
+		
+/* oldie fallback */
+.oldie body.landing #contentLanding { background:#252525; background-image:none!important; }
+
 	/* padder */
-	body.landing #landingContent > .padder { padding:30px; }	
+	body.landing #contentLanding > .padder { position:relative; width:auto; padding:30px; }	
+	
+/* -------------------------------------------------------------------------- */
+/* tilesLanding */
+body.landing #tilesLanding { 
+	display:block; position:absolute; left:600px; right:0; top:0; bottom:55px; width:auto; height:auto; margin:0 auto; padding:0; overflow:hidden; 
+	border-top:17px solid #fff; border-right:17px solid #fff; background:silver;
+	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+		
+	/* padder */
+	body.landing #tilesLanding > .padder { position:relative; width:auto; margin:0 auto; overflow:hidden; min-height:1000px; }	
 
 /* -------------------------------------------------------------------------- */
 /* footer */
@@ -1762,7 +1775,14 @@ body.landing #footer {
 	position:absolute; bottom:0; left:0; width:100%; float:none; clear:both; }
 
 /* -------------------------------------------------------------------------- */
-/* responsive */
+/* responsive down stream */
+@media only screen and (max-width:1000px) {
+	
+	/* reduce content width, making room for tiles */
+	body.landing #contentLanding 	{ width:280px; }
+	body.landing #tilesLanding 		{ left:530px; }
+
+}
 @media only screen and (max-width:770px) {
 	
 	/* -------------------------------------------------------------------------- */
@@ -1815,15 +1835,25 @@ body.landing #footer {
 	body.landing #nav.active { max-height:500px; padding:10px 0; }
 	
 	/* -------------------------------------------------------------------------- */
-	/* landingContent */
-	body.landing #landingContent { 
-		position:relative; left:auto; top:auto; bottom:auto; width:45%; float:left; clear:left; overflow:hidden;
+	/* contentLanding */
+	body.landing #contentLanding { 
+		position:relative; left:auto; top:auto; bottom:auto; width:45%; float:left; clear:left;
 		border:none; }
 		
 		/* padder */
-		body.landing #landingContent > .padder { 
+		body.landing #contentLanding > .padder { 
 			padding:30px; 
 			border:15px solid #fff; border-right:none; border-bottom:none; }	
+	
+	/* -------------------------------------------------------------------------- */
+	/* tilesLanding */
+	body.landing #tilesLanding { 
+		position:relative; left:auto; right:auto; top:auto; bottom:auto; width:55%; float:left; clear:right;
+		border:none; }
+			
+		/* padder */
+		body.landing #tilesLanding > .padder { 
+			border-top:12px solid #fff; border-right:12px solid #fff; }	
 	
 	/* -------------------------------------------------------------------------- */
 	/* footer */
@@ -1833,11 +1863,18 @@ body.landing #footer {
 @media only screen and (max-width:600px) {
 
 	/* -------------------------------------------------------------------------- */
-	/* landingContent */
+	/* contentLanding */
 	
 	/* stretch full */
-	body.landing #landingContent { width:auto; float:none; clear:both; }
-	body.landing #landingContent > .padder { padding:30px; border:none; }
+	body.landing #contentLanding { width:auto; float:none; clear:both; }
+	body.landing #contentLanding > .padder { padding:30px; border:none; }
+	
+	/* -------------------------------------------------------------------------- */
+	/* tilesLanding */
+	
+	/* stack below content */
+	body.landing #tilesLanding { width:auto; float:none; clear:both; }
+	body.landing #tilesLanding > .padder { border:12px solid #fff; border-bottom:none; }	
 
 }
 @media only screen and (max-width:500px) {
@@ -1851,10 +1888,35 @@ body.landing #footer {
 	body.landing #header .brand .title 	{ width:108px; margin-right:0; }
 	
 	/* -------------------------------------------------------------------------- */
-	/* landingContent */
+	/* contentLanding */
 	
 	/* reduce padder border */
-	body.landing #landingContent > .padder { padding:20px; }
+	body.landing #contentLanding > .padder { padding:20px; }
+	
+	/* -------------------------------------------------------------------------- */
+	/* tilesLanding */
+	
+	/* reduce border */
+	body.landing #tilesLanding > .padder { border-width:7px; }	
+	
+}
+
+/* -------------------------------------------------------------------------- */
+/* responsive up stream */
+@media only screen and (min-width:1600px) {
+	
+	/* -------------------------------------------------------------------------- */
+	/* make things bigger */  
+	
+	/* header */
+	body.landing #header { width:330px; }
+	
+	/* contentLanding */
+	body.landing #contentLanding { left:330px; width:490px; }
+	body.landing #contentLanding > .padder { padding:50px 60px; }	
+		
+	/* tilesLanding */
+	body.landing #tilesLanding { left:820px; }
 	
 }
 
