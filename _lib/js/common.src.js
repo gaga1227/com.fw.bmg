@@ -107,7 +107,10 @@ function initHome(){
 
 }
 function initLanding(){
-
+	
+	//layout assistance
+	insertFirstLastChild('.tile > .contentViewport');
+	
 }
 /* DOM Ready */
 $(document).ready(function(){

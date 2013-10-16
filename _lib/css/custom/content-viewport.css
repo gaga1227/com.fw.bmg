@@ -378,26 +378,21 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
 /* -------------------------------------------------------------------------- */
 /* btnText */
 .btnText { 
-	display:inline-block; position:relative; margin:8px 16px 16px 0; padding:0; width:auto; height:24px; vertical-align:middle;
-	text-decoration:none!important; outline:0 none!important; cursor:pointer; }
+	display:inline-block; position:relative; width:auto; height:auto; margin:8px 16px 16px 0; padding:0; overflow:hidden;
+	white-space:nowrap; text-overflow:ellipsis;
+	text-decoration:none!important; outline:0 none!important; }
+	
+/* interaction */
+a.btnText { cursor:pointer; }
 .no-touch .btnText:hover,
 .touch .btnText:active { 
-	text-decoration:none!important; }
+	text-decoration:underline!important; }
 
 	/* label */
 	.btnText,
 	.btnText .label { 
-		overflow:hidden; white-space:nowrap; text-overflow:ellipsis; vertical-align:middle;
-		color:#06afbc; font-size:15px; font-weight:700; line-height:24px;
-		/*transition*/
-		/*-webkit-transform:translate3d(0,0,0);*/
-		-webkit-transition:color 0.3s ease-in-out;
-		-moz-transition:color 0.3s ease-in-out;
-		-o-transition:color 0.3s ease-in-out;
-		transition:color 0.3s ease-in-out; }	
-	.no-touch .btnText:hover .label,
-	.touch .btnText:active .label { 
-		text-decoration:underline!important; }
+		color:#fff!important; vertical-align:middle;
+		font-weight:400; font-size:13px; line-height:16px; }
 		
 	/* icon */
 	.btnText .icon,
@@ -406,7 +401,7 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
 	.ie7 .btnText .icon,
 	.ie7 .btnText .iconInline,
 	.btnText .icon:before,
-	.btnText .iconInline:before	{ font-size:14px; line-height:24px; }
+	.btnText .iconInline:before	{ font-size:14px; line-height:16px; }
 
 /* -------------------------------------------------------------------------- */
 /* btnBox */

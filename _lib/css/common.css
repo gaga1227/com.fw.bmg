@@ -1139,6 +1139,86 @@ body.ps {
 
 
 /* ==========================================================================
+   common - TILES
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* default */
+.tile { 
+	display:block; position:relative; width:auto; height:auto; margin:0; padding:50% 0 0 0; overflow:hidden;
+	background:#fff; }
+
+/* link */
+a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!important; }
+
+/* -------------------------------------------------------------------------- */
+/* sizes */
+.tile 		{ width:50%; }
+.tile.w2	{ width:100%; }	
+.tile.h2	{ padding-top:100%; }
+
+/* -------------------------------------------------------------------------- */
+/* content */
+
+/* common */
+.tile > img,
+.tile > .padder,
+.tile > .caption 		{ display:block; position:absolute; top:0; left:0; width:100%; height:100%; margin:0; padding:0; overflow:hidden; }
+
+/* padder */
+.tile > .padder  		{ width:80%; height:80%; padding:10%; }
+.tile.w2 > .padder  	{ width:90%; height:80%; padding:5%; }
+.tile.h2 > .padder		{ width:80%; height:90%; padding:10%; }
+.tile.w2.h2 > .padder	{ width:90%; height:90%; padding:5%; }
+
+/* img */
+.ie7 .tile > img 			{ height:auto; }
+
+/* caption */
+.tile > .caption 		{ top:auto; bottom:0; width:80%; height:auto; padding:6% 10%; background:rgba(37,37,37,0.9); }
+.tile.w2 > .caption 	{ width:90%; padding:3% 5%; }
+.tile.h2 > .caption 	{ width:80%; padding:6% 10%; }
+.tile.w2.h2 > .caption 	{ width:90%; padding:3% 5%; }
+
+/* fallback */
+.oldie .tile > .caption { background:#373737; }
+
+/* -------------------------------------------------------------------------- */
+/* types */
+
+/* typeB fade */
+.tile.typeB:after { content:''; display:block; position:absolute; bottom:0; left:0; width:100%; height:8%; background-color:transparent; }
+.oldie .tile.typeB:after { display:none; }
+.tile.typeB.bgc-blu:after {
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,130,226,0)), color-stop(100%,rgba(16,130,226,1)));
+	background-image:-webkit-linear-gradient(top, rgba(16,130,226,0) 0%, rgba(16,130,226,1) 100%);
+	background-image:-moz-linear-gradient(top, rgba(16,130,226,0) 0%, rgba(16,130,226,1) 100%);
+	background-image:-o-linear-gradient(top, rgba(16,130,226,0) 0%, rgba(16,130,226,1) 100%);
+	background-image:linear-gradient(to bottom, rgba(16,130,226,0) 0%, rgba(16,130,226,1) 100%); }
+.tile.typeB.bgc-gld:after {
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(231,187,43,0)), color-stop(100%,rgba(231,187,43,1)));
+	background-image:-webkit-linear-gradient(top, rgba(231,187,43,0) 0%, rgba(231,187,43,1) 100%);
+	background-image:-moz-linear-gradient(top, rgba(231,187,43,0) 0%, rgba(231,187,43,1) 100%);
+	background-image:-o-linear-gradient(top, rgba(231,187,43,0) 0%, rgba(231,187,43,1) 100%);
+	background-image:linear-gradient(to bottom, rgba(231,187,43,0) 0%, rgba(231,187,43,1) 100%); }
+	
+/* typeB watermark */
+.tile.typeB.watermark 		{ background-image:url(../img/img-crest-watermark.png); background-repeat:no-repeat;
+							  background-position:center center; background-size:75%; }
+.tile.typeB.w2.watermark 	{ background-position:right bottom;  background-size:40%; }
+.tile.typeB.h2.watermark 	{ background-position:center bottom; background-size:75%; }
+.tile.typeB.w2.h2.watermark { background-position:right bottom;  background-size:75%; }
+
+/* -------------------------------------------------------------------------- */
+/* contentViewport */
+
+.tile .contentViewport .tileTitle 		{ font-size:22px; line-height:24px; font-weight:300; padding-bottom:16px; }
+.tile .contentViewport p  				{ font-size:14px; line-height:20px; }
+.tile .contentViewport > :last-child  	{ margin-bottom:0; padding-bottom:0; }
+.tile .contentViewport > .last-child  	{ margin-bottom:0; padding-bottom:0; }
+
+
+/* ==========================================================================
    common - ITEMS
    ========================================================================== */
 
@@ -1762,12 +1842,12 @@ body.landing #contentLanding {
 /* -------------------------------------------------------------------------- */
 /* tilesLanding */
 body.landing #tilesLanding { 
-	display:block; position:absolute; left:600px; right:0; top:0; bottom:55px; width:auto; height:auto; margin:0 auto; padding:0; overflow:hidden; 
-	border-top:17px solid #fff; border-right:17px solid #fff; background:silver;
+	display:block; position:absolute; left:600px; right:0; top:0; bottom:55px; width:auto; height:auto; margin:0 auto; padding:0;
+	border-top:20px solid #fff; border-right:20px solid #fff;
 	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
 		
 	/* padder */
-	body.landing #tilesLanding > .padder { position:relative; width:auto; margin:0 auto; overflow:hidden; min-height:1000px; }	
+	body.landing #tilesLanding > .padder { position:relative; width:auto; margin:0 auto; overflow:hidden; }	
 
 /* -------------------------------------------------------------------------- */
 /* footer */
@@ -1853,7 +1933,7 @@ body.landing #footer {
 			
 		/* padder */
 		body.landing #tilesLanding > .padder { 
-			border-top:12px solid #fff; border-right:12px solid #fff; }	
+			border-top:15px solid #fff; border-right:15px solid #fff; }	
 	
 	/* -------------------------------------------------------------------------- */
 	/* footer */
@@ -1874,7 +1954,7 @@ body.landing #footer {
 	
 	/* stack below content */
 	body.landing #tilesLanding { width:auto; float:none; clear:both; }
-	body.landing #tilesLanding > .padder { border:12px solid #fff; border-bottom:none; }	
+	body.landing #tilesLanding > .padder { border:15px solid #fff; border-bottom:none; }	
 
 }
 @media only screen and (max-width:500px) {
@@ -1897,7 +1977,7 @@ body.landing #footer {
 	/* tilesLanding */
 	
 	/* reduce border */
-	body.landing #tilesLanding > .padder { border-width:7px; }	
+	body.landing #tilesLanding > .padder { border-width:10px; }	
 	
 }
 
