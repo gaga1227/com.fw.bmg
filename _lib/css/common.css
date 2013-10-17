@@ -1380,7 +1380,7 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 .oldie .tile.typeA				{ padding-top:100%; }
 .oldie .tile.typeA.w2			{ padding-top:50%; }
 .oldie .tile.typeB.w2			{ padding-top:100%; }
-.oldie .tile.typeA.h2			{ padding-top:200%; }
+.oldie .tile.typeA.h2			{ padding-top:198%; }
 .oldie .tile.typeB.h2			{ padding-top:100%; }
 .oldie .tile.typeA.w2.h2		{ padding-top:100%; }
 .oldie .tile.typeB.w2.h2		{ padding-top:100%; }

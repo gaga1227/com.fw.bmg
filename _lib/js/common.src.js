@@ -21,7 +21,7 @@ WebFontUtils = {
 								},
 	onWFActive: 	function()	{},
 	onWFInactive: 	function()	{}
-}
+};
 /* ------------------------------------------------------------------------------ */
 /* initTiles */
 /* ------------------------------------------------------------------------------ */
@@ -57,10 +57,8 @@ var Tiles, SelectNav, Slideshows, StaticAudios, StaticVideos;
 function init(){
 	//layout assistance
 	insertFirstLastChild('#navItems, #sideNav, #sideNav ul, .itemListing, #main > .padder');
-	
 	//interactions	
 	ToggleNav = new initToggleNav();
-	
 	//template specific functions
 	if 		( $('body#home').length ) 			{ initHome(); }
 	else if ( $('body.landing').length ) 		{ initLanding(); }
@@ -72,7 +70,6 @@ function init(){
 		//form
 		initDatepicker();
 	}
-	
 	//debug
 	displayDebugInfo('#debugInfo');
 }
@@ -80,13 +77,10 @@ function initHome(){
 
 }
 function initLanding(){
-	
 	//layout assistance
 	insertFirstLastChild('#tiles, .tile > .contentViewport');
-	
-	//fix
+	//iOS native scrolling fail fix
 	initIOSNativeScrollerFix();
-	
 }
 /* DOM Ready */
 $(document).ready(function(){
