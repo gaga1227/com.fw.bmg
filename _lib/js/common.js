@@ -111,6 +111,9 @@ function initLanding(){
 	//layout assistance
 	insertFirstLastChild('.tile > .contentViewport');
 	
+	//fix
+	initIOSNativeScrollerFix();
+	
 }
 /* DOM Ready */
 $(document).ready(function(){

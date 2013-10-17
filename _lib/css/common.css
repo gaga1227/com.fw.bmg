@@ -1214,8 +1214,146 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 
 .tile .contentViewport .tileTitle 		{ font-size:22px; line-height:24px; font-weight:300; padding-bottom:16px; }
 .tile .contentViewport p  				{ font-size:14px; line-height:20px; }
-.tile .contentViewport > :last-child  	{ margin-bottom:0; padding-bottom:0; }
-.tile .contentViewport > .last-child  	{ margin-bottom:0; padding-bottom:0; }
+.tile .contentViewport > :last-child  	{ margin-bottom:0!important; padding-bottom:0!important; }
+.tile .contentViewport > .last-child  	{ margin-bottom:0!important; padding-bottom:0!important; }
+
+.tile .contentViewport a 				{ text-decoration:none!important; }
+.tile .contentViewport a:hover,
+.tile .contentViewport a:focus,
+.tile .contentViewport a:active 		{ text-decoration:underline!important; }
+
+/* -------------------------------------------------------------------------- */
+/* responsive downstream */
+@media only screen and (max-width:900px) {
+	
+	/* shrink text */
+	.tile .contentViewport .tileTitle 		{ font-size:18px; line-height:22px; padding-bottom:10px; }
+	.tile .contentViewport p  				{ font-size:13px; line-height:18px; }
+
+}
+@media only screen and (max-width:600px) {
+	
+	/* enlarge text */
+	.tile .contentViewport .tileTitle 		{ font-size:30px; line-height:36px; padding-bottom:24px; }
+	.tile .contentViewport p  				{ font-size:20px; line-height:28px; padding-bottom:16px; }
+
+}
+@media only screen and (max-width:500px) {
+	
+	/* shrink text */
+	.tile .contentViewport .tileTitle 		{ font-size:22px; line-height:24px; padding-bottom:16px; }
+	.tile .contentViewport p  				{ font-size:14px; line-height:20px; padding-bottom:8px; }
+
+}
+@media only screen and (max-width:400px) {
+	
+	/* shrink text */
+	.tile .contentViewport .tileTitle 		{ font-size:18px; line-height:22px; padding-bottom:10px; }
+	.tile .contentViewport p  				{ font-size:13px; line-height:18px; }
+
+}
+@media only screen and (max-width:150px) {
+
+	/* -------------------------------------------------------------------------- */
+	/* normalize tiles to single column */
+	
+	/* sizes */
+	.tile,
+	.tile.w2,
+	.tile.h2 				{ width:100%; }
+	
+	.tile					{ padding-top:100%; }
+	.tile.w2 				{ padding-top:50%; }
+	.tile.h2 				{ padding-top:200%; }
+	
+	.tile.typeB.w2			{ padding-top:100%; }
+	.tile.typeB.h2			{ padding-top:200%; }
+	.tile.typeA.w2.h2		{ padding-top:100%; }
+	.tile.typeB.w2.h2		{ padding-top:200%; }
+	
+	
+	/* padder */
+	.tile > .padder,
+	.tile.w2 > .padder  	{ width:80%; height:80%; padding:10%; }
+	.tile.h2 > .padder,
+	.tile.w2.h2 > .padder	{ width:80%; height:90%; padding:10%; }
+	
+	/* caption */
+	.tile > .caption,
+	.tile.w2 > .caption,
+	.tile.h2 > .caption,
+	.tile.w2.h2 > .caption 	{ width:80%; padding:6% 10%; }
+
+	/* enlarge text */
+	.tile .contentViewport .tileTitle 		{ font-size:22px; line-height:24px; padding-bottom:16px; }
+	.tile .contentViewport p  				{ font-size:14px; line-height:20px; }
+	
+}
+
+/* -------------------------------------------------------------------------- */
+/* responsive upstream */
+@media only screen and (min-width:1200px) {
+	
+	/* enlarge text */
+	.tile .contentViewport .tileTitle 		{ font-size:30px; line-height:36px; padding-bottom:24px; }
+	.tile .contentViewport p  				{ font-size:20px; line-height:28px; padding-bottom:16px; }
+
+}
+@media only screen and (min-width:1400px) {
+	
+	/* -------------------------------------------------------------------------- */
+	/* half all tiles */
+	
+	/* sizes */
+	.tile 					{ width:25%; }
+	.tile.w2				{ width:50%; }
+	.tile.h2 				{ width:25%; }
+	.tile.w2.h2 			{ width:50%; }
+	
+	.tile					{ padding-top:25%; }
+	.tile.w2 				{ padding-top:25%; }
+	.tile.h2 				{ padding-top:50%; }
+	.tile.w2.h2 			{ padding-top:50%; }
+	
+	/* padder */
+	.tile > .padder  		{ width:80%; height:80%; padding:10%; }
+	.tile.w2 > .padder  	{ width:90%; height:80%; padding:5%; }
+	.tile.h2 > .padder		{ width:80%; height:90%; padding:10%; }
+	.tile.w2.h2 > .padder	{ width:90%; height:90%; padding:5%; }
+	
+	/* caption */
+	.tile > .caption 		{ width:80%; padding:6% 10%; }
+	.tile.w2 > .caption 	{ width:90%; padding:3% 5%; }
+	.tile.h2 > .caption 	{ width:80%; padding:6% 10%; }
+	.tile.w2.h2 > .caption 	{ width:90%; padding:3% 5%; }
+	
+	/* shrink text */
+	.tile .contentViewport .tileTitle 		{ font-size:22px; line-height:24px; padding-bottom:16px; }
+	.tile .contentViewport p  				{ font-size:14px; line-height:20px; padding-bottom:8px; }
+
+}
+@media only screen and (min-width:1900px) {
+	
+	/* -------------------------------------------------------------------------- */
+	/* enlarge padding */
+	
+	/* padder */
+	.tile > .padder  		{ width:74%; height:74%; padding:13%; }
+	.tile.w2 > .padder  	{ width:87%; height:74%; padding:6.5%; }
+	.tile.h2 > .padder		{ width:74%; height:87%; padding:13%; }
+	.tile.w2.h2 > .padder	{ width:87%; height:87%; padding:6.5%; }
+	
+	/* caption */
+	.tile > .caption 		{ width:74%; padding:7% 13%; }
+	.tile.w2 > .caption 	{ width:87%; padding:4% 6.5%; }
+	.tile.h2 > .caption 	{ width:74%; padding:7% 13%; }
+	.tile.w2.h2 > .caption 	{ width:87%; padding:4% 6.5%; }
+
+	/* enlarge text */
+	.tile .contentViewport .tileTitle 		{ font-size:30px; line-height:36px; padding-bottom:24px; }
+	.tile .contentViewport p  				{ font-size:20px; line-height:28px; padding-bottom:16px; }
+
+}
 
 
 /* ==========================================================================
@@ -1726,7 +1864,7 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
    
 /* scroller */
 .scroller 		{ overflow:auto!important; }
-.iOS .scroller 	{ -webkit-overflow-scrolling:touch!important; }
+.iOS .scroller 	{ -webkit-overflow-scrolling:touch; }
    
 /* flash */
 .flashContainer { 
@@ -1828,7 +1966,8 @@ body.landing #container { height:100%; }
 /* -------------------------------------------------------------------------- */
 /* contentLanding */
 body.landing #contentLanding { 
-	display:block; position:absolute; left:250px; top:0; bottom:55px; width:350px; height:auto; margin:0 auto; padding:0; overflow:hidden;
+	display:block; position:absolute; left:250px; top:0; bottom:55px; 
+	width:350px; height:auto; margin:0 auto; padding:0; overflow:hidden;
 	background-position:center center; background-size:cover; 
 	border-top:20px solid #fff;
 	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
@@ -1842,7 +1981,8 @@ body.landing #contentLanding {
 /* -------------------------------------------------------------------------- */
 /* tilesLanding */
 body.landing #tilesLanding { 
-	display:block; position:absolute; left:600px; right:0; top:0; bottom:55px; width:auto; height:auto; margin:0 auto; padding:0;
+	display:block; position:absolute; left:600px; right:0; top:0; bottom:55px; 
+	width:auto; height:auto; margin:0 auto; padding:0; overflow:hidden;
 	border-top:20px solid #fff; border-right:20px solid #fff;
 	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
 		
@@ -1917,7 +2057,7 @@ body.landing #footer {
 	/* -------------------------------------------------------------------------- */
 	/* contentLanding */
 	body.landing #contentLanding { 
-		position:relative; left:auto; top:auto; bottom:auto; width:45%; float:left; clear:left;
+		position:relative; left:auto; top:auto; bottom:auto; width:45%; height:auto; float:left; clear:left;
 		border:none; }
 		
 		/* padder */
@@ -1928,7 +2068,7 @@ body.landing #footer {
 	/* -------------------------------------------------------------------------- */
 	/* tilesLanding */
 	body.landing #tilesLanding { 
-		position:relative; left:auto; right:auto; top:auto; bottom:auto; width:55%; float:left; clear:right;
+		position:relative; left:auto; right:auto; top:auto; bottom:auto; width:55%; height:auto; float:left; clear:right;
 		border:none; }
 			
 		/* padder */
@@ -1969,6 +2109,10 @@ body.landing #footer {
 	
 	/* -------------------------------------------------------------------------- */
 	/* contentLanding */
+	
+	/* min-width */
+	body.landing #contentLanding,
+	body.landing #tilesLanding { min-width:300px; }
 	
 	/* reduce padder border */
 	body.landing #contentLanding > .padder { padding:20px; }

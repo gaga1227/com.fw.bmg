@@ -150,6 +150,28 @@ function initCSS3PIE() {
 	}
 }
 /* ------------------------------------------------------------------------------ */
+/* common - initIOSNativeScrollerFix */
+/* ------------------------------------------------------------------------------ */
+function initIOSNativeScrollerFix(cls, cssCls) {
+	if (!$('html').hasClass('iOS')) return false;
+	var scrollerCls = cls || '.scroller',
+		cssCls = cssCls || 'scroller',
+		$scrollers = $(scrollerCls);
+	function resetScroller() {
+		$.each($scrollers, function(idx,ele){
+			var $scroller = $(ele);
+			$scroller.removeClass(cssCls);
+			setTimeout(function(){
+				$scroller.addClass(cssCls);
+				//alert('[resetScroller] ' + (idx+1));
+			},100);
+		});
+	}
+	document.addEventListener('orientationchange',function(e){
+		resetScroller();
+	}, false);
+}
+/* ------------------------------------------------------------------------------ */
 /* common - cssAnim (working specifically with animate.css) */
 /* ------------------------------------------------------------------------------ */
 function cssAnim(target,anim) {

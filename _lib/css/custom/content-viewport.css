@@ -384,8 +384,8 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
 	
 /* interaction */
 a.btnText { cursor:pointer; }
-.no-touch .btnText:hover,
-.touch .btnText:active { 
+.no-touch a.btnText:hover,
+.touch a.btnText:active { 
 	text-decoration:underline!important; }
 
 	/* label */
@@ -503,6 +503,10 @@ a.btnOutline { cursor:pointer; }
    themes - INVERT
    ========================================================================== */
 
+/* selection */
+.contentViewport.invert ::-moz-selection 	{ color:#000; background:#e7bb2b; }
+.contentViewport.invert ::selection 		{ color:#000; background:#e7bb2b; }
+
 /* common */
 .contentViewport.invert h1,
 .contentViewport.invert h2,
@@ -518,7 +522,7 @@ a.btnOutline { cursor:pointer; }
 .contentViewport.invert a,
 .contentViewport.invert a:hover,
 .contentViewport.invert a:focus,
-.contentViewport.invert a:active 	{ color:#fff; }
+.contentViewport.invert a:active 	{ color:#fff; text-decoration:underline; }
 
 /* list */
 .contentViewport.invert ul > li 	{ background-image:url(../../img/blt-list-lv1-white.png); }
