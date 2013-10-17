@@ -37,6 +37,7 @@
 <script type="text/javascript" src="_lib/js/modernizr.all.js"></script><!-- modernizr -->
 <script type="text/javascript" src="_lib/js/jquery-1.8.3.js"></script><!-- jQuery -->
 <!-- JS:LIBS -->
+<script type="text/javascript" src="_lib/js/packery/packery.pkgd.js"></script><!-- packery -->
 <!-- JS:FW -->
 <script type="text/javascript" src="_lib/js/fw.utils.js"></script><!-- utils -->
 <script type="text/javascript" src="_lib/js/fw.widgets.js"></script><!-- widgets -->
@@ -131,28 +132,28 @@
 	<div id="tilesLanding" class="tiles scroller">
 		<div class="padder">
 			<!-- TILES -->
-			<div id="tiles" class="tiles packery">
+			<div id="tiles" class="tiles">
 				<!-- TILE -->
-				<a href="#" class="tile typeA h2 w2">
+				<a href="#" class="tile typeA h2 w2 stamp">
 					<img src="___samples/ph-tile-h2w2-1.jpg" alt="" />
-					<span class="caption contentViewport invert"><p class="tileTitle">Year Level Overviews</span></p>
+					<span class="caption contentViewport invert"><p class="tileTitle">Year Level Overviews</p></span>
 				</a>
 				<!-- TILE -->
-				<div class="tile typeA">
+				<div class="tile typeA gridSizer">
 					<img src="___samples/ph-tile-h1w1-1.jpg" alt="" />
 				</div>
 				<!-- TILE -->
 				<a href="#" class="tile typeB bgc-blu">
 					<span class="padder contentViewport invert">
 						<p class="tileTitle">Proin quis tortor orci et etiam at risus?</p>
-						<span href="#" class="btnText"><span class="label">Read more</span><i class="iconInline right sz1 fwicon-plus"></i></span>
+						<span class="btnText"><span class="label">Read more</span><i class="iconInline right sz1 fwicon-plus"></i></span>
 					</span>
 				</a>
 				<!-- TILE -->
 				<a href="#" class="tile typeB bgc-gld watermark">
 					<span class="padder contentViewport invert">
 						<p class="tileTitle"><i class="iconInline left fwicon-flag"></i>At risus et etium magna etium setis.</p>
-						<span href="#" class="btnText"><span class="label">Read more</span><i class="iconInline right sz1 fwicon-plus"></i></span>
+						<span class="btnText"><span class="label">Read more</span><i class="iconInline right sz1 fwicon-plus"></i></span>
 					</span>
 				</a>
 				<!-- TILE -->
@@ -162,7 +163,7 @@
 				<!-- TILE -->
 				<div class="tile typeA w2">
 					<img src="___samples/ph-tile-h1w2-1.jpg" alt="" />
-					<span class="caption contentViewport invert"><p class="tileTitle">Health Sciences and PE</span></p>
+					<span class="caption contentViewport invert"><p class="tileTitle">Health Sciences and PE</p></span>
 				</div>
 				<!-- TILE -->
 				<div class="tile typeB h2 bgc-blu watermark">
@@ -176,6 +177,24 @@
 					</span>
 				</div>
 				<!-- TILE -->
+				<a href="#" class="tile typeB bgc-gld">
+					<span class="padder contentViewport invert">
+						<p class="tileTitle">Pathways to their talents and ambitions</p>
+					</span>
+				</a>
+				<!-- TILE -->
+				<a href="#" class="tile typeB bgc-gld">
+					<span class="padder contentViewport invert">
+						<p class="tileTitle">Lorum ipsum dolor sit, tesque ucibus vestibulum luctus tortor</p>
+					</span>
+				</a>
+				<!-- TILE -->
+				<a href="#" class="tile typeB bgc-blu">
+					<span class="padder contentViewport invert">
+						<p class="tileTitle">We believe that students need access to a diversity</p>
+					</span>
+				</a>
+				<!-- TILE -->
 				<div class="tile typeA">
 					<img src="___samples/ph-tile-h1w1-3.jpg" alt="" />
 				</div>
@@ -183,13 +202,13 @@
 				<a href="#" class="tile typeB bgc-blu">
 					<span class="padder contentViewport invert">
 						<p class="tileTitle">In pellen tesque ucibus vestibulum luctus tortor.</p>
-						<span href="#" class="btnText"><span class="label">Read more</span><i class="iconInline right sz1 fwicon-plus"></i></span>
+						<span class="btnText"><span class="label">Read more</span><i class="iconInline right sz1 fwicon-plus"></i></span>
 					</span>
 				</a>
 				<!-- TILE -->
 				<a href="#" class="tile typeA h2 w2">
 					<img src="___samples/ph-tile-h2w2-2.jpg" alt="" />
-					<span class="caption contentViewport invert"><p class="tileTitle">Student Wellbeing</span></p>
+					<span class="caption contentViewport invert"><p class="tileTitle">Student Wellbeing</p></span>
 				</a>
 				<!-- TILE -->
 				<a href="#" class="tile typeB w2 bgc-gld watermark">
@@ -203,18 +222,30 @@
 					<span class="padder contentViewport invert">
 						<p class="tileTitle">Curriculum and its effective delivery is the cornerstone of the school's program.</p>
 						<p>Our curriculum, at all levels, is based on a belief that all students need to have a good grounding in the key areas of literacy and numeracy. We believe that this needs to be supplemented by exposure to a wide range of activities that cover the sciences, humanities and arts.</p>
-						<span href="#" class="btnText"><span class="label">Read more</span><i class="iconInline right sz1 fwicon-plus"></i></span>
+						<span class="btnText"><span class="label">Read more</span><i class="iconInline right sz1 fwicon-plus"></i></span>
 					</span>
 				</a>
 				<!-- TILE -->
 				<a href="#" class="tile typeA">
 					<img src="___samples/ph-tile-h1w1-4.jpg" alt="" />
-					<span class="caption contentViewport invert"><p class="tileTitle">Applied Science</span></p>
+					<span class="caption contentViewport invert"><p class="tileTitle">Hospitality</p></span>
+				</a>
+				<!-- TILE -->
+				<a href="#" class="tile typeA">
+					<img src="___samples/ph-tile-h1w1-5.jpg" alt="" />
+					<span class="caption contentViewport invert"><p class="tileTitle">Applied Science</p></span>
 				</a>
 				<!-- TILE -->
 				<a href="#" class="tile typeA h2">
 					<img src="___samples/ph-tile-h2w1-1.jpg" alt="" />
-					<span class="caption contentViewport invert"><p class="tileTitle">Religious Education</span></p>
+					<span class="caption contentViewport invert"><p class="tileTitle">Religious Education</p></span>
+				</a>
+				<!-- TILE -->
+				<a href="#" class="tile typeB bgc-gld watermark">
+					<span class="padder contentViewport invert">
+						<p class="tileTitle"><i class="iconInline left fwicon-gallery"></i><br />Virtual Tour Collections</p>
+						<span class="btnText"><span class="label">Read more</span><i class="iconInline right sz1 fwicon-plus"></i></span>
+					</span>
 				</a>
 			</div><!-- /TILES -->
 		</div>

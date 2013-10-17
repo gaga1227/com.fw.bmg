@@ -1143,19 +1143,49 @@ body.ps {
    ========================================================================== */
 
 /* -------------------------------------------------------------------------- */
+/* container */
+.tiles { position:relative; }
+.tiles .padder { }
+
+/* -------------------------------------------------------------------------- */
 /* default */
 .tile { 
 	display:block; position:relative; width:auto; height:auto; margin:0; padding:50% 0 0 0; overflow:hidden;
-	background:#fff; }
+	background:#fff; border:5px solid #fff; border-right:none; border-top:none;
+	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
 
-/* link */
+/* -------------------------------------------------------------------------- */
+/* link */		 
 a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!important; }
+
+/* -------------------------------------------------------------------------- */
+/* interaction */	
+.no-touch a.tile {
+	/*transform-origin*/
+	-webkit-transform-origin:50%;
+	-moz-transform-origin:50%;
+	-ms-transform-origin:50%;
+	-o-transform-origin:50%;
+	transform-origin:50%;
+	/*transition*/
+	/*-webkit-transform:translate3d(0,0,0);*/
+	-webkit-transition:-webkit-transform 0.3s ease-in-out;
+	-moz-transition:-moz-transform 0.3s ease-in-out;
+	-o-transition:-o-transform 0.3s ease-in-out;
+	transition:transform 0.3s ease-in-out; }
+.no-touch a.tile:hover { 
+	/*transform*/
+	-webkit-transform:scale(0.95);
+	-moz-transform:scale(0.95);
+	-ms-transform:scale(0.95);
+	-o-transform:scale(0.95);
+	transform:scale(0.95); }
 
 /* -------------------------------------------------------------------------- */
 /* sizes */
 .tile 		{ width:50%; }
 .tile.w2	{ width:100%; }	
-.tile.h2	{ padding-top:100%; }
+.tile.h2	{ padding-top:99.75%; }
 
 /* -------------------------------------------------------------------------- */
 /* content */
@@ -1172,7 +1202,7 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 .tile.w2.h2 > .padder	{ width:90%; height:90%; padding:5%; }
 
 /* img */
-.ie7 .tile > img 			{ height:auto; }
+.ie7 .tile > img 		{ height:auto; }
 
 /* caption */
 .tile > .caption 		{ top:auto; bottom:0; width:80%; height:auto; padding:6% 10%; background:rgba(37,37,37,0.9); }
@@ -1226,9 +1256,18 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 /* responsive downstream */
 @media only screen and (max-width:900px) {
 	
+	/* adjust tile */
+	.tile.h2	{ padding-top:99.00%; }
+	
 	/* shrink text */
 	.tile .contentViewport .tileTitle 		{ font-size:18px; line-height:22px; padding-bottom:10px; }
 	.tile .contentViewport p  				{ font-size:13px; line-height:18px; }
+
+}
+@media only screen and (max-width:800px) {
+
+	/* adjust tile */
+	.tile.h2	{ padding-top:99.25%; }	
 
 }
 @media only screen and (max-width:600px) {
@@ -1252,43 +1291,6 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.tile .contentViewport p  				{ font-size:13px; line-height:18px; }
 
 }
-@media only screen and (max-width:150px) {
-
-	/* -------------------------------------------------------------------------- */
-	/* normalize tiles to single column */
-	
-	/* sizes */
-	.tile,
-	.tile.w2,
-	.tile.h2 				{ width:100%; }
-	
-	.tile					{ padding-top:100%; }
-	.tile.w2 				{ padding-top:50%; }
-	.tile.h2 				{ padding-top:200%; }
-	
-	.tile.typeB.w2			{ padding-top:100%; }
-	.tile.typeB.h2			{ padding-top:200%; }
-	.tile.typeA.w2.h2		{ padding-top:100%; }
-	.tile.typeB.w2.h2		{ padding-top:200%; }
-	
-	
-	/* padder */
-	.tile > .padder,
-	.tile.w2 > .padder  	{ width:80%; height:80%; padding:10%; }
-	.tile.h2 > .padder,
-	.tile.w2.h2 > .padder	{ width:80%; height:90%; padding:10%; }
-	
-	/* caption */
-	.tile > .caption,
-	.tile.w2 > .caption,
-	.tile.h2 > .caption,
-	.tile.w2.h2 > .caption 	{ width:80%; padding:6% 10%; }
-
-	/* enlarge text */
-	.tile .contentViewport .tileTitle 		{ font-size:22px; line-height:24px; padding-bottom:16px; }
-	.tile .contentViewport p  				{ font-size:14px; line-height:20px; }
-	
-}
 
 /* -------------------------------------------------------------------------- */
 /* responsive upstream */
@@ -1299,7 +1301,7 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.tile .contentViewport p  				{ font-size:20px; line-height:28px; padding-bottom:16px; }
 
 }
-@media only screen and (min-width:1400px) {
+@media only screen and (min-width:1350px) {
 	
 	/* -------------------------------------------------------------------------- */
 	/* half all tiles */
@@ -1312,8 +1314,8 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	
 	.tile					{ padding-top:25%; }
 	.tile.w2 				{ padding-top:25%; }
-	.tile.h2 				{ padding-top:50%; }
-	.tile.w2.h2 			{ padding-top:50%; }
+	.tile.h2 				{ padding-top:49.75%; }
+	.tile.w2.h2 			{ padding-top:49.75%; }
 	
 	/* padder */
 	.tile > .padder  		{ width:80%; height:80%; padding:10%; }
@@ -1335,6 +1337,10 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 @media only screen and (min-width:1900px) {
 	
 	/* -------------------------------------------------------------------------- */
+	/* adjust tiles */
+	.tile.h2 				{ padding-top:49.75%; }
+	
+	/* -------------------------------------------------------------------------- */
 	/* enlarge padding */
 	
 	/* padder */
@@ -1354,6 +1360,46 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.tile .contentViewport p  				{ font-size:20px; line-height:28px; padding-bottom:16px; }
 
 }
+
+/* -------------------------------------------------------------------------- */
+/* oldIE fallback - normalize tiles to single column */
+
+/* border */
+.oldie .tile:last-child 		{ border-bottom:none; }
+.oldie .tile.last-child 		{ border-bottom:none; }
+
+/* sizes */
+.oldie .tile,
+.oldie .tile.w2,
+.oldie .tile.h2 				{ width:100%; }
+
+.oldie .tile					{ padding-top:50%; }
+.oldie .tile.w2 				{ padding-top:50%; }
+.oldie .tile.w2.h2 				{ padding-top:100%; }
+
+.oldie .tile.typeA				{ padding-top:100%; }
+.oldie .tile.typeA.w2			{ padding-top:50%; }
+.oldie .tile.typeB.w2			{ padding-top:100%; }
+.oldie .tile.typeA.h2			{ padding-top:200%; }
+.oldie .tile.typeB.h2			{ padding-top:100%; }
+.oldie .tile.typeA.w2.h2		{ padding-top:100%; }
+.oldie .tile.typeB.w2.h2		{ padding-top:100%; }
+
+/* padder */
+.oldie .tile > .padder,
+.oldie .tile.w2 > .padder,
+.oldie .tile.h2 > .padder,
+.oldie .tile.w2.h2 > .padder	{ width:90%; height:90%; padding:5%; }
+
+/* caption */
+.oldie .tile > .caption,
+.oldie .tile.w2 > .caption,
+.oldie .tile.h2 > .caption,
+.oldie .tile.w2.h2 > .caption 	{ width:90%; padding:3% 5%; }
+
+/* adjust text */
+.oldie .tile .contentViewport .tileTitle 	{ font-size:22px; line-height:24px; padding-bottom:16px; }
+.oldie .tile .contentViewport p  			{ font-size:15px; line-height:20px; padding-bottom:8px; }
 
 
 /* ==========================================================================
@@ -1981,7 +2027,7 @@ body.landing #contentLanding {
 /* -------------------------------------------------------------------------- */
 /* tilesLanding */
 body.landing #tilesLanding { 
-	display:block; position:absolute; left:600px; right:0; top:0; bottom:55px; 
+	display:block; position:absolute; left:600px; right:0; top:0; bottom:50px; 
 	width:auto; height:auto; margin:0 auto; padding:0; overflow:hidden;
 	border-top:20px solid #fff; border-right:20px solid #fff;
 	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
@@ -2094,7 +2140,7 @@ body.landing #footer {
 	
 	/* stack below content */
 	body.landing #tilesLanding { width:auto; float:none; clear:both; }
-	body.landing #tilesLanding > .padder { border:15px solid #fff; border-bottom:none; }	
+	body.landing #tilesLanding > .padder { border:15px solid #fff; border-left-width:10px; border-bottom:none; }	
 
 }
 @media only screen and (max-width:500px) {
@@ -2121,7 +2167,7 @@ body.landing #footer {
 	/* tilesLanding */
 	
 	/* reduce border */
-	body.landing #tilesLanding > .padder { border-width:10px; }	
+	body.landing #tilesLanding > .padder { border-width:10px; border-left-width:5px; }	
 	
 }
 

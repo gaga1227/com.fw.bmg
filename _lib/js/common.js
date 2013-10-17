@@ -12,75 +12,48 @@ WebFontConfig = {
 	timeout: 		5000
 };
 WebFontUtils = {
-	onWFLoading: 	function()	{
-									//show loader
-									
-								},
-	onWFComplete: 	function()	{
-									//hide loader
-									
-									//isotope tiles
+	onWFLoading: 	function()	{},
+	onWFComplete: 	function()	{									
+									//landing pages
 									if ( $('body.landing').length ) {
-										$isotope = new initIsotope();
+										initTiles();
 									}
 								},
 	onWFActive: 	function()	{},
 	onWFInactive: 	function()	{}
 }
 /* ------------------------------------------------------------------------------ */
-/* initIsotope */
+/* initTiles */
 /* ------------------------------------------------------------------------------ */
-function initIsotope(){
+function initTiles(customopts){
+	//exit
+	if ( typeof(Packery) != 'function' ) return 'Packery NOT loaded';
+	if ( $('html').hasClass('oldie') ) return 'skipping oldIE';
+	
 	//vars
-	var $container = $('.isotopeContainer'),
-		colW = 320,
-		isotopeIsOn = false;
-	//update handler
-	function update(){
-		//check mq
-		var isotopeRequired = Modernizr.mediaqueries ? !Modernizr.mq(mqStates.max400) : $(window).width() > 400;
-		//toggle isotope
-		if (isotopeRequired) {
-			//check flag
-			if (isotopeIsOn) return '[isotope] already on';
-			//update flag
-			isotopeIsOn = true;
-			//imagesLoaded
-			$container.imagesLoaded(function(){
-				//isotope
-				$container.isotope({
-					itemSelector:	'.item.tile',
-					layoutMode:		'masonry',
-					masonry:		{ 
-										columnWidth: colW,
-										cornerStampSelector: '.corner-stamp'
-									}
-				}, function($items){
-					console.log('[isotope] anim complete');	
-				});
-				console.log('[isotope] initialised');				
-			});	
-		} else {
-			//check flag
-			if (!isotopeIsOn) return '[isotope] already off';
-			//update flag
-			isotopeIsOn = false;
-			//destroy
-			$container.isotope('destroy');
-			console.log('[isotope] destroyed');
-		}	
+	var container = $('#tiles')[0],
+		opts = {};
+	
+	//update opts
+	opts = { 
+		containerStyle:		null,
+		isReiszeBound:		true,
+		transitionDuration:	'0.3s',
+		itemSelector:		'.tile',
+		stamp:				'.tile.gridSizer.stamp'
 	}
-	//init call
-	update();
-	//bind update to window resize
-	$(window).bind('resize', update);
-	//return global obj
-	return $container;
+	opts = $.extend(opts, customopts); 
+	
+	// initialize
+	imagesLoaded( container, function() {
+		Tiles = new Packery(container, opts);
+		Tiles.layout();
+	});
 }
 /* ------------------------------------------------------------------------------ */
 /* init */
 /* ------------------------------------------------------------------------------ */
-var $isotope, SelectNav, Slideshows, StaticAudios, StaticVideos;
+var Tiles, SelectNav, Slideshows, StaticAudios, StaticVideos;
 function init(){
 	//layout assistance
 	insertFirstLastChild('#navItems, #sideNav, #sideNav ul, .itemListing, #main > .padder');
@@ -109,7 +82,7 @@ function initHome(){
 function initLanding(){
 	
 	//layout assistance
-	insertFirstLastChild('.tile > .contentViewport');
+	insertFirstLastChild('#tiles, .tile > .contentViewport');
 	
 	//fix
 	initIOSNativeScrollerFix();
