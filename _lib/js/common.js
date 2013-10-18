@@ -23,6 +23,158 @@ WebFontUtils = {
 	onWFInactive: 	function()	{}
 };
 /* ------------------------------------------------------------------------------ */
+/* initFocus */
+/* ------------------------------------------------------------------------------ */
+function initFocus() {
+	
+	//exit if no focus
+	if (!$('#focus').length) return false;
+	
+	//vars
+	var //elems
+		$window = $(window),
+		$focus = $('#focus'),
+		$slideshow = $('#focusSlideshow'),
+		$slides = $slideshow.find('.slide'),
+		
+		//classes
+		scaleByHCls = 'scaleByH',
+		scaleByWCls = 'scaleByW',		
+		
+		//properties	
+		winH, winW,
+		focusW, focusH, focusAR,
+		slideW, slideH, slideAR = 1400/900,
+		
+		//functions
+		getWindowInfo = function(){
+			winW = $window.innerWidth();
+			winH = $window.innerHeight();
+		},
+		getFocusInfo = function(){
+			focusW = $focus.innerWidth();
+			focusH = $focus.innerHeight();
+			focusAR = focusW/focusH;
+		}
+		getSlideInfo = function(){
+			slideW = $slides.width();
+			slideH = $slides.height();
+			if ( slideW == 0 ) slideW = Math.round(focusH * slideAR);
+			if ( slideH == 0 ) slideH = Math.round(focusW / slideAR);
+		},
+		updateSlides = function(){
+			//compare slide and container AR and update size and pos
+			if ( focusAR > slideAR ) {
+				//size
+				$slides.removeClass(scaleByHCls);
+				$slides.addClass(scaleByWCls);
+				//pos
+				//console.log('slideH:'+slideH, 'focusH:'+focusH);
+				getSlideInfo();
+				$slides.css( 'margin-left', 0 );
+				$slides.css( 'margin-top', -1 * Math.round(Math.abs((slideH - focusH)/2)) );
+				//console.log('byW', slideH - focusH);
+			} else {
+				//size
+				$slides.removeClass(scaleByWCls);
+				$slides.addClass(scaleByHCls);	
+				//pos
+				//console.log('slideW:'+slideW, 'focusW:'+focusW);
+				getSlideInfo();
+				$slides.css( 'margin-top', 0 );
+				$slides.css( 'margin-left', -1 * Math.round(Math.abs((slideW - focusW)/2)) );
+				//console.log('byH', slideW - focusW);
+			}	
+		},
+		resetSlides = function(){
+			$slides.removeClass(scaleByWCls);
+			$slides.removeClass(scaleByHCls);
+			$slides.attr('style','');
+		};
+	
+	//handler
+	function update(e){
+		//update properties
+		getFocusInfo();
+		getSlideInfo();
+		//update slides
+		updateSlides();
+	}
+	
+	//master functions
+	function init(){
+		$window.on('resize.focus', update);
+		update();	
+	}
+	
+	//kick off
+	init();
+}
+/* ------------------------------------------------------------------------------ */
+/* initFocusSlides */
+/* ------------------------------------------------------------------------------ */
+function initFocusSlides(){
+	//vars
+	var //cache elems
+		$container = $('#focusSlideshow'),
+		$slides = $container.find('.slide'),
+		
+		//settings
+		autoplay = true,
+		pauseonhover = Modernizr.touch ? false : true,
+		effect = 'fade',
+		
+		//static
+		/*
+		animCls1 = 'animated',
+		animCls2 = animCls1 + ' delay1',
+		animCls3 = animCls1 + ' delay2',
+		*/
+		
+		//function
+		toggleAnim = function(forwardFlag, show){
+
+		},
+		
+		//callbacks
+		onBefore = function( currSlide, nextSlide, opts, forwardFlag ){
+			
+			//anim
+			toggleAnim(forwardFlag, true);
+		}, 
+		onAfter = function( currSlide, nextSlide, opts, forwardFlag ){			
+			
+			//anim
+			toggleAnim(forwardFlag, false);
+		}, 
+	
+		//initiation call to player obj
+		slideshowObj = $container.cycle({
+			fx:     	effect, 
+			speed:  	1500, 
+			timeout: 	8000,
+			nowrap:		0,
+			slideExpr:	$slides,
+			before:		onBefore,
+			after:		onAfter
+		});
+	
+	//autoplay
+	slideshowObj.cycle(autoplay ? 'resume' : 'pause', false);
+	
+	//pause on hover
+	if ( autoplay && pauseonhover ) {
+		$container.hover( function(e){
+			slideshowObj.cycle('pause', true);
+		}, function(e){
+			slideshowObj.cycle('resume');
+		} );	
+	}
+	
+	//return slideshow player obj
+	return slideshowObj;	
+}
+/* ------------------------------------------------------------------------------ */
 /* initTiles */
 /* ------------------------------------------------------------------------------ */
 function initTiles(customopts){
@@ -53,14 +205,14 @@ function initTiles(customopts){
 /* ------------------------------------------------------------------------------ */
 /* init */
 /* ------------------------------------------------------------------------------ */
-var Tiles, SelectNav, Slideshows, StaticAudios, StaticVideos;
+var FocusSlideshow, Tiles, ToggleNav, Slideshows, StaticAudios, StaticVideos;
 function init(){
 	//layout assistance
 	insertFirstLastChild('#navItems, #sideNav, #sideNav ul, .itemListing, #main > .padder');
 	//interactions	
 	ToggleNav = new initToggleNav();
 	//template specific functions
-	if 		( $('body#home').length ) 			{ initHome(); }
+	if 		( $('body.home').length ) 			{ initHome(); }
 	else if ( $('body.landing').length ) 		{ initLanding(); }
 	else {
 		//media
@@ -74,7 +226,9 @@ function init(){
 	displayDebugInfo('#debugInfo');
 }
 function initHome(){
-
+	//focus
+	initFocus();
+	FocusSlideshow = new initFocusSlides();
 }
 function initLanding(){
 	//layout assistance
