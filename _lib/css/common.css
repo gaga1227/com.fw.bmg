@@ -2026,6 +2026,65 @@ body.home #focus {
 		body.home #focus #focusSlideshow .slide.scaleByH 	{ height:100%!important; width:auto!important; }
 
 /* -------------------------------------------------------------------------- */
+/* intro */
+body.home #intro { 
+	display:block; position:absolute; top:0; bottom:55px; right:4.5%; 
+	width:22.5%; height:auto; margin:0 auto; padding:0; overflow:hidden; }
+	
+	/* padder */
+	body.home #intro > .padder { 
+		position:relative; width:auto; height:auto; margin:0 auto; padding:0; overflow:hidden; }
+	
+		/* introTitle */
+		body.home #intro #introTitle { margin:0; }
+		
+		/* introText */
+		body.home #intro #introText { 
+			padding-top:0.8em; text-shadow:0 0 6px rgba(0,0,0,0.2);
+			font-size:40px; line-height:1.1em; font-weight:200!important; }
+			
+		/* introButton */
+		body.home #intro #introButton { margin-bottom:0; }
+
+/* oldIE fallback */
+.oldie body.home #intro #introText { font-size:36px; }
+
+/* interaction */
+body.home #intro #introTitle,
+body.home #intro #introText,
+body.home #intro #introButton { 
+	/*transition*/
+	/*-webkit-transform:translate3d(0,0,0);*/
+	-webkit-transition:opacity 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
+	-moz-transition:opacity 0.8s ease-in-out, -moz-transform 0.8s ease-in-out;
+	-o-transition:opacity 0.8s ease-in-out, -o-transform 0.8s ease-in-out;
+	transition:opacity 0.8s ease-in-out, transform 0.8s ease-in-out; }
+
+/* out */
+body.home #intro.out #introTitle,
+body.home #intro.out #introText,
+body.home #intro.out #introButton { 
+	/*opacity*/
+	opacity:0;
+	/*transform*/
+	-webkit-transform:translate(0,-10px);
+	-moz-transform:translate(0,-10px);
+	-o-transform:translate(0,-10px);
+	transform:translate(0,-10px); }
+
+/* in */
+body.home #intro.in #introTitle,
+body.home #intro.in #introText,
+body.home #intro.in #introButton { 
+	/*opacity*/
+	opacity:1;
+	/*transform*/
+	-webkit-transform:translate(0);
+	-moz-transform:translate(0);
+	-o-transform:translate(0);
+	transform:translate(0); }
+
+/* -------------------------------------------------------------------------- */
 /* footer */
 body.home #footer { 
 	position:absolute; bottom:0; left:0; width:100%; float:none; clear:both; z-index:51; }
@@ -2033,6 +2092,11 @@ body.home #footer {
 /* -------------------------------------------------------------------------- */
 /* responsive down stream */
 @media only screen and (max-width:1000px) {
+
+	/* -------------------------------------------------------------------------- */
+	/* adjust intro */
+	body.home #intro 			{ width:30%; right:4%; }
+	body.home #intro #introText { font-size:38px; line-height:1.1em; }
 
 }
 @media only screen and (max-width:770px) {
@@ -2095,15 +2159,56 @@ body.home #footer {
 			
 		/* slideshow */
 		body.home #focus #focusSlideshow { 
-			position:relative; top:auto; left:auto; height:auto!important; padding-top:54%;/*400/740*/ }
+			position:relative; top:auto; left:auto; height:auto!important; padding-top:47%;/*348/740*/ }
 			
 			/* slide */
 			body.home #focus #focusSlideshow .slide { position:absolute; top:0; left:0; }
 	
 	/* -------------------------------------------------------------------------- */
+	/* intro */
+	body.home #intro { 
+		position:relative; top:auto; bottom:auto; right:auto; 
+		width:auto; background:#0f69b1 url(../img/bg-crest-blu2.png) bottom right no-repeat; background-size:52%; 
+		border:15px solid #fff; border-bottom:none; }
+		
+		/* padder */
+		body.home #intro > .padder { width:50%; margin:0; padding:6%; }
+		
+			/* introTitle */
+			body.home #intro #introTitle { display:none; }
+			
+			/* introText */
+			body.home #intro #introText { 
+				min-height:4.4em/*4 lines*/; padding-top:0; text-shadow:none; font-size:42px; }
+	
+	/* interaction */
+	
+	/* out */
+	body.home #intro.out #introTitle,
+	body.home #intro.out #introText,
+	body.home #intro.out #introButton { 
+		/*transform*/
+		-webkit-transform:translate(-10px,0);
+		-moz-transform:translate(-10px,0);
+		-o-transform:translate(-10px,0);
+		transform:translate(-10px,0); }
+	
+	/* -------------------------------------------------------------------------- */
 	/* footer */
 	body.home #footer { position:relative; bottom:auto; left:auto; width:auto; }
 	
+}
+@media only screen and (max-width:640px) {
+
+	/* -------------------------------------------------------------------------- */
+	/* intro */
+	
+	/* adjust padder */
+	body.home #intro > .padder 	{ width:65%; }
+	
+	/* maintain height */
+	body.home #intro #introText { min-height:5.5em/*5 lines*/; }
+
 }
 @media only screen and (max-width:600px) {
 	
@@ -2111,7 +2216,14 @@ body.home #footer {
 	/* header */
 	
 	/* left align brand */
-	body.home #header .brand 			{ width:400px; margin:0 0 0 5px; text-align:left; }
+	body.home #header .brand 	{ width:400px; margin:0 0 0 5px; text-align:left; }
+	
+	/* -------------------------------------------------------------------------- */
+	/* intro */
+	
+	/* adjust padder and text */
+	body.home #intro > .padder 	{ width:75%; }
+	body.home #intro #introText { font-size:40px; }
 
 }
 @media only screen and (max-width:500px) {
@@ -2133,17 +2245,43 @@ body.home #footer {
 	/* -------------------------------------------------------------------------- */
 	/* focus */
 	body.home #focus 					{ border-width:10px; }
+	body.home #focus #focusSlideshow 	{ padding-top:53.5%;/*396/740*/ }
+	
+	/* -------------------------------------------------------------------------- */
+	/* intro */
+	
+	/* adjust border */
+	body.home #intro 					{ border-width:10px; background-position:50px bottom; background-size:100%; }
+	
+	/* adjust padder and text */
+	body.home #intro > .padder 			{ padding:10%; }
+	body.home #intro #introText 		{ font-size:35px; min-height:6.6em/*6 lines*/; }
 	
 	/* -------------------------------------------------------------------------- */
 	/* min-width */
-	body.home #header 					{ min-width:280px; }
-	body.home #focus,
-	body.home #intro					{ min-width:300px; }
+	body.home #header,
+	body.home #intro 					{ min-width:280px; }
+	body.home #focus					{ min-width:300px; }
 	
 }
 
 /* -------------------------------------------------------------------------- */
 /* responsive up stream */
+@media only screen and (min-width:1200px) {
+
+	/* -------------------------------------------------------------------------- */
+	/* adjust intro */
+	body.home #intro 			{ right:6.5%; }
+	body.home #intro #introText { padding-top:1em; font-size:48px; line-height:1.1em; }
+
+}
+@media only screen and (min-width:1400px) {
+
+	/* -------------------------------------------------------------------------- */
+	/* adjust intro */
+	body.home #intro 			{ right:7%; width:20%; }
+
+}
 @media only screen and (min-width:1600px) {
 	
 	/* -------------------------------------------------------------------------- */
@@ -2160,6 +2298,14 @@ body.home #footer {
 	body.home #nav #navItems .navItem 	{ font-size:22px; line-height:26px; }
 	body.home #nav .navItem .label 		{ padding:11px 40px; font-size:22px; }
 	
+}
+@media only screen and (min-width:1800px) {
+
+	/* -------------------------------------------------------------------------- */
+	/* adjust intro */
+	body.home #intro 			{ width:18%; }
+	body.home #intro #introText { padding-top:1.6em; font-size:56px; line-height:1.08em; }
+
 }
 
    

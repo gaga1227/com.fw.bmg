@@ -2,7 +2,7 @@
 /* webfonts */
 /* ------------------------------------------------------------------------------ */
 WebFontConfig = { 
-	google: 		{ families: [ 'Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic:latin' ] },
+	google: 		{ families: [ 'Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' ] },
 	loading: 		function() { console.log('[WF] loading'); 	WebFontUtils.onWFLoading(); },
 	active: 		function() { console.log('[WF] active'); 	WebFontUtils.onWFActive(); 	 WebFontUtils.onWFComplete(); },
 	inactive: 		function() { console.log('[WF] inactive'); 	WebFontUtils.onWFInactive(); WebFontUtils.onWFComplete(); },
@@ -124,34 +124,66 @@ function initFocusSlides(){
 		pauseonhover = Modernizr.touch ? false : true,
 		effect = 'fade',
 		
-		//static
-		/*
-		animCls1 = 'animated',
-		animCls2 = animCls1 + ' delay1',
-		animCls3 = animCls1 + ' delay2',
-		*/
-		
 		//function
-		toggleAnim = function(forwardFlag, show){
-
+		updateIntro = function(nextSlide, showFlag){
+			//vars
+			var //intro
+				$intro = $('#intro'),
+				$title = $('#introTitle'), 
+				$text = $('#introText'),
+				$btn = $('#introButton'),
+				//slide
+				$slide = $(nextSlide),
+				$slideLink = $slide.parent('a'),
+				//data
+				title = $.trim($slide.data('title')),
+				text = $.trim($slide.data('text')),
+				url = $.trim($slideLink.attr('href')),
+				//static
+				speed = 800,
+				hideCls = 'out',
+				showCls = 'in',
+				css3Trans = Modernizr.csstransitions;
+			
+			//update intro
+			if (showFlag) {
+				$title.text(title);
+				$text.text(text);
+				$btn.attr('href', url);
+				if (css3Trans) {
+					$intro
+						.removeClass(hideCls)
+						.addClass(showCls);
+				} else {
+					$title.animate({opacity:1}, speed);
+					$text.animate({opacity:1}, speed);
+					$btn.animate({opacity:1}, speed);
+				}
+			} else {
+				if (css3Trans) {
+					$intro
+						.removeClass(showCls)
+						.addClass(hideCls);
+				} else {
+					$title.animate({opacity:0}, speed);
+					$text.animate({opacity:0}, speed);
+					$btn.animate({opacity:0}, speed);
+				}
+			}
 		},
 		
 		//callbacks
 		onBefore = function( currSlide, nextSlide, opts, forwardFlag ){
-			
-			//anim
-			toggleAnim(forwardFlag, true);
+			updateIntro(nextSlide, false);
 		}, 
 		onAfter = function( currSlide, nextSlide, opts, forwardFlag ){			
-			
-			//anim
-			toggleAnim(forwardFlag, false);
+			updateIntro(nextSlide, true);
 		}, 
 	
 		//initiation call to player obj
 		slideshowObj = $container.cycle({
 			fx:     	effect, 
-			speed:  	1500, 
+			speed:  	2000, 
 			timeout: 	8000,
 			nowrap:		0,
 			slideExpr:	$slides,

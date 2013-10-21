@@ -437,6 +437,17 @@ a.btnBox { cursor:pointer; }
 	.btnBox .iconInline:before 	{ font-size:14px; line-height:17px; }	
 
 /* -------------------------------------------------------------------------- */
+/* btnBox.large */
+.btnBox.large { padding-left:40px; padding-right:40px; }
+.btnBox.large,
+.btnBox.large .label { font-size:20px; line-height:24px; }	
+
+.ie7 .btnBox.large .icon,
+.ie7 .btnBox.large .iconInline,
+.btnBox.large .icon:before,
+.btnBox.large .iconInline:before { font-size:21px; line-height:24px; }	
+
+/* -------------------------------------------------------------------------- */
 /* btnBoxTitle */
 .btnBox.btnBoxTitle { white-space:normal; margin:0 0 24px 0; }
 .btnBox.btnBoxTitle,
@@ -479,6 +490,17 @@ a.btnOutline { cursor:pointer; }
 	.ie7 .btnOutline .iconInline,
 	.btnOutline .icon:before,
 	.btnOutline .iconInline:before 	{ font-size:14px; line-height:17px; }	
+
+/* -------------------------------------------------------------------------- */
+/* btnOutline.large */
+.btnOutline.large { padding-left:29px; padding-right:29px; }
+.btnOutline.large,
+.btnOutline.large .label { font-size:16px; line-height:20px; }	
+
+.ie7 .btnOutline.large .icon,
+.ie7 .btnOutline.large .iconInline,
+.btnOutline.large .icon:before,
+.btnOutline.large .iconInline:before { font-size:21px; line-height:20px; }	
 
 
 /* ==========================================================================
