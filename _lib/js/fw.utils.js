@@ -226,3 +226,15 @@ function initWebFontLoader() {
 		s.parentNode.insertBefore(wf, s);
 	})();
 }
+/* ------------------------------------------------------------------------------ */
+/* common - initTouchState */
+/* ------------------------------------------------------------------------------ */
+function initTouchState() {
+	//enhance touch interaction state,
+	//manually trigger touch on body to make :active effective
+	if (Platform.touchOS) { 
+		$(document).ready(function(){
+			$('body').attr('ontouchstart','');
+		});	
+	}
+}

@@ -273,5 +273,6 @@ $(document).ready(function(){
 	console.log('DOM Ready');
 	initWebFontLoader();
 	Platform.addDOMClass();
+	initTouchState();
 	init();	
 });
