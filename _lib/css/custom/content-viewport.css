@@ -434,7 +434,14 @@ a.btnBox { cursor:pointer; }
 	.ie7 .btnBox .icon,
 	.ie7 .btnBox .iconInline,
 	.btnBox .icon:before,
-	.btnBox .iconInline:before 	{ font-size:14px; line-height:17px; }	
+	.btnBox .iconInline:before 	{ font-size:14px; line-height:17px; }
+	
+/* selected */
+a.btnBox.selected,
+.no-touch a.btnBox.selected:hover,
+.touch a.btnBox.selected:active { 
+	pointer-events:none; cursor:default!important;
+	background:#1082e2; }
 
 /* -------------------------------------------------------------------------- */
 /* btnBox.large */
@@ -448,15 +455,33 @@ a.btnBox { cursor:pointer; }
 .btnBox.large .iconInline:before { font-size:21px; line-height:24px; }	
 
 /* -------------------------------------------------------------------------- */
-/* btnBoxTitle */
-.btnBox.btnBoxTitle { white-space:normal; margin:0 0 24px 0; }
-.btnBox.btnBoxTitle,
-.btnBox.btnBoxTitle .label { text-align:left; }
-
-/* -------------------------------------------------------------------------- */
 /* btnBox.invert */
 .btnBox.invert,
 .contentViewport.invert .btnBox	{ background:#1367ad; }
+
+/* -------------------------------------------------------------------------- */
+/* btnBoxPage */
+.btnBoxPage 						{ padding:10px 15px; background:#c4c4c4; }
+.no-touch a.btnBoxPage:hover,
+.touch a.btnBoxPage:active 			{ background:#d9a600; }
+
+a.btnBoxPage.selected,
+.no-touch a.btnBoxPage.selected:hover,
+.touch a.btnBoxPage.selected:active { background:#373737; }
+	
+.btnBoxPage,
+.btnBoxPage .label { font-size:18px; line-height:20px; }
+
+/* -------------------------------------------------------------------------- */
+/* btnBoxTitle */
+.btnBox.btnBoxTitle { white-space:normal; max-width:60%; margin:0 0 24px 0; }
+.btnBox.btnBoxTitle,
+.btnBox.btnBoxTitle .label { text-align:left; }
+/* responsive */
+@media only screen and (max-width:640px) {
+	/* remove max-width for mobile */
+	.btnBox.btnBoxTitle { max-width:100%; }
+}
 
 /* -------------------------------------------------------------------------- */
 /* btnOutline */
