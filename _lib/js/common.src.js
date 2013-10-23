@@ -251,6 +251,8 @@ function init(){
 		Slideshows = new initSlideshows();
 		StaticAudios = new initStaticAudios();
 		StaticVideos = new initStaticVideos();
+		//widgets
+		initCalendar();
 		//form
 		initDatepicker();
 	}
