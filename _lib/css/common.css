@@ -1544,25 +1544,49 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 /* item.grid */
 .item.grid { 
 	display:inline-block; width:22.75%; margin:0 1% 2% 1%;/*4up*/
-	background:#fff; vertical-align:top; }
+	background:#fff; border:none; vertical-align:top; }
 	
 	/* icon */
 	.item.grid .icon { right:15px; }
 
+/* -------------------------------------------------------------------------- */
+/* item.grid.pub */
+.no-touch a.item.grid.pub:hover,
+.touch a.item.grid.pub:active { background:#1367ad; border-bottom-color:#1367ad; }
+	
+	/* title */
+	.item.grid.pub .title { min-height:13.2em;/*11 lines*/ }
+	
+		/* desc */
+		.item.grid.pub .desc { 
+			margin-top:1.5em; 
+			font-size:0.8em; line-height:1.5em;/*1.2/0.8*/ }
+	
+	/* tag */
+	.item.grid.pub .tag { margin-right:20px; }
+	
+	/* icon */
+	.item.grid.pub .icon,
+	.no-touch a.item.grid.pub:hover .icon,
+	.touch a.item.grid.pub:active .icon { font-size:21px; right:20px; }
 
 /* -------------------------------------------------------------------------- */
-/* responsive - upstream */
+/* responsive - downstream */
 @media only screen and (max-width:1100px) {
 	
 	/* update grid to 3up */
 	.item.grid { width:30.08%; margin:0 1.5% 3% 1.5%; }
-
+	
+	/* update min height */
+	.item.grid.pub .title { min-height:12em;/*10 lines*/ }
+	
 }
 @media only screen and (max-width:860px) {
 	
-	/* no min-height */
+	/* min-height */
 	.item .title 						{ min-height:0; margin-bottom:0.3em; }
 	.item.grid .title 					{ min-height:6em;/*5 lines*/ }
+	.item.grid.pub .title 				{ min-height:14.4em;/*12 lines*/ }
 	
 	/* update border */
 	.item 								{ border-bottom-color:#fff; }
@@ -1582,6 +1606,13 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.touch a.item.grid:active .icon 	{ right:15px; }
 
 }
+@media only screen and (max-width:700px) {
+
+	/* hide desc */
+	.item.grid.pub .title 	{ min-height:7.2em;/*6 lines*/ }
+	.item.grid.pub .desc 	{ display:none; }
+
+}
 @media only screen and (max-width:800px) {
 
 	/* adjust padder */
@@ -1598,6 +1629,7 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 
 	/* update grid to 2up */
 	.item.grid { width:45.75%; margin:0 2% 4% 2%; }
+	.item.grid.pub .title 	{ min-height:4.8em;/*4 lines*/ }
 
 }
 @media only screen and (max-width:500px) {
@@ -1608,7 +1640,8 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	/* update grid to 1up */
 	.item.grid 				{ display:block; width:auto; margin:0 0 1px 0; }
 	.item.grid .imgThumb 	{ display:none; }
-	.item.grid .title 		{ min-height:0; }
+	.item.grid .title,
+	.item.grid.pub .title	{ min-height:0; }
 
 }
 
@@ -1633,7 +1666,8 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 
 /* -------------------------------------------------------------------------- */
 /* oldIE fallback */
-.oldie .item.grid .title { min-height:6em;/*6 lines*/ }
+.oldie .item.grid .title 		{ min-height:6em;/*6 lines*/ }
+.oldie .item.grid.pub .title 	{ min-height:15.6em;/*13 lines*/ }
 
 
 /* ==========================================================================
