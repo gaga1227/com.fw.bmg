@@ -987,10 +987,11 @@ body.ps {
 		
 		/* -------------------------------------------------------- */
 		/* placeholder */
-		::-webkit-input-placeholder 	{ color:#ccc; }
-		:-moz-placeholder 				{ color:#ccc; }
-		::-moz-placeholder 				{ color:#ccc; }
-		:-ms-input-placeholder			{ color:#ccc; }
+		::-webkit-input-placeholder 	{ color:#252525; }
+		:-moz-placeholder 				{ color:#252525; }
+		::-moz-placeholder 				{ color:#252525; }
+		:-ms-input-placeholder			{ color:#252525; }
+		:input-placeholder				{ color:#252525; }
 		
 		/* -------------------------------------------------------- */
 		/* fieldset */
@@ -1001,8 +1002,8 @@ body.ps {
 		/* label */			
 		.formView label { 
 			display:block; margin:0; padding:24px 0 0 0;
-			color:#222; vertical-align:baseline; white-space:nowrap; text-overflow:ellipsis;
-			font-size:16px; font-weight:400; line-height:40px; }
+			color:#252525; vertical-align:baseline; white-space:nowrap; text-overflow:ellipsis;
+			font-size:20px; font-weight:300; line-height:40px; }
 		
 		/* inline */
 		.formView label.inline { 
@@ -1040,8 +1041,8 @@ body.ps {
 		/* input */
 		.formView input.text { 
 			display:block; width:100%; height:1em; margin:0; padding:12px 0; overflow:hidden;
-			color:#252525; border-bottom:1px solid #252525;
-			font-size:16px; line-height:1em; font-weight:400;
+			color:#252525; background:none; border:none; border-bottom:1px solid #252525;
+			font-size:16px; line-height:1em; font-weight:200;
 			/*transition*/
 			/*-webkit-transform:translate3d(0,0,0);*/
 			-webkit-transition:color 0.3s ease-in-out, border-color 0.3s ease-in-out;
@@ -1131,8 +1132,8 @@ body.ps {
 		/* -------------------------------------------------------- */
 		/* textarea */
 		.formView textarea { 
-			display:block; width:100%; margin:0; padding:8px 0; overflow:hidden;
-			color:#252525; border-bottom:1px solid #252525; resize:vertical;
+			display:block; width:95.75%; margin:0; padding:8px 2%; overflow:hidden;
+			color:#252525; background:none; border:1px solid #252525; resize:vertical;
 			font-size:16px; line-height:20px; font-weight:400;
 			/*transition*/
 			/*-webkit-transform:translate3d(0,0,0);*/
