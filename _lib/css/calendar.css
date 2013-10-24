@@ -13,24 +13,31 @@
 
 /* ------------------------------------------------------------------------------ */
 /* common */
-.calendarView div,.calendarView p,.calendarView ul,.calendarView ol,.calendarView li
-.calendarView ul ul,.calendarView ul ol,.calendarView ol ul,.calendarView ol ol,
-.calendarView ul li,.calendarView ol li,.calendarView li li { margin:0; padding:0; list-style:none; zoom:1;/*IE6 fix*/ }
-.calendarView ul,.calendarView ol { position:relative; list-style:none; background:none; }
-.calendarView img { border:none; }
+.calendarView div,   .calendarView p,
+.calendarView ul,    .calendarView ol, .calendarView li,
+.calendarView ul ul, .calendarView ul ol,
+.calendarView ol ul, .calendarView ol ol,
+.calendarView ul li, .calendarView ol li, .calendarView li li	{ margin:0; padding:0; list-style:none; zoom:1;/*IE6 fix*/ }
+.calendarView ul,    .calendarView ol 							{ position:relative; list-style:none; background:none; }
+.calendarView img												{ border:none; }
 
 /* ------------------------------------------------------------------------------ */
 /* layout */
-.calendarView .clear { clear:both; }
-.calendarView .clearer { float:none; clear:both; height:0; line-height:0; overflow:hidden; visibility:hidden; }
+.calendarView .clear 	{ clear:both; }
+.calendarView .clearer 	{ float:none; clear:both; height:0; line-height:0; overflow:hidden; visibility:hidden; }
 
 /* ------------------------------------------------------------------------------ */
 /* interaction */
-.calendarView a:focus { outline:none; }
+.calendarView a:focus 	{ outline:0 none!important; }
 
 /* ------------------------------------------------------------------------------ */
 /* touch */
-.calendarView * { -webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-touch-callout:none; }
+.calendarView * { 
+	-webkit-tap-highlight-color:rgba(0,0,0,0); 
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-webkit-user-drag:element;
+	/*touch-action*/-ms-touch-action:none; touch-action:none; }
 
 
 /* ================================================================================================== */
@@ -47,134 +54,94 @@
 	/* calendarViewHeader */
 	.calendarView .calendarViewHeader {
 		position:relative; width:100%; height:auto; overflow:visible; 
-		background:none; border-bottom:1px solid #c3c3c3; }
+		background:none; }
 		
 		/* ------------------------------------------------------------------------------ */
 		/* heading */
 		.calendarView .calendarViewHeader .heading {
-			width:auto; margin:0 110px 15px 60px; padding:0; overflow:hidden;
-			color:#2053ad; text-shadow:0 1px 0 rgba(255,255,255,0.8); letter-spacing:-1px;
-			font-family:'OpenSansBold',serif; font-size:45px; font-weight:normal; line-height:65px; }
+			width:auto; margin:0 100px 5% 65px; padding:0; overflow:hidden;
+			color:#373737; font-size:45px; font-weight:300; line-height:1em; }
 		
 		/* ------------------------------------------------------------------------------ */
 		/* navigation */
 		.calendarView .calendarViewHeader .nav { 
-			position:absolute; top:0; left:0; width:32px; height:65px; overflow:hidden; }
+			position:absolute; top:0; left:0; width:60px; height:45px; overflow:hidden; }
 			
 			/* btnNav */
 			.calendarView .calendarViewHeader .nav .btnNav {  
-				/*layout*/display:block; position:relative; width:auto; height:30px; margin:0; padding:0; overflow:hidden;
-				/*style*/color:#6f6f6f; border:1px solid #d8d8d8;
-				/*text*/font-size:16px; line-height:30px; text-align:center; 
-				/*interaction*/text-decoration:none;
-				/*border-radius*/-webkit-border-radius:3px; border-radius:3px;
-				/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box;
-				/*background-gradient*/
-				background-color:#ffffff;
-				background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.15)));
-				background-image:-webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 100%);
-				background-image:-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 100%);
-				background-image:-o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 100%);
-				background-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 100%);
-				-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#26000000);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#26000000);
-				zoom:1; }
-			.calendarView .calendarViewHeader .nav .btnNavNext { margin-top:0px; }
-			
-			/* btnNav interaction */
-			.no-touch .calendarView .calendarViewHeader .nav .btnNav:hover,
-			.no-touch .calendarView .calendarViewHeader .nav .btnNav:focus,
-			.touch .calendarView .calendarViewHeader .nav .btnNav:active { color:#fff; background-color:#2053ad; text-decoration:none; cursor:pointer; }
-			
+				display:block; position:absolute; top:0; left:0; width:50%; height:100%; margin:0; padding:0; overflow:hidden;
+				color:#afafaf; font-size:28px; line-height:45px; text-align:center; 
+				text-decoration:none; }
+			.calendarView .calendarViewHeader .nav .btnNavNext { left:50%; }
+
 				/* icon */
 				.calendarView .calendarViewHeader .nav .btnNav .icon { 
-					top:0; left:0; width:100%; height:100%; line-height:32px; cursor:pointer!important;
+					top:0; left:0; width:100%; height:100%; line-height:45px; cursor:pointer!important;
 					/*transition*/
-					/*-webkit-transform:translate3d(0,0,0);*/
 					-webkit-transition:none;
 					-moz-transition:none;
 					-o-transition:none;
 					transition:none; }
 			
+			/* btnNav interaction */
+			.no-touch .calendarView .calendarViewHeader .nav .btnNav:hover,
+			.touch .calendarView .calendarViewHeader .nav .btnNav:active { 
+				color:#1082e2; text-decoration:none; cursor:pointer; }
+			
 		/* ------------------------------------------------------------------------------ */
 		/* view */
 		.calendarView .calendarViewHeader .view { 
-			position:absolute; top:10px; right:0; width:90px; height:45px; overflow:visible;
-			/*border-radius*/-webkit-border-radius:3px; border-radius:3px;
-			/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box;
-			/*box-shadow*/-webkit-box-shadow:0px 1px 3px 0px rgba(0,0,0,0.4); box-shadow:0px 1px 3px 0px rgba(0,0,0,0.4); }
+			position:absolute; top:0; right:0; width:90px; height:45px; overflow:visible; }
 			
 			/* btnView */
 			.calendarView .calendarViewHeader .view .btnView { 
-				/*layout*/position:absolute; top:0; width:50%; height:100%; margin:0; padding:0; overflow:hidden;
-				/*style*/color:#2e2e2e; text-shadow:0 1px 0 rgba(255,255,255,0.6);
-				/*text*/font-size:24px; font-weight:normal; line-height:45px; text-align:center;
-				/*interaction*/text-decoration:none;
-				/*transition*/
-				/*-webkit-transform:translate3d(0,0,0);*/
-				-webkit-transition:box-shadow 0.3s ease-in-out;
-				-moz-transition:box-shadow 0.3s ease-in-out;
-				-o-transition:box-shadow 0.3s ease-in-out;
-				transition:box-shadow 0.3s ease-in-out;
-				/*background-gradient*/
-				background-color:#fff;
-				background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.1)));
-				background-image:-webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
-				background-image:-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
-				background-image:-o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
-				background-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
-				-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#19000000);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#19000000);
-				zoom:1; }
-			.calendarView .calendarViewHeader .view .btnViewGrid { left:0; /*border-radius*/-webkit-border-radius:3px 0 0 3px; border-radius:3px 0 0 3px; }
-			.calendarView .calendarViewHeader .view .btnViewList { right:0; /*border-radius*/-webkit-border-radius:0 3px 3px 0; border-radius:0 3px 3px 0; }
+				position:absolute; top:0; left:0; width:50%; height:100%; margin:0; padding:0; overflow:hidden;
+				color:#d8d8d8; background:#fff;
+				font-size:28px; line-height:45px; text-align:center;
+				text-decoration:none; }
+			.calendarView .calendarViewHeader .view .btnViewList { left:50%; }
 			
 				/* icon */
-				.calendarView .calendarViewHeader .view .btnView .icon { top:0; left:0; width:100%; height:100%; line-height:50px; cursor:pointer!important; }
-				.calendarView .calendarViewHeader .view .btnView.selected .icon { cursor:default!important; }
+				.calendarView .calendarViewHeader .view .btnView .icon,
+				.calendarView .calendarViewHeader .view .btnView.selected .icon { 
+					top:0; left:0; width:100%; height:100%; line-height:45px; cursor:pointer!important;
+					/*transition*/
+					-webkit-transition:none;
+					-moz-transition:none;
+					-o-transition:none;
+					transition:none; }
 					
 			/* btnView interaction */
 			.no-touch .calendarView .calendarViewHeader .view .btnView:hover,
-			.no-touch .calendarView .calendarViewHeader .view .btnView:focus,
 			.touch .calendarView .calendarViewHeader .view .btnView:active { 
-				color:#1775dd; text-decoration:none; cursor:pointer;
-				/*box-shadow*/-webkit-box-shadow:0px 0px 6px 0px #1775dd; box-shadow:0px 0px 6px 0px #1775dd; }
+				color:#fff; background:#d9a600; text-decoration:none; cursor:pointer; }
 			
 			/* btnView selected */
-			.calendarView .calendarViewHeader .view .btnView.selected { 
-				/*style*/color:#f8f8f8; text-shadow:0 1px 0 rgba(0,0,0,0.6); cursor:default;
-				/*box-shadow*/-webkit-box-shadow:inset 0px 2px 8px 0px rgba(0,0,0,0.5); box-shadow:inset 0px 2px 8px 0px rgba(0,0,0,0.5);
-				/*background-gradient*/
-				background-color:#8f8f8f;
-				background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.2)), color-stop(100%,rgba(0,0,0,0)));
-				background-image:-webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
-				background-image:-moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
-				background-image:-o-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
-				background-image:linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
-				-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, endColorstr=#00000000);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, endColorstr=#00000000);
-				zoom:1; }
+			.calendarView .calendarViewHeader .view .btnView.selected,
 			.no-touch .calendarView .calendarViewHeader .view .btnView.selected:hover,
-			.no-touch .calendarView .calendarViewHeader .view .btnView.selected:focus,
 			.touch .calendarView .calendarViewHeader .view .btnView.selected:active { 
-				color:#f8f8f8; background-color:#8f8f8f; cursor:default;
-				/*box-shadow*/-webkit-box-shadow:inset 0px 2px 8px 0px rgba(0,0,0,0.5); box-shadow:inset 0px 2px 8px 0px rgba(0,0,0,0.5); }
+				color:#fff; background-color:#1082e2; cursor:default!important; pointer-events:none; }
+				
+				/* icon */
+				.calendarView .calendarViewHeader .view .btnView.selected .icon,
+				.no-touch .calendarView .calendarViewHeader .view .btnView.selected:hover .icon,
+				.touch .calendarView .calendarViewHeader .view .btnView.selected:active .icon { 
+					cursor:default!important; }
 		
 	/* ------------------------------------------------------------------------------ */
 	/* calendarViewWeekBar */
 	.calendarView .calendarViewWeekBar { 
-		height:45px; overflow:hidden; 
-		background:none; border-top:1px solid #fff; }
+		height:50px; overflow:hidden; 
+		background:none; }
 		
 		/* day */
 		.calendarView .calendarViewWeekBar li { 
-			position:absolute; top:0; height:45px; }
+			position:absolute; top:0; height:100%; }
 			
 			/* text */
 			.calendarView .calendarViewWeekBar li span {
-				display:block; width:100%; height:45px;
-				color:#1f50a7; font-family:'OpenSansBold',sans-serif; text-shadow:0 1px 1px rgba(255,255,255,0.4);
-				font-size:12px; font-weight:normal; line-height:45px; text-align:center; text-transform:uppercase; }
+				display:block; width:auto; height:auto; padding:0 10%;overflow:hidden; white-space:nowrap; text-overflow:ellipsis;
+				color:#7b7b7b; font-size:16px; font-weight:600; line-height:50px; text-align:left; text-transform:uppercase; }
 			
 			/* shortLabel */
 			.calendarView .calendarViewWeekBar li .shortLabel { display:none; }
@@ -182,12 +149,9 @@
 	/* ------------------------------------------------------------------------------ */
 	/* calendarViewMsg */
 	.calendarView .calendarViewMsg { 
-		/*layout*/position:relative; width:60%; height:auto; margin:5% auto; padding:2%; overflow:hidden;
-		/*style*/color:#000; background:#fff;
-		/*text*/font-family:'OpenSansSemibold',sans-serif; font-size:18px; font-weight:normal; line-height:25px; text-align:center;
-		/*border-radius*/-webkit-border-radius:10px; border-radius:10px;
-		/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box;
-		/*box-shadow*/-webkit-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.1); box-shadow:0px 0px 10px 0px rgba(0,0,0,0.1); }
+		position:relative; width:60%; height:auto; margin:5% auto; padding:2%; overflow:hidden;
+		color:#000; background:#fff;
+		font-size:18px; font-weight:400; line-height:24px; text-align:center; }
 	.calendarView .calendarViewMsg,
 	.calendarView .calendarViewMsg .msg { display:none; }
 	
@@ -231,9 +195,7 @@
 /* day */
 .calendarView .day {
 	position:absolute; top:0; height:auto; min-height:100px; margin:0; padding:0; overflow:visible; 
-	background:none; border:none;
-	/*border-radius*/-webkit-border-radius:5px; border-radius:5px;
-	/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box; }
+	background:none; border:none; }
 
 	/* ------------------------------------------------------------------------------ */
 	/* day (weekends) */
@@ -246,45 +208,35 @@
 /* dayBg */
 .calendarView .dayBg {
 	position:absolute; top:0; height:100%; min-height:100px; margin:0; padding:0; overflow:hidden; 
-	border-top:1px solid #d7d7d7;
-	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;
-	/*border-radius*/-webkit-border-radius:5px; border-radius:5px;
-	/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box;
-	/*box-shadow*/-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.1); box-shadow:0px 0px 5px 0px rgba(0,0,0,0.1);
-	/*background-gradient*/
-	background-color:#fff;
-	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#fbfbfb));
-	background-image:-webkit-linear-gradient(top, #fff 0%, #fbfbfb 100%);
-	background-image:-moz-linear-gradient(top, #fff 0%, #fbfbfb 100%);
-	background-image:-o-linear-gradient(top, #fff 0%, #fbfbfb 100%);
-	background-image:linear-gradient(to bottom, #fff 0%, #fbfbfb 100%); }
+	background:#fbfbfb;
+	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
 
 /* old IE fix */
 .oldie .calendarView .dayBg { border:none; }
 
 /* dayBg (extend themes) */
-.calendarView .dayBg.today 				{ background:#2eb0c0; border-top:1px solid #fff; } 
+.calendarView .dayBg.today 				{ background:#d9a600; } 
 .calendarView .dayBg.pastMonth,
-.calendarView .dayBg.nextMonth 			{ background:rgba(255,255,255,0.1); border-top:1px solid #fff; }
+.calendarView .dayBg.nextMonth 			{ background:#f3f3f3; }
 
 /* old IE fix */
 .oldie .calendarView .dayBg.today,	
 .oldie .calendarView .dayBg.pastMonth,
 .oldie .calendarView .dayBg.nextMonth 	{ border:none; }
 .oldie .calendarView .dayBg.pastMonth,
-.oldie .calendarView .dayBg.nextMonth 	{ background:#efefef; }
+.oldie .calendarView .dayBg.nextMonth 	{ background:#f3f3f3; }
 	
 /* ------------------------------------------------------------------------------ */
 /* date */
 .calendarView .day .date { 
-	position:absolute; top:15px; left:8%; padding:0; width:auto; height:auto; overflow:hidden;
-	font-family:'OpenSansRegular',sans-serif; font-size:16px; font-weight:normal; line-height:16px; }
+	position:absolute; top:8px; left:10%; padding:0; width:auto; height:auto; overflow:hidden;
+	font-size:30px; font-weight:300; line-height:1em; }
 
 /* date (extend themes) */
 .calendarView .pastMonth .date,
-.calendarView .nextMonth .date 		{ color:#828d99; text-shadow:0 1px 0 rgba(255,255,255,0.5); }
-.calendarView .currentMonth .date 	{ color:#182d43; }
-.calendarView .today .date 			{ color:#fff; }
+.calendarView .nextMonth .date 		{ color:#959595; }
+.calendarView .currentMonth .date 	{ color:#3a3a3a; }
+.calendarView .today .date 			{ color:#fff; font-size:48px; }
 
 
 /* ================================================================================================== */
@@ -306,7 +258,7 @@
 .calendarView .day6,						
 .calendarView .day.weekends					{ left:83.75%; }
 .calendarView .day.weekends .day6,
-.calendarView .day.weekends .day7			{ top:auto; left:auto; width:auto; height:auto; min-height:50px; }
+.calendarView .day.weekends .day7			{ top:auto; left:auto; width:auto; height:auto; min-height:65px; }
 .calendarView .day.weekends .day7			{ margin-top:0; }
 
 
@@ -316,66 +268,52 @@
 
 /* ------------------------------------------------------------------------------ */
 /* entries */
-.calendarView .entries { width:auto; padding-top:45px; }
+.calendarView .entries { width:auto; padding-top:60px; }
 
 /* entry round corners */
 .calendarView .entries,
-.calendarView .entry {	
-	/*border-radius*/-webkit-border-radius:5px; border-radius:5px;
-	/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box; }
+.calendarView .entry { }
 
 	/* ------------------------------------------------------------------------------ */
 	/* entry container */
-	.calendarView .entry { width:auto; overflow:hidden; margin:0 4px 4px 4px; }
+	.calendarView .entry { width:auto; overflow:hidden; margin:5px 0 0 0; }
 	
 		/* ------------------------------------------------------------------------------ */
 		/* entry event */
 		.calendarView .entry a,
 		.calendarView .entry .event { 
-			display:block; width:auto; padding:8%;
-			/*box-shadow*/-webkit-box-shadow:inset 0px 0px 30px 0px rgba(255,255,255,0.2); box-shadow:inset 0px 0px 30px 0px rgba(255,255,255,0.2);
-
-			/*background-gradient*/
-			background-color:#245eb8;
-			background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.1)));
-			background-image:-webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
-			background-image:-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
-			background-image:-o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
-			background-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
-			-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#19000000);
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#19000000);
-			zoom:1; }
+			display:block; width:auto; padding:8% 10%;
+			background:#1676cf; }
+		.calendarView .entry .event {
+			background:#555; }
 		
 		/* entry event (extend themes) */
 		.calendarView .pastMonth .entry a,
+		.calendarView .nextMonth .entry a 				{ background:#b8c1c7; }
 		.calendarView .pastMonth .entry .event,
-		.calendarView .nextMonth .entry a,
-		.calendarView .nextMonth .entry .event { background:rgba(0,0,0,0.15); }
+		.calendarView .nextMonth .entry .event 			{ background:#ccc; }
 		
 		/* old IE fix */
 		.oldie .calendarView .pastMonth .entry a,
+		.oldie .calendarView .nextMonth .entry a 		{ background:#b8c1c7; }
 		.oldie .calendarView .pastMonth .entry .event,
-		.oldie .calendarView .nextMonth .entry a,
-		.oldie .calendarView .nextMonth .entry .event { background:#d3d3d3; }
+		.oldie .calendarView .nextMonth .entry .event 	{ background:#ccc; }
 	
 		/* entry event interaction */
 		.calendarView .entry a,
 		.calendarView .entry a:link,
 		.calendarView .entry a:visited,
-		.calendarView .entry .event { color:#fff; text-decoration:none; }
+		.calendarView .entry .event 			{ color:#fff; text-decoration:none; }
 		.no-touch .calendarView .entry a:hover,
-		.no-touch .calendarView .entry a:focus,
-		.touch .calendarView .entry a:active { color:#fff; background-color:#173897; text-decoration:none; }
+		.touch .calendarView .entry a:active 	{ color:#fff; background:#373737; text-decoration:none; }
 	
 		/* entry event text style */
 		.calendarView .entry a span,
 		.calendarView .entry .event span {
-			display:block;
-			color:#fff; 
-			font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:normal; line-height:16px; margin:0; }
+			display:block; color:#fff; font-size:15px; font-weight:400; line-height:18px; margin:0; }
 		.calendarView .entry a .time,
 		.calendarView .entry .event .time { 
-			font-size:10px; font-weight:bold; text-transform:uppercase; }
+			font-size:13px; font-weight:400; }
 
 
 /* ================================================================================================== */
@@ -392,19 +330,16 @@
 
 	/* ------------------------------------------------------------------------------ */
 	/* calendarViewHeader */
-	.calendarViewList .calendarViewHeader { }
+	.calendarViewList .calendarViewHeader 		{ }
 
 	/* ------------------------------------------------------------------------------ */
 	/* calendarViewWeekBar */
-	.calendarViewList .calendarViewWeekBar { height:35px; }
-	.calendarViewList .calendarViewWeekBar li { display:none; }
+	.calendarViewList .calendarViewWeekBar,
+	.calendarViewList .calendarViewWeekBar li 	{ display:none; }
 
 	/* ------------------------------------------------------------------------------ */
 	/* calendarViewBody */
-	.calendarViewList .calendarViewBody { 
-		/*border-radius*/-webkit-border-radius:3px; border-radius:3px;
-		/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box;
-		/*box-shadow*/-webkit-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.1); box-shadow:0px 0px 10px 0px rgba(0,0,0,0.1); }
+	.calendarViewList .calendarViewBody 		{ background:#fff; }
 
 
 /* ------------------------------------------------------------------------------ 
@@ -427,21 +362,20 @@
 /* day */
 .calendarViewList .day {
 	display:none; position:relative; top:auto; height:auto; min-height:0; margin:0; padding:0; overflow:visible; 
-	background:#fff; border:none;
-	/*border-radius*/-webkit-border-radius:3px; border-radius:3px; }
-
-	/* date (extend themes) */
-	.calendarViewList .pastMonth,
-	.calendarViewList .nextMonth 		{ background:rgba(255,255,255,0.2); }
-	.calendarViewList .currentMonth 	{ background:#fff; }
-	.calendarViewList .today 			{ background:#fff; }
-	
-	/* oldie IE fix */
-	.oldie .calendarViewList .pastMonth,
-	.oldie .calendarViewList .nextMonth 		{ background:#f2f2f2; }
+	background:#fff; border:none; }
 
 /* only shows days with events */
 .calendarViewList .day.hasData { display:block; }
+
+/* date (extend themes) */
+.calendarViewList .pastMonth,
+.calendarViewList .nextMonth 		{ background:#fbfbfb; }
+.calendarViewList .currentMonth 	{ background:#fff; }
+.calendarViewList .today 			{ background:#fff; }
+
+/* oldie IE fix */
+.oldie .calendarViewList .pastMonth,
+.oldie .calendarViewList .nextMonth { background:#fbfbfb; }
 
 	/* ------------------------------------------------------------------------------ */
 	/* day (weekends) */
@@ -457,26 +391,14 @@
 /* ------------------------------------------------------------------------------ */
 /* date */
 .calendarViewList .day .date { 
-	position:relative; top:auto; left:auto; padding:5px 10px;
-	font-family:'OpenSansBold',sans-serif; font-size:16px; line-height:20px;
-	/*border-radius*/-webkit-border-radius:3px 3px 0 0; border-radius:3px 3px 0 0;
-	/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box;
-	/*background-gradient*/
-	background-color:transparent;
-	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.1)), color-stop(100%,rgba(0,0,0,0.2)));
-	background-image:-webkit-linear-gradient(top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 100%);
-	background-image:-moz-linear-gradient(top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 100%);
-	background-image:-o-linear-gradient(top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 100%);
-	background-image:linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 100%);
-	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19000000, endColorstr=#33000000);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19000000, endColorstr=#33000000);
-	zoom:1; }
+	position:relative; top:auto; left:auto; padding:8px 10px;
+	font-size:16px; line-height:20px; font-weight:600; }
 
 	/* date (extend themes) */
 	.calendarViewList .pastMonth .date,
 	.calendarViewList .nextMonth .date 		{ background-color:transparent; }
-	.calendarViewList .currentMonth .date 	{ background-color:#1775dd; color:#fff; text-shadow:none; }
-	.calendarViewList .today .date 			{ background-color:#2eb0c0; text-shadow:0 0 5px rgba(0,0,0,0.3); font-size:22px; line-height:30px; }
+	.calendarViewList .currentMonth .date 	{ background-color:#373737; color:#fff; }
+	.calendarViewList .today .date 			{ background-color:#d9a600; }
 	
 	/* date (day text) */
 	.calendarViewList .day .date:after 		{ content:''; position:relative; float:right; font-size:16px; }
@@ -526,21 +448,19 @@
 
 	/* ------------------------------------------------------------------------------ */
 	/* entry container */
-	.calendarViewList .entry { width:auto; overflow:hidden; margin:0; padding:0; border-bottom:1px solid #d3d3d3; }
+	.calendarViewList .entry { width:auto; overflow:hidden; margin:0; padding:0; border-bottom:1px solid #ebebeb; }
 	.calendarViewList .entry:last-child { border-bottom:none; }
 	
 	/* entry container (theme) */
 	.calendarViewList .pastMonth .entry,
-	.calendarViewList .nextMonth .entry { border-color:#e3e3e3; }
+	.calendarViewList .nextMonth .entry { border-bottom-color:#ebebeb; }
 	
 		/* ------------------------------------------------------------------------------ */
 		/* entry event */
 		.calendarViewList .entry a,
 		.calendarViewList .entry .event { 
 			position:relative; padding:15px 10px; 
-			background:none; -ms-filter:none; filter:none; zoom:0;
-			/*border-radius*/-webkit-border-radius:0; border-radius:0;
-			/*box-shadow*/-webkit-box-shadow:none; box-shadow:none; }
+			background:none; }
 		
 		/* entry event (extend themes) */
 		.calendarViewList .pastMonth .entry a,
@@ -550,7 +470,7 @@
 		.oldie .calendarViewList .pastMonth .entry a,
 		.oldie .calendarViewList .pastMonth .entry .event,
 		.oldie .calendarViewList .nextMonth .entry a,
-		.oldie .calendarViewList .nextMonth .entry .event { background:none; }
+		.oldie .calendarViewList .nextMonth .entry .event 	{ background:none; }
 	
 		/* entry event interaction */
 		.calendarViewList .entry a,
@@ -559,21 +479,19 @@
 		.calendarViewList .entry a span,
 		.calendarViewList .entry a:link span,
 		.calendarViewList .entry a:visited span,
-		.calendarViewList .entry .event { color:#222; text-decoration:none; }
+		.calendarViewList .entry .event 					{ color:#373737; text-decoration:none; }
+		.calendarViewList .entry .event						{ color:#888; }
 		
 		.no-touch .calendarViewList .entry a:hover,
-		.no-touch .calendarViewList .entry a:focus,
 		.touch .calendarViewList .entry a:active,
 		.no-touch .calendarViewList .entry a:hover span,
-		.no-touch .calendarViewList .entry a:focus span,
-		.touch .calendarViewList .entry a:active span { color:#1775dd; background:none; text-decoration:underline; }
+		.touch .calendarViewList .entry a:active span 		{ color:#1082e2; background:none; text-decoration:none; }
 	
 		/* entry event text style */
 		.calendarViewList .entry a span,
-		.calendarViewList .entry .event span {
-			display:block;
-			color:#222;
-			font-size:16px; line-height:20px; }
+		.calendarViewList .entry .event span 				{ display:block; color:#373737; font-size:16px; line-height:20px; }
+		.calendarViewList .entry .event span 				{ color:#888; }
+		
 		.calendarViewList .entry a .title,
 		.calendarViewList .entry .event .title { 
 			padding-right:100px;
@@ -586,18 +504,68 @@
 		.calendarViewList .entry a .time,
 		.calendarViewList .entry .event .time { 
 			position:absolute; top:15px; right:10px; width:120px; height:20px;
-			color:#777!important; text-decoration:none!important; text-transform:uppercase;
-			font-size:12px; font-weight:normal; text-align:right;  }
+			color:#b3b3b3!important; text-decoration:none!important;
+			font-size:16px; font-weight:400; text-align:right;  }
 
 
 /* ================================================================================================== */
 /* calendarView - RESPONSIVE */
 /* ================================================================================================== */
+
+/* up stream */
+@media only screen and (min-width:1000px) {
+
+	/* -------------------------------------------------------------------------- */
+	/* bigger list */
+
+	/* date */
+	.calendarViewList .day .date 			{ padding:16px 20px; font-size:22px; line-height:1em; font-weight:600; }
+	.calendarViewList .day .date:after 		{ font-size:22px; font-weight:300; }
+	
+	/* a/event */
+	.calendarViewList .entry a,
+	.calendarViewList .entry .event 		{ padding:25px 20px 15px 20px; }
+	
+	.calendarViewList .entry a span,
+	.calendarViewList .entry .event span 	{ font-size:18px; line-height:24px; }
+	
+	.calendarViewList .entry a .title,
+	.calendarViewList .entry .event .title	{ padding-right:160px; }
+	
+	.calendarViewList .entry a .time,
+	.calendarViewList .entry .event .time 	{ top:25px; right:20px; width:150px; height:24px; }
+	
+}
+@media only screen and (min-width:1600px) {
+
+	/* -------------------------------------------------------------------------- */
+	/* even bigger list */
+	
+	/* date */
+	.calendarViewList .day .date 			{ padding:16px 30px; font-size:30px; line-height:1em; font-weight:400; }
+	.calendarViewList .day .date:after 		{ font-size:30px; font-weight:300; }
+	
+	/* a/event */
+	.calendarViewList .entry a,
+	.calendarViewList .entry .event 		{ padding:30px 30px 15px 30px; }
+	
+	.calendarViewList .entry a span,
+	.calendarViewList .entry .event span 	{ font-size:20px; }
+	
+	.calendarViewList .entry a .title,
+	.calendarViewList .entry .event .title	{ padding-right:180px; }
+	
+	.calendarViewList .entry a .time,
+	.calendarViewList .entry .event .time 	{ top:30px; right:30px; width:170px; }
+
+}
+
+/* down stream */
 @media only screen and (max-width:640px) {
 	
 	/* ------------------------------------------------------------------------------ */
 	/* heading */
-	.calendarView .calendarViewHeader .heading { margin-left:0; font-size:40px; }
+	.calendarView .calendarViewHeader .heading { margin-left:0; font-size:40px; line-height:45px; }
 		
 	/* ------------------------------------------------------------------------------ */
 	/* navigation */
@@ -612,19 +580,33 @@
 	
 	/* ------------------------------------------------------------------------------ */
 	/* heading */
-	.calendarView .calendarViewHeader .heading { margin-right:80px; font-size:26px; line-height:30px; }
+	.calendarView .calendarViewHeader .heading { margin-right:80px; font-size:24px; line-height:30px; }
 	
 	/* ------------------------------------------------------------------------------ */
 	/* navigation */
-	.calendarView .calendarViewHeader .nav { width:65px; height:30px; }
+	.calendarView .calendarViewHeader .nav { width:60px; height:30px; }
 		
 		/* btnNav */
 		.calendarView .calendarViewHeader .nav .btnNav { position:absolute; top:0; width:30px; margin-top:0; }
 		.calendarView .calendarViewHeader .nav .btnNavPrev { left:0; }
 		.calendarView .calendarViewHeader .nav .btnNavNext { right:0; }
-		
-	/* ------------------------------------------------------------------------------ */
-	/* navigation */
-	.calendarView .calendarViewWeekBar { height:15px; }
+			
+			/* icon */
+			.calendarView .calendarViewHeader .nav .btnNav,
+			.calendarView .calendarViewHeader .nav .btnNav .icon { line-height:30px; }
+			
+	/* -------------------------------------------------------------------------- */
+	/* entries */
+	.calendarViewList .entry a,
+	.calendarViewList .entry .event 		{ padding:8px 10px; }
 	
-}		
+	.calendarViewList .entry a span,
+	.calendarViewList .entry .event span 	{ font-size:14px; line-height:18px; }
+	
+	.calendarViewList .entry a .time,
+	.calendarViewList .entry .event .time	{ position:static; top:auto; right:auto; width:auto; font-size:13px; text-align:left; }
+	
+	.calendarViewList .entry a .title,
+	.calendarViewList .entry .event .title 	{ padding-right:0; }
+
+}
