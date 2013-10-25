@@ -384,16 +384,17 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
 	
 /* interaction */
 a.btnText { cursor:pointer; }
-.no-touch a.btnText:hover,
-.touch a.btnText:active { 
-	text-decoration:underline!important; }
 
 	/* label */
 	.btnText,
 	.btnText .label { 
-		color:#fff!important; vertical-align:middle;
-		font-weight:400; font-size:13px; line-height:16px; }
-		
+		color:#252525!important; vertical-align:middle;
+		font-weight:400; font-size:13px; line-height:17px; }
+	
+	.no-touch a.btnText:hover .label,
+	.touch a.btnText:active .label { 
+		text-decoration:underline!important; }
+	
 	/* icon */
 	.btnText .icon,
 	.btnText .iconInline 		{ font-size:0; line-height:0; vertical-align:middle; }
@@ -401,7 +402,14 @@ a.btnText { cursor:pointer; }
 	.ie7 .btnText .icon,
 	.ie7 .btnText .iconInline,
 	.btnText .icon:before,
-	.btnText .iconInline:before	{ font-size:14px; line-height:16px; }
+	.btnText .iconInline:before	{ font-size:14px; line-height:17px; }
+
+/* -------------------------------------------------------------------------- */
+/* btnText.invert */
+.btnText.invert,
+.btnText.invert .label,
+.contentViewport.invert .btnText,
+.contentViewport.invert .btnText .label { color:#fff!important; }
 
 /* -------------------------------------------------------------------------- */
 /* btnBox */

@@ -854,7 +854,9 @@ body.ps {
 .col2b,
 .col3a,
 .col3b,
-.col3c { display:block; position:relative; height:auto; margin:0; padding:0; overflow:visible; }
+.col3c,
+.colMain,
+.colSide { display:block; position:relative; height:auto; margin:0; padding:0; overflow:visible; }
 
 /* -------------------------------------------------------------------------- */
 /* contentViewport */
@@ -863,7 +865,9 @@ body.ps {
 .col2b   .contentViewport,
 .col3a   .contentViewport,
 .col3b   .contentViewport,
-.col3c   .contentViewport { width:auto; }
+.col3c   .contentViewport,
+.colMain .contentViewport,
+.colSide .contentViewport { width:auto; }
 	
 /* -------------------------------------------------------------------------- */
 /* colFull */
@@ -887,6 +891,11 @@ body.ps {
 .col3b,
 .formView .col3b	{ float:left; clear:none; margin-left:5.6%; }
 .col3c 				{ float:right; clear:right; }
+
+/* -------------------------------------------------------------------------- */
+/* main/side */
+.colMain { width:60%; float:left;  clear:left; }
+.colSide { width:36%; float:right; clear:right; }
 
 /* -------------------------------------------------------------------------- */
 /* columns responsive */
@@ -917,6 +926,10 @@ body.ps {
 	.col3Important.col3a { float:left; clear:left; }
 	.col3Important.col3b { float:left; clear:none; margin-left:5.6%;  }
 	.col3Important.col3c { float:right; clear:right; }
+	
+	/* make/side stacking */
+	.colMain,
+	.colSide { width:auto; float:none; clear:both; }
 	
 	/* -------------------------------------------------------------------------- */
 	/* form */
@@ -965,7 +978,7 @@ body.ps {
 	
 	/* custom */
 	.sysmsg h3,
-	.sysmsg h4 	{ font-size:16px; font-weight:700; }
+	.sysmsg h4 	{ font-size:18px; font-weight:600; }
 	.sysmsg a	{ text-decoration:underline; }
 		
 /* extend */
@@ -987,11 +1000,11 @@ body.ps {
 		
 		/* -------------------------------------------------------- */
 		/* placeholder */
-		::-webkit-input-placeholder 	{ color:#252525; }
-		:-moz-placeholder 				{ color:#252525; }
-		::-moz-placeholder 				{ color:#252525; }
-		:-ms-input-placeholder			{ color:#252525; }
-		:input-placeholder				{ color:#252525; }
+		::-webkit-input-placeholder 	{ color:#373737; }
+		:-moz-placeholder 				{ color:#373737; }
+		::-moz-placeholder 				{ color:#373737; }
+		:-ms-input-placeholder			{ color:#373737; }
+		:input-placeholder				{ color:#373737; }
 		
 		/* -------------------------------------------------------- */
 		/* fieldset */
@@ -1042,7 +1055,7 @@ body.ps {
 		.formView input.text { 
 			display:block; width:100%; height:1em; margin:0; padding:12px 0; overflow:hidden;
 			color:#252525; background:none; border:none; border-bottom:1px solid #252525;
-			font-size:16px; line-height:1em; font-weight:200;
+			font-family:'Source Sans Pro',sans-serif; font-size:16px; line-height:1em; font-weight:400;
 			/*transition*/
 			/*-webkit-transform:translate3d(0,0,0);*/
 			-webkit-transition:color 0.3s ease-in-out, border-color 0.3s ease-in-out;
@@ -1094,7 +1107,7 @@ body.ps {
 		.formView select 		{ position:relative; width:100%!important; height:40px!important; margin:0; padding:0; border:none;
 								  /*box-sizing*/-webkit-box-sizing:content-box; -moz-box-sizing:content-box; box-sizing:content-box; } 
 		/* put <select> on top */
-		.formView .select 		{ position:absolute; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; } 
+		.formView .select 		{ position:absolute; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; border-bottom:1px solid #252525; } 
 		
 		/* optimise position for IE7 */
 		.ie7 .formView select 	{ margin-top:10px; } 
@@ -1118,7 +1131,7 @@ body.ps {
 			
 			/* bigger select */
 			.formView .filter .select { 
-				width:100%; padding-right:0; 
+				width:100%; padding-right:0; border:none;
 				font-size:21px; line-height:1em; text-align:center; }
 			.formView .filter select { 
 				height:45px!important; }
@@ -1134,7 +1147,7 @@ body.ps {
 		.formView textarea { 
 			display:block; width:95.75%; margin:0; padding:8px 2%; overflow:hidden;
 			color:#252525; background:none; border:1px solid #252525; resize:vertical;
-			font-size:16px; line-height:20px; font-weight:400;
+			font-family:'Source Sans Pro',sans-serif; font-size:16px; line-height:20px; font-weight:400;
 			/*transition*/
 			/*-webkit-transform:translate3d(0,0,0);*/
 			-webkit-transition:color 0.3s ease-in-out, border-color 0.3s ease-in-out;
@@ -1145,24 +1158,22 @@ body.ps {
 		/* interaction */
 		.formView textarea:focus,
 		.touch .formView textarea:active { 
-			color:#252525; border-color:#252525; }
+			color:#252525; background:#fff; border-color:#252525; }
 		.formView textarea[disabled] { 
 			color:#777!important; border-color:#777; }
 		
-		/* nesting */	
-		/*	
+		/* nesting */
 		.formView .col2 > textarea 						{ width:91.25%; padding-left:4%; padding-right:4%; }
 		.formView .col2 > .col2 > textarea 				{ width:83.25%; padding-left:8%; padding-right:8%; }
 		.formView .col2 > .col3 > textarea	 			{ width:75.25%; padding-left:12%; padding-right:12%; }
 		.formView .col2 > .col2 > .col2 > textarea 		{ width:67.25%; padding-left:16%; padding-right:16%; }
-		*/
 
 /* -------------------------------------------------------------------------- */
 /* responsive */
 @media only screen and (max-width:640px) {
 	
 	/* reduce label top gap */
-	.formView label 		{ padding-top:8px; font-size:14px; }
+	.formView label 		{ padding-top:8px; font-size:18px; }
 	.formView label.inline 	{ padding-top:16px; }
 	
 	/* reduce radio/checkbox top gap */
@@ -1178,11 +1189,11 @@ body.ps {
 	.formView input.text,
 	.formView .col2 > input.text,
 	.formView .col2 > .col2 > input.text, 
-	.formView .col2 > .col2 > .col2 > input.text,
+	.formView .col2 > .col2 > .col2 > input.text 		{ width:100%; padding-left:0%; padding-right:0%; }
 	.formView textarea,
 	.formView .col2 > textarea,
 	.formView .col2 > .col2 > textarea, 
-	.formView .col2 > .col2 > .col2 > textarea 			{ width:100%; padding-left:0%; padding-right:0%; }
+	.formView .col2 > .col2 > .col2 > textarea 			{ width:91.75%; padding-left:4%; padding-right:4%; }
 		
 	/* select */
 	.formView .select,

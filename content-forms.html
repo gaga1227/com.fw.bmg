@@ -35,6 +35,7 @@
 <link type="text/css" rel="stylesheet" media="screen" href="_lib/css/audio.css" /><!-- audio -->
 <link type="text/css" rel="stylesheet" media="screen" href="_lib/js/mejs/mediaelementplayer.css" /><!-- mejs -->
 <link type="text/css" rel="stylesheet" media="screen" href="_lib/js/mejs/mejs-fw-skin.css" /><!-- mejs skin -->
+<link type="text/css" rel="stylesheet" media="screen" href="_lib/js/jqui/jquery-ui-1.10.1.datepicker.css" /><!-- jqui -->
 <!-- CSS:CUSTOM -->
 <style type="text/css">
 	/*insert code here*/	
@@ -49,6 +50,7 @@
 <script type="text/javascript" src="_lib/js/mejs/mediaelement-and-player.js"></script><!-- mejs -->
 <script type="text/javascript" src="_lib/js/placeholders.js"></script><!-- placeholders -->
 <script type="text/javascript" src="_lib/js/custom-form-elements.js"></script><!-- custom-form-elements -->
+<script type="text/javascript" src="_lib/js/jqui/jquery-ui-1.10.1.datepicker.js"></script><!-- jqui -->
 <!-- JS:FW -->
 <script type="text/javascript" src="_lib/js/fw.utils.js"></script><!-- utils -->
 <script type="text/javascript" src="_lib/js/fw.widgets.js"></script><!-- widgets -->
@@ -128,54 +130,54 @@
 							<fieldset class="colFull contentViewport">
 								<h3>Fields with grids</h3>
 								<label for="fm1">Input (colFull) *</label>
-								<input id="fm1" name="fm1" class="text" type="text" />
+								<input id="fm1" name="fm1" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							
 							<fieldset class="col2 col2a">
 								<label for="fm2">Input (col2a) *</label>
-								<input id="fm2" name="fm2" class="text" type="text" />
+								<input id="fm2" name="fm2" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<fieldset class="col2 col2b">
 								<label for="fm3">Input (col2b) *</label>
-								<input id="fm3" name="fm3" class="text" type="text" />
+								<input id="fm3" name="fm3" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<div class="clearer"></div>
 							
 							<fieldset class="col2 col2a col2Important">
 								<label for="fm4">First Name</label>
-								<input id="fm4" name="fm4" class="text" type="text" />
+								<input id="fm4" name="fm4" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<fieldset class="col2 col2b col2Important">
 								<label for="fm5">Last Name</label>
-								<input id="fm5" name="fm5" class="text" type="text" />
+								<input id="fm5" name="fm5" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<div class="clearer"></div>
 							
 							<fieldset class="col3 col3a">
 								<label for="fm6">Input (col3a) *</label>
-								<input id="fm6" name="fm6" class="text" type="text" />
+								<input id="fm6" name="fm6" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<fieldset class="col3 col3b">
 								<label for="fm7">Input (col3b) *</label>
-								<input id="fm7" name="fm7" class="text" type="text" />
+								<input id="fm7" name="fm7" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<fieldset class="col3 col3c">
 								<label for="fm8">Input (col3c) *</label>
-								<input id="fm8" name="fm8" class="text" type="text" />
+								<input id="fm8" name="fm8" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<div class="clearer"></div>
 							
 							<fieldset class="col3 col3a col3Important">
 								<label for="fm9">Day</label>
-								<input id="fm9" name="fm9" class="text" type="text" />
+								<input id="fm9" name="fm9" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<fieldset class="col3 col3b col3Important">
 								<label for="fm10">Month</label>
-								<input id="fm10" name="fm10" class="text" type="text" />
+								<input id="fm10" name="fm10" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<fieldset class="col3 col3c col3Important">
 								<label for="fm11">Year</label>
-								<input id="fm11" name="fm11" class="text" type="text" />
+								<input id="fm11" name="fm11" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<div class="clearer"></div>
 							
@@ -194,7 +196,7 @@
 							
 							<fieldset class="col2 col2a">
 								<label for="fm13">Input (col2)</label>
-								<input id="fm13" name="fm13" class="text" type="text" />
+								<input id="fm13" name="fm13" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<fieldset class="col2 col2b">
 								<label for="fm14">Select (col2)</label>
@@ -212,7 +214,7 @@
 												
 							<fieldset class="col2 col2a">
 								<label for="fm15">Input (col2)</label>
-								<input id="fm15" name="fm15" class="text" type="text" />
+								<input id="fm15" name="fm15" class="text" type="text" placeholder="Placeholder Text"/>
 							</fieldset>
 							<fieldset class="col2 col2b clearfix">
 								<label for="fm16">Nesting (Col2)</label>
@@ -238,7 +240,7 @@
 							
 							<fieldset class="col2 col2a">
 								<label for="fm18">Date Picker *</label>
-								<input id="fm18" name="fm18" class="text datepicker" type="text" /><i class="icon icon-calendar btnDatepicker"></i>
+								<input id="fm18" name="fm18" class="text datepicker" type="text" placeholder="Placeholder Text"/><i class="icon icon-calendar btnDatepicker"></i>
 							</fieldset>
 							<fieldset class="col2 col2b clearfix">
 								<label for="fm19">Time *</label>
@@ -273,7 +275,7 @@
 							
 							<fieldset class="colFull">
 								<label for="fm22">Textarea</label>
-								<textarea id="fm22" name="fm22" cols="10" rows="5" placeholder="(e.g. Probus Club, Italian group, church or school group) this will assist us in meeting their needs."></textarea>
+								<textarea id="fm22" name="fm22" cols="10" rows="5" placeholder="Placeholder Text"></textarea>
 							</fieldset>
 							
 							<fieldset class="colFull mgnTop20 contentViewport">
