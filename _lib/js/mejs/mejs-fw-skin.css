@@ -19,7 +19,7 @@
 		/*common control containers*/
 		.mejs-fw .mejs-controls div { 
 			height:40px; float:none;
-			font-family:'Montserrat',sans-serif; }
+			font-family:'Source Sans Pro',sans-serif; }
 		
 		/*common button*/
 		.mejs-fw .mejs-controls button,
@@ -94,8 +94,8 @@
 			/*time text*/
 			.mejs-fw .mejs-controls .mejs-time span {
 				margin:0; float:none;
-				color:#444; text-shadow:0 1px 0 rgba(255,255,255,1);
-				font-size:14px; font-weight:bold; line-height:40px; }
+				color:#4d4d4d; text-shadow:0 1px 0 rgba(255,255,255,1);
+				font-size:15px; font-weight:400; line-height:40px; }
 			
 			/*time button?*/
 			.mejs-fw .mejs-controls .mejs-time button { 
@@ -121,23 +121,24 @@
 		
 			/*total*/
 			.mejs-fw .mejs-controls .mejs-time-rail .mejs-time-total {
-				margin:14px 10px;
-				background:#bbbbbb;
-				/*box-shadow*/-webkit-box-shadow:inset 0px -1px 1px 0px rgba(0,0,0,0.2); box-shadow:inset 0px -1px 1px 0px rgba(0,0,0,0.2); }
+				height:8px; margin:16px 10px;
+				background:#ccc;
+				/*box-shadow*/-webkit-box-shadow:inset 0px 1px 1px 0px rgba(0,0,0,0.2); box-shadow:inset 0px 1px 1px 0px rgba(0,0,0,0.2); }
 			
 			/*loaded*/
 			.mejs-fw .mejs-controls .mejs-time-rail .mejs-time-loaded {	
-				background:#999; }
+				height:8px; background:#999; }
 			
 			/*current*/
 			.mejs-fw .mejs-controls .mejs-time-rail .mejs-time-current { 
+				height:8px;
 				/*background-gradient*/
-				background-color:#18afb9; /*default*/
+				background-color:#d7a700; /*default*/
 				background-image:none; }
 			
 			/*handle*/
 			.mejs-fw .mejs-controls .mejs-time-rail .mejs-time-handle  {
-				display:block!important; top:-3px; width:16px; height:16px;
+				display:block!important; top:-4px; width:16px; height:16px;
 				border:none;
 				/*border-radius*/-webkit-border-radius:50%; border-radius:50%;
 				/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box;
@@ -160,7 +161,7 @@
 			/*float*/
 			.mejs-fw .mejs-controls .mejs-time-float { 
 				top:-24px;  
-				color:#fbfbfb; background:#444; border:none; }
+				color:#fff; background:#d7a700; border:none; }
 			.ie7 .mejs-fw .mejs-controls .mejs-time-float,
 			.ie8 .mejs-fw .mejs-controls .mejs-time-float,
 			.oldie .mejs-fw .mejs-controls .mejs-time-float {
@@ -172,5 +173,5 @@
 				
 				/*corner*/
 				.mejs-fw .mejs-controls .mejs-time-float .mejs-time-float-corner { 
-					border-color:#444 transparent transparent transparent;  }
+					border-color:#d7a700 transparent transparent transparent;  }
 					/* use 2@x assets */

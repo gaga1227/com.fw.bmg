@@ -38,8 +38,8 @@ body.ps, .contentViewport { color:#252525; font-family:'Source Sans Pro',sans-se
 
 /* styles */
 .contentViewport h1, .h1 { color:#252525; font-size:34px; line-height:40px; font-weight:300; font-style:normal; margin:0!important; padding: 0px 0px 24px 0px; }
-.contentViewport h2, .h2 { color:#252525; font-size:26px; line-height:32px; font-weight:300; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }
-.contentViewport h3, .h3 { color:#252525; font-size:20px; line-height:24px; font-weight:600; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }  
+.contentViewport h2, .h2 { color:#05519a; font-size:26px; line-height:32px; font-weight:300; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }
+.contentViewport h3, .h3 { color:#05519a; font-size:20px; line-height:24px; font-weight:600; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }  
 .contentViewport h4, .h4 { color:#252525; font-size:18px; line-height:24px; font-weight:600; font-style:normal; margin:0!important; padding: 8px 0px  0px 0px; }  
 .contentViewport h5, .h5 { color:#252525; font-size:16px; line-height:24px; font-weight:600; font-style:normal; margin:0!important; padding: 8px 0px  0px 0px; }  
 .contentViewport p,  .p  { color:#252525; font-size:16px; line-height:24px; font-weight:400; font-style:normal; margin:0!important; padding: 0px 0px  8px 0px; }
@@ -405,13 +405,6 @@ a.btnText { cursor:pointer; }
 	.btnText .iconInline:before	{ font-size:14px; line-height:17px; }
 
 /* -------------------------------------------------------------------------- */
-/* btnText.invert */
-.btnText.invert,
-.btnText.invert .label,
-.contentViewport.invert .btnText,
-.contentViewport.invert .btnText .label { color:#fff!important; }
-
-/* -------------------------------------------------------------------------- */
 /* btnBox */
 .btnBox { 
 	display:inline-block; position:relative; width:auto; height:auto; margin:8px 16px 16px 0; padding:14px 20px; overflow:hidden;
@@ -428,7 +421,7 @@ a.btnBox { cursor:pointer; }
 	.btnBox,
 	.btnBox .label { 
 		color:#fff!important; text-align:center; vertical-align:middle;
-		font-weight:400; font-size:13px; line-height:17px; }	
+		font-weight:400; font-size:14px; line-height:17px; }	
 	
 	/* interaction */
 	.no-touch a.btnBox:hover .label,
