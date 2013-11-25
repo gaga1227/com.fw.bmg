@@ -41,6 +41,7 @@
 </style>
 <!-- JS:VENDOR -->
 <script type="text/javascript" src="_lib/js/modernizr.all.js"></script><!-- modernizr -->
+<script type="text/javascript" src="_lib/js/swfobject.js"></script><!-- swfobject -->
 <script type="text/javascript" src="_lib/js/jquery-1.8.3.js"></script><!-- jQuery -->
 <!-- JS:LIBS -->
 <script type="text/javascript" src="_lib/js/jquery.mobile.touch.js"></script><!-- touch gestures -->
@@ -102,20 +103,30 @@
 			<div id="main" class="withExtra clearfix">
 				<!-- EXTRA -->
 				<div id="extra" class="nfp">
+					<!-- BTNMEDIA: GALLERY POPUP -->
 					<a href="#" class="btnTouch btnMedia" data-type="gallery">
 						<img class="imgThumb" src="___samples/ph-media-1.jpg" width="450" height="450" alt="" />
 						<span class="btnIcon circle invert"><i class="icon fwicon-gallery sz4"></i></span>
 						<span class="label"><i class="iconInline left fwicon-gallery sz4"></i>View image gallery</span>
 					</a>
-					<a href="#" class="btnTouch btnMedia" data-type="video">
+					<!-- BTNMEDIA: VIDEO POPUP-->
+					<a href="#" class="btnTouch btnMedia btnThumbVid" data-type="video" 
+						data-w="640" 
+						data-h="400" 
+						data-src-flash="http://dl.dropbox.com/u/3578306/Work/vids/vid-madman.flv" 
+						data-src-mp4="http://dl.dropbox.com/u/3578306/Work/vids/vid-madman.mp4" 
+						data-src-webm="http://dl.dropbox.com/u/3578306/Work/vids/vid-madman.webm" 
+						data-src-ogv="http://dl.dropbox.com/u/3578306/Work/vids/vid-madman.ogv">
 						<img class="imgThumb" src="___samples/ph-media-2.jpg" width="450" height="450" alt="" />
 						<span class="btnIcon circle invert"><i class="icon icon-youtube-play sz4"></i></span>
 						<span class="label"><i class="iconInline left icon-youtube-play sz4"></i>View Video Clip</span>
-					</a>
+					</a>					
+					<!-- BTNMEDIA: IMAGE -->
 					<a href="content-news.html" class="btnTouch btnMedia">
 						<img class="imgThumb" src="___samples/ph-media-3.jpg" width="450" height="450" alt="" />
 						<span class="caption">Lorem ipsum dolor tiam at risus et justo dignissim</span>
 					</a>
+					<!-- BTNMEDIA: IMAGE NO LINK -->
 					<div class="btnTouch btnMedia">
 						<img class="imgThumb" src="___samples/ph-media-4.jpg" width="450" height="450" alt="" />
 						<span class="caption">Class aptent taciti sociosqu ad litora justo dignissium</span>

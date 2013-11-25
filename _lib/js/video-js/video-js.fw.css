@@ -128,7 +128,7 @@ so you can upgrade to newer versions easier. You can remove all these styles by 
 /*themes*/
 .vjs-fw-skin .vjs-control:hover div,
 .vjs-fw-skin .vjs-control:focus div,
-.vjs-fw-skin .vjs-control:active div { background-color: #06bbca; }/*default*/
+.vjs-fw-skin .vjs-control:active div { background-color: #d7a700; }/*default*/
 
 .vjs-fw-skin .vjs-control:focus {
   outline: 0;
@@ -204,7 +204,7 @@ so you can upgrade to newer versions easier. You can remove all these styles by 
 
 /*themes*/
 .vjs-fw-skin .vjs-play-progress { /*default*/
-	background-color: #06bbca!important; 
+	background-color: #d7a700!important; 
 	background-image:url(video-js.fw.png)!important; 
 	background-position:0 -220px!important; 
 	background-repeat:repeat-x!important; }
@@ -305,7 +305,7 @@ so you can upgrade to newer versions easier. You can remove all these styles by 
 /*themes*/
 .vjs-fw-skin div.vjs-big-play-button:hover span,
 .vjs-fw-skin div.vjs-big-play-button:focus span,
-.vjs-fw-skin div.vjs-big-play-button:active span { background-color:#06bbca; }/*default*/
+.vjs-fw-skin div.vjs-big-play-button:active span { background-color:#d7a700; }/*default*/
 
 /* Loading Spinner
 ---------------------------------------------------------*/
@@ -408,7 +408,7 @@ div.vjs-loading-spinner .ball8 { opacity: 1.00; position:absolute; left: 6px; to
 
 /* ------------------------------------------------------------------------------ */
 /* hide most UI for mobile */
-@media only screen and (max-width:640px) {
+@media only screen and (max-width:400px) {
 	
 	/* hide controls */
 	.vjs-fw-skin .vjs-controls,

@@ -2702,7 +2702,7 @@ _V_.Player = _V_.Component.extend({
     var requestFullScreen = _V_.support.requestFullScreen;
 
     this.isFullScreen = true;
-
+	
     // Check for browser element fullscreen support
     if (requestFullScreen) {
 
@@ -2739,7 +2739,6 @@ _V_.Player = _V_.Component.extend({
     } else if (this.tech.supportsFullScreen()) {
       this.triggerEvent("fullscreenchange");
       this.techCall("enterFullScreen");
-
     } else {
       this.triggerEvent("fullscreenchange");
       this.enterFullWindow();

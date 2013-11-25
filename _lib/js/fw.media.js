@@ -16,6 +16,16 @@ function initVideos(vidBtnCls) {
 			//console.log( vidTop );
 			$container.css( 'top', vidTop + 'px' );
 		},
+		setVideoMgnTop = function (vidObj){
+			var $container = vidObj.container,
+				$videoBg = $container.find('.videoBg'),
+				vidTopMgn = Math.round(($videoBg.height() / 2)) * -1;
+			//console.log( vidTopMgn );
+			$videoBg.css( 'margin-top', vidTopMgn + 'px' );
+		},
+		fixTarget = function (flag) {
+			flag ? videos.fixingTarget.addClass('posFix') : videos.fixingTarget.removeClass('posFix')
+		},
 			
 		//tech solution functions
 		getFlashFormat = function(vidObj){
@@ -27,7 +37,8 @@ function initVideos(vidBtnCls) {
 			return format;
 		},
 		updateSolution = function(vidObj){
-			if (Modernizr.video.h264 && vidObj.src.mp4) { vidObj.solution.tech = 'html5'; vidObj.solution.format = 'mp4'; } 
+			if (vidObj.src.youtube) { return; }
+			else if (Modernizr.video.h264 && vidObj.src.mp4) { vidObj.solution.tech = 'html5'; vidObj.solution.format = 'mp4'; } 
 			else if (Modernizr.video.ogg && vidObj.src.ogg) { vidObj.solution.tech = 'html5'; vidObj.solution.format = 'ogg'; }
 			else if (Modernizr.video.webm && vidObj.src.webm) { vidObj.solution.tech = 'html5'; vidObj.solution.format = 'webm'; }
 			else if (swfobject.hasFlashPlayerVersion('10.0.0') && vidObj.src.flash) { vidObj.solution.tech = 'flash'; vidObj.solution.format = getFlashFormat(vidObj); }
@@ -39,19 +50,21 @@ function initVideos(vidBtnCls) {
 			debug:"0",
 			movie:"_lib/swf/vidplayer_multi_purpose_v2.swf", 
 			bgcolor:"#000000", 
-			tint:"#0083c9", 
+			tint:"#d7a700", 
 			loadBarTint:"#666666",
 			autoplay:"1",
 			mediaType:"Progressive",
 			stream:"{url}",
 			flashVars:null
 		},
-		vidContainer_tmpl = "<div id='' class='videoContainer videoContainerPopup nfp'><div class='videoBg'><div id='' class='video'><video id='' class='videoHTML5 video-js vjs-fw-skin' width='' height='' controls='controls' preload='auto'></video><div id='' class='videoFlash'><div id='swfobjectToReplace'><p class='noflash'><b>Please <a href='http://get.adobe.com/flashplayer/' target='_blank'>Install Adobe Flash Player to view this content.</a></b></p></div></div></div></div></div>";
+		vidContainer_tmpl = "<div id='' class='videoContainer videoContainerPopup nfp'><div class='videoBg'><div id='' class='video'><video id='' class='videoHTML5 video-js vjs-fw-skin' width='' height='' controls='controls' preload='auto'></video><div id='' class='videoFlash'><div id='swfobjectToReplace'><p class='noflash'><b>Please <a href='http://get.adobe.com/flashplayer/' target='_blank'>Install Adobe Flash Player to view this content.</a></b></p></div></div></div></div></div>",
+		vidContainer_youtube_tmpl = "<div id='' class='videoContainer videoContainerPopup nfp'><div class='videoBg'><iframe id='' class='video' width='' height='' src='' frameborder='0' allowfullscreen></iframe></div></div>";
 		//<source type='video/mp4' src=''><source type='video/ogg' src=''><source type='video/webm' src=''>
 	
 	//update videos obj
 	videos.currentVideo = '';
-	videos.injectionTarget = $('#container');
+	videos.injectionTarget = $('body');
+	videos.fixingTarget = $('#container');
 	videos.noSolution = "<p style='text-align:center;'><b>It seems there's no supported video playback solution installed for your browser, <br/> please upgrade your browser or <a href='http://get.adobe.com/flashplayer/' target='_blank'>Install Adobe Flash Player.</a></b></p>";
 	videos.on = {};
 	videos.opts.speed = 300;
@@ -63,6 +76,8 @@ function initVideos(vidBtnCls) {
 		//stop on invalid vidObj
 		if (!vidObj) { return false; }
 		//console.log('[videos.killVideo]: Try killing '+vidObj.ref);
+		//unbind window resize
+		$(window).off('resize.popupvideo');	
 		//remove instance if exist
 		if (vidObj && vidObj.container && vidObj.container.length) {
 			vidObj.container.fadeOut(/*videos.opts.speed*/0,function(){ //fade instance
@@ -74,6 +89,7 @@ function initVideos(vidBtnCls) {
 				vidObj.container = null;
 				videos.currentVideo = '';
 				delete videos.on[vidObj.ref];
+				fixTarget(false);
 				//console.log('[videos.killVideo]: Killed '+vidObj.ref);
 			});
 		}
@@ -83,7 +99,7 @@ function initVideos(vidBtnCls) {
 	//function - killAllVideos (temp)
 	//-------------------------------------------------------------------------------------
 	videos.killAllVideos = function(){//function to kill all videos
-		console.log('Try killing all videos');
+		//console.log('Try killing all videos');
 		var count = Number(videos.count);//get total count
 		for (var i=1; i<=count; i++) {//kill all
 			videos.killVideo(videos['video'+i]);
@@ -94,14 +110,14 @@ function initVideos(vidBtnCls) {
 	//function - initClickOut (temp)
 	//-------------------------------------------------------------------------------------
 	videos.initClickOut = function(){//function to init click out
-		$('#container').bind('click',function(e) {//use '#container' element to be compatible on iOS
+		videos.injectionTarget.on('click',function(e) {//use '#container' element to be compatible on iOS
 			//e.preventDefault(); this will prevent all links and other functions
 			//vars
 			var tgt = e.target,//get event target DOM ele
 				$vidsArea = $('.videoBg');//video player area
 			//if event target DOM element not a child of the video area and trigger btns
 			if (!$vidsArea.has(tgt).length && !$videoBtns.has(tgt).length) {
-				console.log('Click Out on:', e.target);
+				//console.log('Click Out on:', e.target);
 				videos.killAllVideos();//kill all vids 
 			}
 		});	
@@ -131,7 +147,7 @@ function initVideos(vidBtnCls) {
 		videos.currentVideo = vidObj.ref;
 			
 		//function - enable STEP 3 
-		function enableVideo(){			
+		function enableVideo(){				
 			//enable player
 			if (vidObj.solution.tech == 'html5') {
 				//init videoJS and assign object reference
@@ -187,25 +203,13 @@ function initVideos(vidBtnCls) {
 				if ( vidObj.solution.format == 'mp4' ) {
 					$vidHTML5.append("<source type='video/mp4' src='"+vidObj.src.mp4+"'>");
 					$vidHTML5.attr('src',vidObj.src.mp4);
-					//console.log('mp4');
-					//$vidHTML5.find('source[type="video/mp4"]').attr('src',vidObj.src.mp4);
-					//$vidHTML5.find('source[type="video/ogg"]').remove();
-					//$vidHTML5.find('source[type="video/webm"]').remove(); 				
-				} else if ( vidObj.solution.format == 'ogg' ) {
-					$vidHTML5.append("<source type='video/ogg' src='"+vidObj.src.ogg+"'>");
-					$vidHTML5.attr('src',vidObj.src.ogg);
-					//console.log('ogg');
-					//$vidHTML5.find('source[type="video/mp4"]').remove();
-					//$vidHTML5.find('source[type="video/ogg"]').attr('src',vidObj.src.ogg);
-					//$vidHTML5.find('source[type="video/webm"]').remove(); 	
 				} else if ( vidObj.solution.format == 'webm' ) {
 					$vidHTML5.append("<source type='video/webm' src='"+vidObj.src.webm+"'>");
 					$vidHTML5.attr('src',vidObj.src.webm);
-					//console.log('webm');
-					//$vidHTML5.find('source[type="video/mp4"]').remove();
-					//$vidHTML5.find('source[type="video/ogg"]').remove();
-					//$vidHTML5.find('source[type="video/webm"]').attr('src',vidObj.src.webm); 	
-				}
+				} else if ( vidObj.solution.format == 'ogg' ) {
+					$vidHTML5.append("<source type='video/ogg' src='"+vidObj.src.ogg+"'>");
+					$vidHTML5.attr('src',vidObj.src.ogg);	
+				} 
 			}
 			else if (vidObj.solution.tech == 'flash') {				
 				//vars
@@ -242,13 +246,22 @@ function initVideos(vidBtnCls) {
 				attributes.align = 'top';
 				attributes.flashvars = flashPlayer_Ops.flashVars;
 			}
+			else if (vidObj.src.youtube) {
+				//vars
+				var $vidIframe = $vidContainer.find('iframe');
+				//update youtube video info
+				$vidIframe
+					.attr('src', vidObj.src.youtube)
+					.attr('width', vidObj.src.width)
+					.attr('height', vidObj.src.height);
+			}
 			else {//no solution
 				//update container 
 				$vidContainer.empty().append(videos.noSolution);
 			}
 			
 			//inject to DOM
-			videos.injectionTarget/*.empty()*/.append($vidContainer);
+			videos.injectionTarget.append($vidContainer);
 			vidObj.container = $('#'+vidObj.ref+'Container');
 			vidObj.on = videos.on[vidObj.ref] = true;
 									
@@ -257,19 +270,27 @@ function initVideos(vidBtnCls) {
 				//console.log('[injectVideo]: flashvars='+attributes.flashvars);
 				swfobject.embedSWF(flashPlayer_Ops.movie,'swfobjectToReplace',vidObj.src.width,vidObj.src.height,"10.0.0",false,flashvars,params,attributes);
 			}
+			
+			//fix target
+			fixTarget(true);
 				
 			//enable video container
 			enableVideo();
 			
-			//set video container obj top
-			setVideoTop(vidObj);
-			
+			//set video container position
+			setVideoMgnTop(vidObj);
+			$(window).on('resize.popupvideo', function(e){
+				setTimeout(function(){
+					setVideoMgnTop(vidObj);
+					//console.log('resize.popupvideo');
+				}, Platform.android ? 600 : 100);	
+			});
 		}
 			
 		//function - injection STEP 1
 		function injectVideoContainer(){
 			//getting html template
-			var $vidContainer = $(vidContainer_tmpl);
+			var $vidContainer = vidObj.src.youtube ? $(vidContainer_youtube_tmpl) : $(vidContainer_tmpl);
 			//prepare video container obj
 			$vidContainer
 				.attr('id',vidObj.ref+'Container')
@@ -332,6 +353,7 @@ function initVideos(vidBtnCls) {
 		vidObj.ref = 'video'+vidObj.vidID;
 		vidObj.src.width = vidObj.triggerBtn.attr('data-w');
 		vidObj.src.height = vidObj.triggerBtn.attr('data-h');
+		vidObj.src.youtube = vidObj.triggerBtn.attr('data-src-youtube');
 		vidObj.src.mp4 = vidObj.triggerBtn.attr('data-src-mp4');
 		vidObj.src.ogg = vidObj.triggerBtn.attr('data-src-ogv');
 		vidObj.src.webm = vidObj.triggerBtn.attr('data-src-webm');
