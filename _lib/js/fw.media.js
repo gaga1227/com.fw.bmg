@@ -24,7 +24,7 @@ function initVideos(vidBtnCls) {
 			$videoBg.css( 'margin-top', vidTopMgn + 'px' );
 		},
 		fixTarget = function (flag) {
-			flag ? videos.fixingTarget.addClass('posFix') : videos.fixingTarget.removeClass('posFix')
+			flag ? videos.fixingTarget.addClass('posFix') : videos.fixingTarget.removeClass('posFix');
 		},
 			
 		//tech solution functions
@@ -59,11 +59,10 @@ function initVideos(vidBtnCls) {
 		},
 		vidContainer_tmpl = "<div id='' class='videoContainer videoContainerPopup nfp'><div class='videoBg'><div id='' class='video'><video id='' class='videoHTML5 video-js vjs-fw-skin' width='' height='' controls='controls' preload='auto'></video><div id='' class='videoFlash'><div id='swfobjectToReplace'><p class='noflash'><b>Please <a href='http://get.adobe.com/flashplayer/' target='_blank'>Install Adobe Flash Player to view this content.</a></b></p></div></div></div></div></div>",
 		vidContainer_youtube_tmpl = "<div id='' class='videoContainer videoContainerPopup nfp'><div class='videoBg'><iframe id='' class='video' width='' height='' src='' frameborder='0' allowfullscreen></iframe></div></div>";
-		//<source type='video/mp4' src=''><source type='video/ogg' src=''><source type='video/webm' src=''>
-	
+		
 	//update videos obj
 	videos.currentVideo = '';
-	videos.injectionTarget = $('body');
+	videos.injectionTarget = $('<div id="popupwrapper"></div>').appendTo('body'); //cannot use 'body' as injection target for iOS
 	videos.fixingTarget = $('#container');
 	videos.noSolution = "<p style='text-align:center;'><b>It seems there's no supported video playback solution installed for your browser, <br/> please upgrade your browser or <a href='http://get.adobe.com/flashplayer/' target='_blank'>Install Adobe Flash Player.</a></b></p>";
 	videos.on = {};
@@ -110,8 +109,7 @@ function initVideos(vidBtnCls) {
 	//function - initClickOut (temp)
 	//-------------------------------------------------------------------------------------
 	videos.initClickOut = function(){//function to init click out
-		videos.injectionTarget.on('click',function(e) {//use '#container' element to be compatible on iOS
-			//e.preventDefault(); this will prevent all links and other functions
+		videos.injectionTarget.on('click',function(e) {
 			//vars
 			var tgt = e.target,//get event target DOM ele
 				$vidsArea = $('.videoBg');//video player area
