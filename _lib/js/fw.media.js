@@ -841,5 +841,65 @@ function initSlideshows(ssCls) {
 	
 	//return container obj
 	return slideshows;
-
+}
+/* ------------------------------------------------------------------------------ */
+/* initGallery */
+/* ------------------------------------------------------------------------------ */
+function initGallery(){
+	
+	//vars
+	var $btns = $('.btnThumbGallery'),
+		settings = { 
+			margin		: [0,0,0,0],
+			padding		: 0,
+			loop		: false,
+			openEffect	: 'fade',
+			closeEffect	: 'fade',
+			prevEffect 	: 'fade',
+			nextEffect 	: 'fade',
+			beforeShow	: function(){ 
+							this.title = ('<span class="caption">' + (this.title ? this.title : '') + '</span>'); 
+						  },
+			tpl			: {
+							closeBtn :'<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i class="icon icon-remove"></i></a>',
+							next     :'<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i class="icon icon-angle-down"></i></a>',
+							prev     :'<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i class="icon icon-angle-up"></i></a>'
+						  }
+		};
+	
+	//exit if no instance found
+	if (!$btns.length) return false;
+	
+	//get gallery data
+	function getGalleryData($tgt){
+		//vars
+		var tgtData = $tgt.data(),
+			data = [],
+			maxCount = 100,
+			i;
+		//collect each image data
+		for (i=1; i <= maxCount; i++) {
+			//stop and return data when reaching last image
+			if (!tgtData['img'+i]) {
+				return data;
+			}
+			//otherwise keep pushing data for gallery
+			data.push({
+				href:	tgtData['img'+i],
+				title:	tgtData['cpn'+i] ? tgtData['cpn'+i] : ''
+			});
+		}
+	}
+	
+	//process gallery instacne
+	$.each($btns, function(idx,ele){
+		//vars
+		var $btn = $(ele),
+			galleryData = getGalleryData($btn);
+		//attach fancybox trigger to button
+		$btn.on('click', function(e){
+			e.preventDefault();
+			$.fancybox.open(galleryData, settings);
+		});
+	});
 }

@@ -237,7 +237,7 @@ function initTiles(customopts){
 /* ------------------------------------------------------------------------------ */
 /* init */
 /* ------------------------------------------------------------------------------ */
-var FocusSlideshow, Tiles, ToggleNav, Slideshows, StaticAudios, StaticVideos, Videos;
+var FocusSlideshow, Tiles, ToggleNav, Slideshows, StaticAudios, Videos;
 function init(){
 	//layout assistance
 	insertFirstLastChild('#navItems, #sideNav, #sideNav ul, .itemListing, #main > .padder');
@@ -251,7 +251,7 @@ function init(){
 		Slideshows = new initSlideshows();
 		StaticAudios = new initStaticAudios();
 		Videos = new initVideos();
-		//StaticVideos = new initStaticVideos();
+		initGallery();
 		//widgets
 		initCalendar();
 		//form

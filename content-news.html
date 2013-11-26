@@ -35,6 +35,7 @@
 <link type="text/css" rel="stylesheet" media="screen" href="_lib/css/audio.css" /><!-- audio -->
 <link type="text/css" rel="stylesheet" media="screen" href="_lib/js/mejs/mediaelementplayer.css" /><!-- mejs -->
 <link type="text/css" rel="stylesheet" media="screen" href="_lib/js/mejs/mejs-fw-skin.css" /><!-- mejs skin -->
+<link type="text/css" rel="stylesheet" media="screen" href="_lib/js/fancyBox/jquery.fancybox.fw.css" /><!-- fancybox -->
 <!-- CSS:CUSTOM -->
 <style type="text/css">
 	/*insert code here*/	
@@ -48,6 +49,7 @@
 <script type="text/javascript" src="_lib/js/jquery.cycle.js"></script><!-- Cycle -->
 <script type="text/javascript" src="_lib/js/video-js/video.js"></script><!-- videoJS -->
 <script type="text/javascript" src="_lib/js/mejs/mediaelement-and-player.js"></script><!-- mejs -->
+<script type="text/javascript" src="_lib/js/fancyBox/jquery.fancybox.js"></script><!-- fancybox -->
 <script type="text/javascript" src="_lib/js/placeholders.js"></script><!-- placeholders -->
 <!-- JS:FW -->
 <script type="text/javascript" src="_lib/js/fw.utils.js"></script><!-- utils -->
@@ -114,8 +116,16 @@
 			<div id="main" class="withExtra clearfix">
 				<!-- EXTRA -->
 				<div id="extra" class="nfp">
-					<a href="#" class="btnTouch btnMedia" data-type="gallery">
-						<img class="imgThumb" src="___samples/ph-media-3.jpg" width="450" height="450" alt="" />
+					<!-- BTNMEDIA: GALLERY POPUP -->
+					<a href="#" class="btnTouch btnMedia btnThumbGallery" data-type="gallery"
+						data-img1="https://dl.dropboxusercontent.com/u/3578306/Work/gallery/s01-640360.jpg"
+						data-cpn1="Quisque commodo hendrerit lorem quis egestas"
+						data-img2="https://dl.dropboxusercontent.com/u/3578306/Work/gallery/s02-640360.jpg"
+						data-cpn2="Commodo hendrerit lorem quis egestas commodo hendrerit lorem quis egestas"
+						data-img3="https://dl.dropboxusercontent.com/u/3578306/Work/gallery/s03-640360.jpg"
+						data-cpn3="Hendrerit lorem quis egestas"
+						data-img4="___samples/ph-640x360.gif">
+						<img class="imgThumb" src="___samples/ph-media-1.jpg" width="450" height="450" alt="" />
 						<span class="btnIcon circle invert"><i class="icon fwicon-gallery sz4"></i></span>
 						<span class="label"><i class="iconInline left fwicon-gallery sz4"></i>View image gallery</span>
 					</a>
