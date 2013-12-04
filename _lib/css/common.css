@@ -1583,6 +1583,36 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.touch a.item.grid.pub:active .icon { font-size:21px; right:20px; }
 
 /* -------------------------------------------------------------------------- */
+/* item.stack */
+.item.stack { 
+	display:block; width:100%; margin:0; padding:0; overflow:hidden;
+	background:#fff; border-bottom:1px solid #ebebeb; }
+.item.stack:last-child { border-bottom:none; }
+.item.stack.last-child { border-bottom:none; }
+	
+	/* title */
+	.item.stack .title { 
+		display:inline-block; min-height:1em!important;/*1 line*/ margin:0 0.5em 0 0; 
+		font-size:20px; line-height:1em; }
+	
+	/* tag */
+	.item.stack .tag { 
+		display:inline-block; padding:0 0 0 0.5em; 
+		color:#252525; border-left:1px solid #252525;
+		font-size:20px; line-height:1em;
+		/*transition*/
+		/*-webkit-transform:translate3d(0,0,0);*/
+		-webkit-transition:color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+		-moz-transition:color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+		-o-transition:color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+		transition:color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+	.no-touch a.item.stack:hover .tag,
+	.touch a.item.stack:active .tag { border-color:#fff; }
+	
+	/* icon */
+	.item.stack .icon { height:20px; right:25px; font-size:18px; line-height:20px; }
+
+/* -------------------------------------------------------------------------- */
 /* responsive - downstream */
 @media only screen and (max-width:1100px) {
 	
@@ -1618,13 +1648,6 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.touch a.item.grid:active .icon 	{ right:15px; }
 
 }
-@media only screen and (max-width:700px) {
-
-	/* hide desc */
-	.item.grid.pub .title 	{ min-height:7.2em;/*6 lines*/ }
-	.item.grid.pub .desc 	{ display:none; }
-
-}
 @media only screen and (max-width:800px) {
 
 	/* adjust padder */
@@ -1635,6 +1658,18 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.item.grid .title	{ font-size:16px; }
 	.item.grid .tag		{ margin-right:15px; font-size:12px; }
 	.item.grid .icon	{ bottom:15px; }
+
+}
+@media only screen and (max-width:700px) {
+
+	/* hide desc */
+	.item.grid.pub .title 	{ min-height:7.2em;/*6 lines*/ }
+	.item.grid.pub .desc 	{ display:none; }
+	
+	/* smaller size */
+	.item.stack .title,
+	.item.stack .tag 		{ font-size:18px; }
+	.item.stack .icon 		{ height:1em; line-height:1em; }
 
 }
 @media only screen and (max-width:640px) {
@@ -1654,6 +1689,18 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.item.grid .imgThumb 	{ display:none; }
 	.item.grid .title,
 	.item.grid.pub .title	{ min-height:0; }
+	
+	/* smaller size */
+	.item.stack .title		{ font-size:16px; }
+	.item.stack .tag 		{ display:block; color:#9f9f9f; padding:0; border:none; font-size:13px; line-height:1.3em; }
+	.item.stack .icon		{ height:1.428em; right:15px; font-size:14px; line-height:1.428em; }
+
+}
+@media only screen and (max-width:400px) {
+	
+	/* smaller size */
+	.item.stack .tag 		{ display:block; color:#9f9f9f; padding:0; border:none; font-size:13px; line-height:1.3em; }
+	.item.stack .icon		{ height:1.428em; right:15px; font-size:14px; line-height:1.428em; }	
 
 }
 
@@ -1690,7 +1737,30 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 /* itemListingGrid */
 .itemListingGrid {  }
 
+/* -------------------------------------------------------------------------- */
+/* itemListingStack */
+.itemListingStack {  }
 
+	/* heading */
+	.itemListingStack .heading { 
+		display:block; position:relative; width:auto; height:auto; margin:0; padding:15px 25px; overflow:hidden;
+		color:#fff; background:#383838; 
+		font-size:26px; font-weight:300; line-height:1em; }
+		
+/* -------------------------------------------------------------------------- */
+/* responsive */	
+@media only screen and (max-width:800px) {
+	
+	/* adjust padding with padder */
+	.itemListingStack .heading { padding:15px 30px; }
+
+}
+@media only screen and (max-width:500px) {
+
+	/* adjust padding with padder */
+	.itemListingStack .heading { padding:15px 20px; font-size:20px; line-height:1.2em; }
+	
+}
 
 
 /* ==========================================================================
