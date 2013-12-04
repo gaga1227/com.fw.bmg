@@ -1020,10 +1020,8 @@ body.ps {
 		
 		/* inline */
 		.formView label.inline { 
-			display:inline-block; margin:0; padding:24px 0 0 15px; line-height:24px; overflow:hidden;
+			display:inline-block; margin:0; padding:24px 24px 0 12px; line-height:24px; overflow:hidden;
 			white-space:normal; vertical-align:middle; }
-		.formView input.styled + label.inline { 
-			width:80%; } /* prevent wrappnig */
 			
 		/* disabled */
 		.formView .disabled label { 
@@ -1043,7 +1041,7 @@ body.ps {
 			background:url(../img/radio-custom.png) no-repeat; vertical-align:middle;
 			cursor:pointer!important; }
 		.formView span.checkbox { 
-			background-image:url(../img/checkbox-custom.png); }
+			background-image:url(../img/checkbox-custom.png); }		
 		
 		/* disabled */
 		.formView .disabled span.radio,
@@ -1169,6 +1167,58 @@ body.ps {
 		.formView .col2 > .col2 > .col2 > textarea 		{ width:67.25%; padding-left:16%; padding-right:16%; }
 
 /* -------------------------------------------------------------------------- */
+/* invert */
+
+/* placeholder */
+.invert ::-webkit-input-placeholder 	{ color:#fefefe; }
+.invert :-moz-placeholder 				{ color:#fefefe; }
+.invert ::-moz-placeholder 				{ color:#fefefe; }
+.invert :-ms-input-placeholder			{ color:#fefefe; }
+.invert :input-placeholder				{ color:#fefefe; }
+
+/* label */			
+.invert .formView label,
+.formView.invert label 				{ color:#fff; }
+.invert .formView .disabled label,
+.formView.invert .disabled label 	{ color:#ccc; }
+
+/* radio/checkbox */
+.invert .formView span.radio,
+.formView.invert span.radio		{ background-image:url(../img/radio-custom-invert.png); }
+.invert .formView span.checkbox,
+.formView.invert span.checkbox 	{ background-image:url(../img/checkbox-custom-invert.png); }
+
+/* input */
+.invert .formView input.text,
+.formView.invert input.text 	{ color:#fff; border-bottom-color:#fff; }
+
+.invert .formView input.text:focus,
+.touch .invert .formView input.text:active,
+.formView.invert input.text:focus,
+.touch .formView.invert input.text:active 	{ color:#fff; border-color:#fff; }
+.invert .formView input.text[disabled],
+.formView.invert input.text[disabled] 		{ color:#ccc!important; border-color:#fff; }
+
+/* select */
+.invert .formView select,
+.invert .formView .select,
+.formView.invert select,
+.formView.invert .select 	{ color:#fff; }
+.invert .formView .select,
+.formView.invert .select 	{ border-bottom-color:#fff; } 
+
+/* textarea */
+.invert .formView textarea,
+.formView.invert textarea 	{ color:#fff; border-color:#fff; }
+
+.invert .formView textarea:focus,
+.touch .invert .formView textarea:active,
+.formView.invert textarea:focus,
+.touch .formView.invert textarea:active 	{ color:#fff; background:none; border-color:#fff; }
+.invert .formView textarea[disabled],
+.formView.invert textarea[disabled] 		{ color:#ccc!important; border-color:#fff; }
+
+/* -------------------------------------------------------------------------- */
 /* responsive */
 @media only screen and (max-width:640px) {
 	
@@ -1223,6 +1273,13 @@ body.ps {
 	.formView span.radio,
 	.formView span.checkbox { background-image:url(../img/radio-custom@2x.png); background-size:32px 128px; }
 	.formView span.checkbox { background-image:url(../img/checkbox-custom@2x.png); }
+	
+	.formView.invert span.radio,
+	.formView.invert span.checkbox,
+	.invert .formView span.radio,
+	.invert .formView span.checkbox { background-image:url(../img/radio-custom@2x-invert.png); }
+	.formView.invert span.checkbox,
+	.invert .formView span.checkbox { background-image:url(../img/checkbox-custom@2x-invert.png); }
 }
 
 
@@ -1492,6 +1549,65 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 
 
 /* ==========================================================================
+   common - ITEM HEADING
+   ========================================================================== */
+.itemHeading { 
+	display:block; position:relative; width:auto; height:auto; margin:0; padding:0 25px; overflow:hidden;
+	color:#fff; background:#383838; white-space:nowrap; text-overflow:ellipsis;
+	font-size:26px; font-weight:300; line-height:60px; }
+		
+/* -------------------------------------------------------------------------- */
+/* responsive */	
+@media only screen and (max-width:800px) {
+	
+	/* adjust padding with padder */
+	.itemHeading { padding:0 30px; }
+
+}
+@media only screen and (max-width:500px) {
+
+	/* adjust padding with padder */
+	.itemHeading { padding:0 20px; font-size:20px; }
+	
+}
+
+
+/* ==========================================================================
+   common - POD
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* default */
+.pod { 
+	display:block; position:relative; width:auto; height:auto; margin:0; padding:0; overflow:hidden; }
+	
+	/* padder */
+	.pod > .padder { 
+		display:block; position:relative; width:auto; height:auto; margin:0; padding:20px 25px; overflow:hidden; }
+		
+		/* heading */
+		.pod .heading { 
+			padding:0.4em 0 0.2em 0; }
+		
+/* -------------------------------------------------------------------------- */
+/* responsive */
+@media only screen and (max-width:800px) {
+
+	/* adjust padder */
+	.pod > .padder { padding:20px 30px; }
+
+}
+@media only screen and (max-width:500px) {
+	
+	/* adjust padder */
+	.pod > .padder { padding:15px 20px; }
+
+}
+
+
+
+
+/* ==========================================================================
    common - ITEMS
    ========================================================================== */
 
@@ -1613,6 +1729,32 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.item.stack .icon { height:20px; right:25px; font-size:18px; line-height:20px; }
 
 /* -------------------------------------------------------------------------- */
+/* item.feat */
+.item.feat { 
+	background:#fff; border:none; }
+
+	/* heading */
+	.item.feat .itemHeading 		{ margin-top:-60px; background:rgba(37,37,37,0.9); }
+	.oldie .item.feat .itemHeading 	{ background:#383838; }	
+	
+	/* padding */
+	.item.feat .padder { padding:25px; }
+		
+		/* title */
+		.item.feat .title { 
+			min-height:1.2em;/*1 line*/ margin-bottom:0.4em;
+			font-size:24px; font-weight:400; line-height:1.2em; }
+			
+		/* desc */
+		.item.feat .desc { }	
+		
+		/* tag */
+		.item.feat .tag { margin:2em 20px 0 0; font-size:18px; line-height:1em; }	
+		
+	/* icon */
+	.item.feat .icon { height:20px; right:25px; bottom:25px; font-size:18px; line-height:20px; }
+
+/* -------------------------------------------------------------------------- */
 /* responsive - downstream */
 @media only screen and (max-width:1100px) {
 	
@@ -1653,6 +1795,7 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	/* adjust padder */
 	.item .padder 		{ padding:20px 30px; }
 	.item.grid .padder 	{ padding:15px 15px; }
+	.item.feat .padder	{ padding:25px 30px; }
 	
 	/* smaller size */
 	.item.grid .title	{ font-size:16px; }
@@ -1683,6 +1826,7 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	
 	/* adjust padder */
 	.item .padder 			{ padding:15px 20px; }
+	.item.feat .padder		{ padding:20px; }
 	
 	/* update grid to 1up */
 	.item.grid 				{ display:block; width:auto; margin:0 0 1px 0; }
@@ -1694,14 +1838,23 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.item.stack .title		{ font-size:16px; }
 	.item.stack .tag 		{ display:block; color:#9f9f9f; padding:0; border:none; font-size:13px; line-height:1.3em; }
 	.item.stack .icon		{ height:1.428em; right:15px; font-size:14px; line-height:1.428em; }
-
+	
+	/* itemHeading */
+	.item.feat .icon 		{ right:20px!important; bottom:20px; font-size:14px; }
+	
 }
 @media only screen and (max-width:400px) {
 	
 	/* smaller size */
 	.item.stack .tag 		{ display:block; color:#9f9f9f; padding:0; border:none; font-size:13px; line-height:1.3em; }
-	.item.stack .icon		{ height:1.428em; right:15px; font-size:14px; line-height:1.428em; }	
+	.item.stack .icon		{ height:1.428em; right:15px!important; bottom:15px; font-size:14px; line-height:1.428em; }	
 
+	/* itemHeading */
+	.item.feat .itemHeading { margin-top:0; }
+	.item.feat .title 		{ font-size:20px; }
+	.item.feat .desc 		{ font-size:14px; line-height:1.5em; }	
+	.item.feat .tag 		{ margin-top:1.2em; font-size:13px; line-height:20px; }	
+		
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1740,27 +1893,6 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 /* -------------------------------------------------------------------------- */
 /* itemListingStack */
 .itemListingStack {  }
-
-	/* heading */
-	.itemListingStack .heading { 
-		display:block; position:relative; width:auto; height:auto; margin:0; padding:15px 25px; overflow:hidden;
-		color:#fff; background:#383838; 
-		font-size:26px; font-weight:300; line-height:1em; }
-		
-/* -------------------------------------------------------------------------- */
-/* responsive */	
-@media only screen and (max-width:800px) {
-	
-	/* adjust padding with padder */
-	.itemListingStack .heading { padding:15px 30px; }
-
-}
-@media only screen and (max-width:500px) {
-
-	/* adjust padding with padder */
-	.itemListingStack .heading { padding:15px 20px; font-size:20px; line-height:1.2em; }
-	
-}
 
 
 /* ==========================================================================

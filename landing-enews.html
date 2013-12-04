@@ -103,8 +103,9 @@
 			<div id="main" class="full">
 				<div class="padder clearfix">
 					<div class="colMain">				
-						<a href="content-news.html" class="item news">
-							<img class="imgThumb" src="_lib/img/img-news.png" width="290" height="200" alt=""/>
+						<a href="#" class="item feat enews">
+							<img class="imgThumb" src="_lib/img/img-enews.png" width="580" height="400" alt=""/>
+							<span class="itemHeading">Latest Edition</span>
 							<span class="padder">
 								<span class="title">Editon 24</span>
 								<span class="desc">Nunc eu ullamcorper orci uisque eget odio ac lectus faucibus eget donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget.</span>
@@ -114,21 +115,25 @@
 						</a>
 					</div>
 					<div class="colSide blu">
-						<div class="padder bgc-d">
+						<div class="pod bgc-d">
 							<!-- FORM -->
-							<div class="contentViewport invert">
-								<h2>Subscribe</h2>
+							<div class="padder contentViewport invert">
+								<h1 class="heading">Subscribe</h1>
 								<p>Nunc eu ullamcorper orci uisque eget odio ac lectus faucibus eget.</p>
 								<form id="formENews" class="formView" action="/">
-									<fieldset>
-										<input type="radio" class="styled" name="formFormat" id="formFormatHTML" value="HTML" checked="checked"/><label for="formFormatHTML" class="inline">HTML</label><input type="radio" class="styled" name="formFormat" id="formFormatTEXT" value="TEXT"/><label for="formFormatTEXT" class="inline">Plain</label>
-									</fieldset>
-									<fieldset>
+									<fieldset class="whitespaceNowrap fleft"><input type="radio" class="styled inline" name="formFormat" id="formFormatHTML" value="HTML" checked="checked"/><label for="formFormatHTML" class="inline">HTML</label></fieldset>
+									<fieldset class="whitespaceNowrap fleft"><input type="radio" class="styled inline" name="formFormat" id="formFormatTEXT" value="TEXT"/><label for="formFormatTEXT" class="inline">Plain</label></fieldset>
+									<div class="clearer"></div>
+									<fieldset class="mgnTop25">
 										<input id="formFirstName" name="formFirstName" class="text" type="text" placeholder="First Name"/>
+									</fieldset>
+									<fieldset class="mgnTop25">
 										<input id="formFirstSurname" name="formFirstSurname" class="text" type="text" placeholder="Surname"/>
+									</fieldset>
+									<fieldset class="mgnTop25">
 										<input id="formEmail" name="formEmail" class="text" type="text" placeholder="Email Address"/>
 									</fieldset>
-									<a class="btnOutline"><span class="label">Subscribe</span></a>
+									<a class="btnOutline mgnTop40"><span class="label">Subscribe</span></a>
 								</form>
 							</div><!-- /FORM -->
 						</div>
@@ -137,7 +142,7 @@
 				<div class="padder padTop0">
 					<!-- LISTING -->
 					<div id="enewsListing" class="itemListingStack">
-						<h3 class="heading">Previous Editions</h3>
+						<h3 class="itemHeading">Previous Editions</h3>
 						<a href="#" class="item stack">
 							<span class="padder"><span class="title">Edition 126</span><span class="tag">14 November 2013</span></span>
 							<i class="icon fwicon-plus"></i>
