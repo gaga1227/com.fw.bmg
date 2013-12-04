@@ -405,6 +405,13 @@ a.btnText { cursor:pointer; }
 	.btnText .iconInline:before	{ font-size:14px; line-height:17px; }
 
 /* -------------------------------------------------------------------------- */
+/* btnText.invert */
+.btnText.invert,
+.btnText.invert .label,
+.contentViewport.invert .btnText,
+.contentViewport.invert .btnText .label { color:#fff!important; }
+
+/* -------------------------------------------------------------------------- */
 /* btnBox */
 .btnBox { 
 	display:inline-block; position:relative; width:auto; height:auto; margin:8px 16px 16px 0; padding:14px 20px; overflow:hidden;
