@@ -64,6 +64,11 @@
 .videoContainerPopup.videoContainer640400 .video 		{ max-width:640px; max-height:400px; width:100%; height:100%; }
 .videoContainerPopup.videoContainer640400 .videoHTML5 	{ padding-top:62.50% /*400/640*/; }
 
+/* 854x480 */
+.videoContainerPopup.videoContainer854480 				{  }
+.videoContainerPopup.videoContainer854480 .video 		{ max-width:854px; max-height:480px; width:100%; height:100%; }
+.videoContainerPopup.videoContainer854480 .videoHTML5 	{ padding-top:56.20% /*480/854*/; }
+
 /* fullscreen */
 .vjs-full-window .videoContainerPopup .videoHTML5,
 .videoContainerPopup .videoHTML5.vjs-fullscreen			{ padding-top:0!important; }
