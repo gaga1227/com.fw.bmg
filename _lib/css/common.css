@@ -899,6 +899,13 @@ body.ps {
 
 /* -------------------------------------------------------------------------- */
 /* columns responsive */
+@media only screen and (max-width:700px) {
+
+	/* make 50/50 columns */
+	.colMain,
+	.colSide { width:48%; }
+
+}
 @media only screen and (max-width:500px) {
 
 	/* -------------------------------------------------------------------------- */
@@ -1199,10 +1206,14 @@ body.ps {
 .invert .formView input.text[disabled],
 .formView.invert input.text[disabled] 		{ color:#ccc!important; border-color:#fff; }
 
+/* datepicker */
+.invert .formView input.text.datepicker + .icon,
+.invert .formView input.text.datepicker + .icon:hover,
+.formView.invert input.text.datepicker + .icon,
+.formView.invert input.text.datepicker + .icon:hover { color:#fff; }
+
 /* select */
-.invert .formView select,
 .invert .formView .select,
-.formView.invert select,
 .formView.invert .select 	{ color:#fff; }
 .invert .formView .select,
 .formView.invert .select 	{ border-bottom-color:#fff; } 
@@ -1261,7 +1272,8 @@ body.ps {
 
 	/* button */
 	.formView .btnBox,
-	.formView .btnText { 
+	.formView .btnText,
+	.formView .btnOutline { 
 		display:block; margin-left:0!important; margin-right:0!important;
 		float:none!important; clear:both!important; text-align:center; }
 	
@@ -1564,6 +1576,12 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.itemHeading { padding:0 30px; }
 
 }
+@media only screen and (max-width:640px) {
+
+	/* reduce font size */
+	.itemHeading { font-size:22px; }
+	
+}
 @media only screen and (max-width:500px) {
 
 	/* adjust padding with padder */
@@ -1588,7 +1606,7 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 		/* heading */
 		.pod .heading { 
 			padding:0.4em 0 0.2em 0; }
-		
+
 /* -------------------------------------------------------------------------- */
 /* responsive */
 @media only screen and (max-width:800px) {
@@ -1601,10 +1619,11 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	
 	/* adjust padder */
 	.pod > .padder { padding:15px 20px; }
+	
+	/* custom */
+	#podEnews { margin-top:20px; }
 
 }
-
-
 
 
 /* ==========================================================================
@@ -1813,6 +1832,9 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.item.stack .title,
 	.item.stack .tag 		{ font-size:18px; }
 	.item.stack .icon 		{ height:1em; line-height:1em; }
+	
+	/* itemHeading */
+	.item.feat .itemHeading { margin-top:0; }
 
 }
 @media only screen and (max-width:640px) {
@@ -1850,7 +1872,6 @@ a.tile { cursor:pointer; text-decoration:none!important; outline:0 none!importan
 	.item.stack .icon		{ height:1.428em; right:15px!important; bottom:15px; font-size:14px; line-height:1.428em; }	
 
 	/* itemHeading */
-	.item.feat .itemHeading { margin-top:0; }
 	.item.feat .title 		{ font-size:20px; }
 	.item.feat .desc 		{ font-size:14px; line-height:1.5em; }	
 	.item.feat .tag 		{ margin-top:1.2em; font-size:13px; line-height:20px; }	

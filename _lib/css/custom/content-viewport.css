@@ -585,6 +585,9 @@ a.btnOutline { cursor:pointer; }
 .ie7 .contentViewport.invert ul li,
 .ie6 .contentViewport.invert ul li 	{ background:none; } 
 
+/* text styles */
+.contentViewport.invert .discreetText { color:#ccc; }
+
 
 /* ==========================================================================
    responsive - ALL
